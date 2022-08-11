@@ -1,4 +1,4 @@
-# Notion x Todoist API Playground
+# Notion <-> Todoist API Playground
 
 Uses the [Notion SDK](https://github.com/makenotion/notion-sdk-js) Template Repository
 and [TypeScript](https://www.typescriptlang.org/).
