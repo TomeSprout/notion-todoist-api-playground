@@ -1,18 +1,18 @@
 import { Client } from "@notionhq/client";
+import { TodoistApi } from "@doist/todoist-api-typescript";
 import dotenv from "dotenv";
 
 dotenv.config();
 
-async function main() {
+const main = async () => {
   const notion = new Client({
     auth: process.env.NOTION_TOKEN,
   });
 
-  const response = await notion.databases.query({
-    database_id: "FIXME",
+  const { results } = await notion.databases.query({
+    database_id: databaseID,
   });
 
-  console.log("Got response:", response);
 }
 
 main()
