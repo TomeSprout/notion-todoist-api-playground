@@ -14,6 +14,11 @@ const main = async () => {
   const { results } = await notion.databases.query({
     database_id: databaseID,
   });
+
+  await todoist.getProjects()
+    .then((projects) => projects.map((project: any) => console.log(project.name)))
+    .catch((error) => console.error());
+  
 }
 
 main()
