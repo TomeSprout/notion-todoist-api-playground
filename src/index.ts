@@ -19,6 +19,10 @@ const main = async () => {
     .then((projects) => projects.map((project: any) => console.log(project.name)))
     .catch((error) => console.error());
   
+  await todoist.getTasks()
+    .then((tasks) => console.log(tasks))
+    .catch((error) => console.error());
+
 }
 
 main()
