@@ -1,10 +1,7 @@
-# notion-sdk-typescript-starter
+# Notion x Todoist API Playground
 
-This is a template repository for getting started with the [Notion SDK](https://github.com/makenotion/notion-sdk-js)
+Uses the [Notion SDK](https://github.com/makenotion/notion-sdk-js) Template Repository
 and [TypeScript](https://www.typescriptlang.org/).
-
-To use this template, click the big green "Use this template" button in the upper-right corner. After some questions,
-GitHub will create a new clone under your account, and then you can get started customizing.
 
 ## Features
 
@@ -16,13 +13,17 @@ GitHub will create a new clone under your account, and then you can get started 
   for ensuring your (and this template's!) dependencies are up to date.
 - Our lovely Notion SDK!
 
-## What to do after duplicating
+## Getting Started
 
-1. Make sure you've [created a Notion integration](https://developers.notion.com/docs/getting-started) and have a secret Notion token.
-2. Add your Notion token to a `.env` file at the root of this repository: `echo "NOTION_TOKEN=[your token here]" > .env`.
-3. Run `npm install`.
-4. Edit the `database_id` in `index.ts` from FIXME to be any database currently shared with your integration.
-5. Run `npm start` to run the script.
+1. See the documentation for [creating a Notion integration](https://developers.notion.com/docs/getting-started) and have a secret Notion token.
+2. Share the newly created integration with the Notion Page or Database to be accessed and record the Database ID.
+3. See the documentation for [the official Todoist REST API](https://developer.todoist.com/rest/v1/). The application needs an [authorization header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization) with the appropriate `Bearer $token` to make authorized calls.\
+During development, the personal API token can be used and is accessed via User Settings > [Integrations](https://todoist.com/prefs/integrations) > API token.
+4. Add Notion token, Todoist token, and Notion Database ID to an `.env` file at the root of this repository.\
+For example: `echo "NOTION_TOKEN=[your token here]" > .env`.
+5. Run `npm install`.
+6. Edit the `database_id` in `index.ts` from FIXME to the Database ID shared with the integration.
+7. Run `npm start` to run the script.
 
 Now you can head over to our [developer documentation](https://developers.notion.com/) for more information on using the Notion API!
 
