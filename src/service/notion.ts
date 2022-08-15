@@ -38,6 +38,15 @@ export const notion = async (): PromiseComplete => {
   for (const page of pages) {
     const pageId = page.id;
 
+    const titlePropertyId = page.properties["Task"].id;
+    const titlePropertyItems = await getPropertyValue({
+      pageId,
+      propertyId: titlePropertyId,
+    });
+    const title = titlePropertyItems.length !== 0
+      ? titlePropertyItems.map(propertyItem => propertyItem.title.plain_text).join("")
+      : 'No Title';
+    
     const descriptionPropertyId = page.properties["Desc"].id;
     const descriptionPropertyItem = await getPropertyValue({
       pageId,
@@ -46,17 +55,6 @@ export const notion = async (): PromiseComplete => {
     const description = descriptionPropertyItem.select
       ? descriptionPropertyItem.select.name
       : "No Description";
-
-    const titlePropertyId = page.properties["Task"].id
-    const titlePropertyItems = await getPropertyValue({
-      pageId,
-      propertyId: titlePropertyId,
-    });
-    const title = titlePropertyItems
-      .map(propertyItem => propertyItem.title.plain_text != ''
-        ? "propertyItem.title.plain_text"
-        : "No Title")
-      .join("");
 
     tasks.push({ pageId, title, description, });
   }
