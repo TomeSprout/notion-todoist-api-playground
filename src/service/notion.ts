@@ -8,8 +8,9 @@ const notionClient: Client = new Client({ auth: process.env.NOTION_TOKEN });
 const databaseId: string = process.env.NOTION_DATABASE_ID as string;
 
 interface PromiseComplete {
-  notion():
-    Promise<Array<{ pageId: string; task: string; description: string; }>>;
+  notion(): Promise<
+    Array<{ pageId: string; task: string; description: string }>
+  >;
 }
 
 //Gets tasks from the database.
@@ -31,7 +32,7 @@ export const notion = async (): PromiseComplete => {
 
     cursor = next_cursor;
   }
-  
+
   console.log(`${pages.length} pages successfully fetched.`);
 
   const tasks = [];
@@ -43,27 +44,31 @@ export const notion = async (): PromiseComplete => {
       pageId,
       propertyId: titlePropertyId,
     });
-    const title = titlePropertyItems.length !== 0
-      ? titlePropertyItems.map(propertyItem => propertyItem.title.plain_text).join("")
-      : 'No Title';
-    
+    const title =
+      titlePropertyItems.length !== 0
+        ? titlePropertyItems
+            .map((propertyItem) => propertyItem.title.plain_text)
+            .join("")
+        : "No Title";
+
     const descriptionPropertyId: string = page.properties["Desc"].id;
     const descriptionPropertyItem = await getPropertyValue({
       pageId,
       propertyId: descriptionPropertyId,
     });
 
-    const description = descriptionPropertyItem.length !== 0
-      ? descriptionPropertyItem
-        .map(propertyItem => propertyItem.rich_text.plain_text)
-        .join("")
-      : 'No Description';
+    const description =
+      descriptionPropertyItem.length !== 0
+        ? descriptionPropertyItem
+            .map((propertyItem) => propertyItem.rich_text.plain_text)
+            .join("")
+        : "No Description";
 
-    tasks.push({ pageId, title, description, });
+    tasks.push({ pageId, title, description });
   }
 
   return tasks;
-}
+};
 
 // If property is paginated, returns an array of property items.
 // Otherwise, it will return a single property item.
@@ -74,15 +79,20 @@ interface PropertyValue {
 }
 
 interface PromisePayload {
-  getPropertyValue({ pageId, propertyId }: PropertyValue):
-    Promise<PropertyItemObject | Array<PropertyItemObject>>;
+  getPropertyValue({
+    pageId,
+    propertyId,
+  }: PropertyValue): Promise<PropertyItemObject | Array<PropertyItemObject>>;
 }
 
-const getPropertyValue = async ({ pageId, propertyId }: PropertyValue): PromisePayload => {
+const getPropertyValue = async ({
+  pageId,
+  propertyId,
+}: PropertyValue): PromisePayload => {
   const propertyItem = await notionClient.pages.properties.retrieve({
     page_id: pageId,
     property_id: propertyId,
-  })
+  });
   if (propertyItem.object === "property_item") {
     return propertyItem;
   }
@@ -96,11 +106,11 @@ const getPropertyValue = async ({ pageId, propertyId }: PropertyValue): PromiseP
       page_id: pageId,
       property_id: propertyId,
       start_cursor: nextCursor,
-    })
+    });
 
     nextCursor = propertyItem.next_cursor;
     results.push(...propertyItem.results);
   }
 
   return results;
-}
+};
