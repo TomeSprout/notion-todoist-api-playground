@@ -2,9 +2,8 @@ import { notion } from "./service/notion";
 import { todoist } from "./service/todoist";
 
 const main = async () => {
-  await notion();
-  await todoist();
-
+  const currentTasks = await notion();
+  console.log('Current Tasks:', currentTasks);
 }
 
 main()
