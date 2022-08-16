@@ -9,7 +9,7 @@ const databaseId: string = process.env.NOTION_DATABASE_ID as string;
 
 interface PromiseComplete {
   notion(): Promise<
-    Array<{ pageId: string; task: string; description: string }>
+    Array<{ pageId: string; task: string; description: string; dueDate: object | string }>
   >;
 }
 
@@ -56,15 +56,23 @@ export const notion = async (): PromiseComplete => {
       pageId,
       propertyId: descriptionPropertyId,
     });
-
     const description =
       descriptionPropertyItem.length !== 0
         ? descriptionPropertyItem
             .map((propertyItem) => propertyItem.rich_text.plain_text)
             .join("")
         : "No Description";
+    
+    const dueDatePropertyId: string = page.properties["Due"].id;
+    const dueDatePropertyItems = await getPropertyValue({
+      pageId,
+      propertyId: dueDatePropertyId,
+    });
+    const dueDate = dueDatePropertyItems.date !== null
+      ? dueDatePropertyItems.date
+      : "No Due Date";
 
-    tasks.push({ pageId, title, description });
+    tasks.push({ pageId, title, description, dueDate });
   }
 
   return tasks;
