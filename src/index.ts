@@ -20,7 +20,6 @@ interface NotionTasksPayload {
 
 const main = async () => {
   const currentTasks = await notion();
-  console.log('Current Tasks:', currentTasks);
 }
 
 main()
