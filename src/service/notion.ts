@@ -2,27 +2,25 @@
 
 import { Client } from "@notionhq/client";
 import dotenv from "dotenv";
+
+import { NotionQuery } from "../ts/interface/interfaces";
+
 dotenv.config();
 
 const notionClient: Client = new Client({ auth: process.env.NOTION_TOKEN });
 const databaseId: string = process.env.NOTION_DATABASE_ID as string;
 
-interface PromiseComplete {
-  notion(): Promise<
-    Array<{ pageId: string; task: string; description: string; dueDate: object | string }>
-  >;
-}
-
 //Gets tasks from the database.
-export const notion = async (): PromiseComplete => {
+export const notion = async () => {
   const pages = [];
   let cursor = undefined;
 
   while (true) {
-    const { results, next_cursor } = await notionClient.databases.query({
-      database_id: databaseId,
-      start_cursor: cursor,
-    });
+    const { results, next_cursor }: NotionQuery =
+      await notionClient.databases.query({
+        database_id: databaseId,
+        start_cursor: cursor,
+      });
 
     pages.push(...results);
 
@@ -62,15 +60,16 @@ export const notion = async (): PromiseComplete => {
             .map((propertyItem) => propertyItem.rich_text.plain_text)
             .join("")
         : "No Description";
-    
+
     const dueDatePropertyId: string = page.properties["Due"].id;
     const dueDatePropertyItems = await getPropertyValue({
       pageId,
       propertyId: dueDatePropertyId,
     });
-    const dueDate = dueDatePropertyItems.date !== null
-      ? dueDatePropertyItems.date
-      : "No Due Date";
+    const dueDate =
+      dueDatePropertyItems.date !== null
+        ? dueDatePropertyItems.date
+        : "No Due Date";
 
     tasks.push({ pageId, title, description, dueDate });
   }
@@ -81,22 +80,7 @@ export const notion = async (): PromiseComplete => {
 // If property is paginated, returns an array of property items.
 // Otherwise, it will return a single property item.
 
-interface PropertyValue {
-  pageId: string;
-  propertyId: string;
-}
-
-interface PromisePayload {
-  getPropertyValue({
-    pageId,
-    propertyId,
-  }: PropertyValue): Promise<PropertyItemObject | Array<PropertyItemObject>>;
-}
-
-const getPropertyValue = async ({
-  pageId,
-  propertyId,
-}: PropertyValue): PromisePayload => {
+const getPropertyValue = async ({ pageId, propertyId }: PropertyValue) => {
   const propertyItem = await notionClient.pages.properties.retrieve({
     page_id: pageId,
     property_id: propertyId,
