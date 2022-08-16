@@ -3,7 +3,8 @@
 import { Client } from "@notionhq/client";
 import dotenv from "dotenv";
 
-import { NotionQuery } from "../ts/interface/interfaces";
+import { GetPagePropertyResponse } from "../ts/type/types"
+import { NotionQuery, PropertyValue } from "../ts/interface/interfaces";
 
 dotenv.config();
 
@@ -81,7 +82,7 @@ export const notion = async () => {
 // Otherwise, it will return a single property item.
 
 const getPropertyValue = async ({ pageId, propertyId }: PropertyValue) => {
-  const propertyItem = await notionClient.pages.properties.retrieve({
+  const propertyItem: GetPagePropertyResponse = await notionClient.pages.properties.retrieve({
     page_id: pageId,
     property_id: propertyId,
   });
@@ -90,7 +91,7 @@ const getPropertyValue = async ({ pageId, propertyId }: PropertyValue) => {
   }
 
   // Property is paginated.
-  let nextCursor = propertyItem.next_cursor;
+  let nextCursor: string | null = propertyItem.next_cursor;
   const results = propertyItem.results;
 
   while (nextCursor !== null) {
