@@ -42,7 +42,7 @@ interface PromiseComplete {
   >;
 }
 
-interface PropertyValue {
+export interface PropertyValue {
   pageId: string;
   propertyId: string;
 }
