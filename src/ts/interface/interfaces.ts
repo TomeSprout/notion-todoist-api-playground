@@ -1,3 +1,5 @@
+import { PageObjectResponse, PartialPageObjectResponse } from "../type/types";
+
 interface NotionTasksPayload {
   [index: number]: {
     object: string;
@@ -27,6 +29,11 @@ interface PropertyItem {
     plain_text: string;
     href?: null
   }
+}
+
+export interface NotionQuery {
+  results: (PageObjectResponse | PartialPageObjectResponse)[];
+  next_cursor: string | null;
 }
 
 interface PromiseComplete {
