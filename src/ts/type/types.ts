@@ -3,51 +3,51 @@
 // cspell:disable-file
 // Note: This is a generated file.
 
-type IdRequest = string | string
+type IdRequest = string | string;
 
 export type PersonUserObjectResponse = {
-  type: "person"
-  person: { email?: string }
-  name: string | null
-  avatar_url: string | null
-  id: IdRequest
-  object: "user"
-}
+  type: "person";
+  person: { email?: string };
+  name: string | null;
+  avatar_url: string | null;
+  id: IdRequest;
+  object: "user";
+};
 
-type EmptyObject = Record<string, never>
+type EmptyObject = Record<string, never>;
 
-export type PartialUserObjectResponse = { id: IdRequest; object: "user" }
+export type PartialUserObjectResponse = { id: IdRequest; object: "user" };
 
 export type BotUserObjectResponse = {
-  type: "bot"
+  type: "bot";
   bot:
     | EmptyObject
     | {
         owner:
           | {
-              type: "user"
+              type: "user";
               user:
                 | {
-                    type: "person"
-                    person: { email: string }
-                    name: string | null
-                    avatar_url: string | null
-                    id: IdRequest
-                    object: "user"
+                    type: "person";
+                    person: { email: string };
+                    name: string | null;
+                    avatar_url: string | null;
+                    id: IdRequest;
+                    object: "user";
                   }
-                | PartialUserObjectResponse
+                | PartialUserObjectResponse;
             }
-          | { type: "workspace"; workspace: true }
-      }
-  name: string | null
-  avatar_url: string | null
-  id: IdRequest
-  object: "user"
-}
+          | { type: "workspace"; workspace: true };
+      };
+  name: string | null;
+  avatar_url: string | null;
+  id: IdRequest;
+  object: "user";
+};
 
 export type UserObjectResponse =
   | PersonUserObjectResponse
-  | BotUserObjectResponse
+  | BotUserObjectResponse;
 
 type EmojiRequest =
   | "😀"
@@ -3608,40 +3608,40 @@ type EmojiRequest =
   | "🇿🇼"
   | "🏴󠁧󠁢󠁥󠁮󠁧󠁿"
   | "🏴󠁧󠁢󠁳󠁣󠁴󠁿"
-  | "🏴󠁧󠁢󠁷󠁬󠁳󠁿"
+  | "🏴󠁧󠁢󠁷󠁬󠁳󠁿";
 
-type TextRequest = string
+type TextRequest = string;
 
 export type PageObjectResponse = {
   parent:
     | { type: "database_id"; database_id: string }
     | { type: "page_id"; page_id: string }
     | { type: "block_id"; block_id: string }
-    | { type: "workspace"; workspace: true }
-  properties: Record<string, { id: string }>
+    | { type: "workspace"; workspace: true };
+  properties: Record<string, { id: string }>;
   icon:
     | { type: "emoji"; emoji: EmojiRequest }
     | null
     | { type: "external"; external: { url: TextRequest } }
     | null
     | { type: "file"; file: { url: string; expiry_time: string } }
-    | null
+    | null;
   cover:
     | { type: "external"; external: { url: TextRequest } }
     | null
     | { type: "file"; file: { url: string; expiry_time: string } }
-    | null
-  created_by: PartialUserObjectResponse
-  last_edited_by: PartialUserObjectResponse
-  object: "page"
-  id: string
-  created_time: string
-  last_edited_time: string
-  archived: boolean
-  url: string
-}
+    | null;
+  created_by: PartialUserObjectResponse;
+  last_edited_by: PartialUserObjectResponse;
+  object: "page";
+  id: string;
+  created_time: string;
+  last_edited_time: string;
+  archived: boolean;
+  url: string;
+};
 
-export type PartialPageObjectResponse = { object: "page"; id: string }
+export type PartialPageObjectResponse = { object: "page"; id: string };
 
 type NumberFormat =
   | "number"
@@ -3681,23 +3681,23 @@ type NumberFormat =
   | "ringgit"
   | "leu"
   | "argentine_peso"
-  | "uruguayan_peso"
+  | "uruguayan_peso";
 
 type NumberDatabasePropertyConfigResponse = {
-  type: "number"
-  number: { format: NumberFormat }
-  id: string
-  name: string
-}
+  type: "number";
+  number: { format: NumberFormat };
+  id: string;
+  name: string;
+};
 
 type FormulaDatabasePropertyConfigResponse = {
-  type: "formula"
-  formula: { expression: string }
-  id: string
-  name: string
-}
+  type: "formula";
+  formula: { expression: string };
+  id: string;
+  name: string;
+};
 
-type StringRequest = string
+type StringRequest = string;
 
 type SelectColor =
   | "default"
@@ -3709,60 +3709,60 @@ type SelectColor =
   | "blue"
   | "purple"
   | "pink"
-  | "red"
+  | "red";
 
 type SelectPropertyResponse = {
-  id: StringRequest
-  name: StringRequest
-  color: SelectColor
-}
+  id: StringRequest;
+  name: StringRequest;
+  color: SelectColor;
+};
 
 type SelectDatabasePropertyConfigResponse = {
-  type: "select"
-  select: { options: Array<SelectPropertyResponse> }
-  id: string
-  name: string
-}
+  type: "select";
+  select: { options: Array<SelectPropertyResponse> };
+  id: string;
+  name: string;
+};
 
 type MultiSelectDatabasePropertyConfigResponse = {
-  type: "multi_select"
-  multi_select: { options: Array<SelectPropertyResponse> }
-  id: string
-  name: string
-}
+  type: "multi_select";
+  multi_select: { options: Array<SelectPropertyResponse> };
+  id: string;
+  name: string;
+};
 
 type StatusDatabasePropertyConfigResponse = {
-  type: "status"
-  status: EmptyObject
-  id: string
-  name: string
-}
+  type: "status";
+  status: EmptyObject;
+  id: string;
+  name: string;
+};
 
 type SinglePropertyDatabasePropertyRelationConfigResponse = {
-  type: "single_property"
-  single_property: EmptyObject
-  database_id: IdRequest
-}
+  type: "single_property";
+  single_property: EmptyObject;
+  database_id: IdRequest;
+};
 
 type DualPropertyDatabasePropertyRelationConfigResponse = {
-  type: "dual_property"
+  type: "dual_property";
   dual_property: {
-    synced_property_id: StringRequest
-    synced_property_name: StringRequest
-  }
-  database_id: IdRequest
-}
+    synced_property_id: StringRequest;
+    synced_property_name: StringRequest;
+  };
+  database_id: IdRequest;
+};
 
 type DatabasePropertyRelationConfigResponse =
   | SinglePropertyDatabasePropertyRelationConfigResponse
-  | DualPropertyDatabasePropertyRelationConfigResponse
+  | DualPropertyDatabasePropertyRelationConfigResponse;
 
 type RelationDatabasePropertyConfigResponse = {
-  type: "relation"
-  relation: DatabasePropertyRelationConfigResponse
-  id: string
-  name: string
-}
+  type: "relation";
+  relation: DatabasePropertyRelationConfigResponse;
+  id: string;
+  name: string;
+};
 
 type RollupFunction =
   | "count"
@@ -3788,111 +3788,111 @@ type RollupFunction =
   | "percent_unchecked"
   | "count_per_group"
   | "percent_per_group"
-  | "show_original"
+  | "show_original";
 
 type RollupDatabasePropertyConfigResponse = {
-  type: "rollup"
+  type: "rollup";
   rollup: {
-    rollup_property_name: string
-    relation_property_name: string
-    rollup_property_id: string
-    relation_property_id: string
-    function: RollupFunction
-  }
-  id: string
-  name: string
-}
+    rollup_property_name: string;
+    relation_property_name: string;
+    rollup_property_id: string;
+    relation_property_id: string;
+    function: RollupFunction;
+  };
+  id: string;
+  name: string;
+};
 
 type TitleDatabasePropertyConfigResponse = {
-  type: "title"
-  title: EmptyObject
-  id: string
-  name: string
-}
+  type: "title";
+  title: EmptyObject;
+  id: string;
+  name: string;
+};
 
 type RichTextDatabasePropertyConfigResponse = {
-  type: "rich_text"
-  rich_text: EmptyObject
-  id: string
-  name: string
-}
+  type: "rich_text";
+  rich_text: EmptyObject;
+  id: string;
+  name: string;
+};
 
 type UrlDatabasePropertyConfigResponse = {
-  type: "url"
-  url: EmptyObject
-  id: string
-  name: string
-}
+  type: "url";
+  url: EmptyObject;
+  id: string;
+  name: string;
+};
 
 type PeopleDatabasePropertyConfigResponse = {
-  type: "people"
-  people: EmptyObject
-  id: string
-  name: string
-}
+  type: "people";
+  people: EmptyObject;
+  id: string;
+  name: string;
+};
 
 type FilesDatabasePropertyConfigResponse = {
-  type: "files"
-  files: EmptyObject
-  id: string
-  name: string
-}
+  type: "files";
+  files: EmptyObject;
+  id: string;
+  name: string;
+};
 
 type EmailDatabasePropertyConfigResponse = {
-  type: "email"
-  email: EmptyObject
-  id: string
-  name: string
-}
+  type: "email";
+  email: EmptyObject;
+  id: string;
+  name: string;
+};
 
 type PhoneNumberDatabasePropertyConfigResponse = {
-  type: "phone_number"
-  phone_number: EmptyObject
-  id: string
-  name: string
-}
+  type: "phone_number";
+  phone_number: EmptyObject;
+  id: string;
+  name: string;
+};
 
 type DateDatabasePropertyConfigResponse = {
-  type: "date"
-  date: EmptyObject
-  id: string
-  name: string
-}
+  type: "date";
+  date: EmptyObject;
+  id: string;
+  name: string;
+};
 
 type CheckboxDatabasePropertyConfigResponse = {
-  type: "checkbox"
-  checkbox: EmptyObject
-  id: string
-  name: string
-}
+  type: "checkbox";
+  checkbox: EmptyObject;
+  id: string;
+  name: string;
+};
 
 type CreatedByDatabasePropertyConfigResponse = {
-  type: "created_by"
-  created_by: EmptyObject
-  id: string
-  name: string
-}
+  type: "created_by";
+  created_by: EmptyObject;
+  id: string;
+  name: string;
+};
 
 type CreatedTimeDatabasePropertyConfigResponse = {
-  type: "created_time"
-  created_time: EmptyObject
-  id: string
-  name: string
-}
+  type: "created_time";
+  created_time: EmptyObject;
+  id: string;
+  name: string;
+};
 
 type LastEditedByDatabasePropertyConfigResponse = {
-  type: "last_edited_by"
-  last_edited_by: EmptyObject
-  id: string
-  name: string
-}
+  type: "last_edited_by";
+  last_edited_by: EmptyObject;
+  id: string;
+  name: string;
+};
 
 type LastEditedTimeDatabasePropertyConfigResponse = {
-  type: "last_edited_time"
-  last_edited_time: EmptyObject
-  id: string
-  name: string
-}
+  type: "last_edited_time";
+  last_edited_time: EmptyObject;
+  id: string;
+  name: string;
+};
 
 type DatabasePropertyConfigResponse =
   | NumberDatabasePropertyConfigResponse
@@ -3914,20 +3914,20 @@ type DatabasePropertyConfigResponse =
   | CreatedByDatabasePropertyConfigResponse
   | CreatedTimeDatabasePropertyConfigResponse
   | LastEditedByDatabasePropertyConfigResponse
-  | LastEditedTimeDatabasePropertyConfigResponse
+  | LastEditedTimeDatabasePropertyConfigResponse;
 
 export type PartialDatabaseObjectResponse = {
-  object: "database"
-  id: string
-  properties: Record<string, DatabasePropertyConfigResponse>
-}
+  object: "database";
+  id: string;
+  properties: Record<string, DatabasePropertyConfigResponse>;
+};
 
 type AnnotationResponse = {
-  bold: boolean
-  italic: boolean
-  strikethrough: boolean
-  underline: boolean
-  code: boolean
+  bold: boolean;
+  italic: boolean;
+  strikethrough: boolean;
+  underline: boolean;
+  code: boolean;
   color:
     | "default"
     | "gray"
@@ -3947,16 +3947,16 @@ type AnnotationResponse = {
     | "blue_background"
     | "purple_background"
     | "pink_background"
-    | "red_background"
-}
+    | "red_background";
+};
 
 export type TextRichTextItemResponse = {
-  type: "text"
-  text: { content: string; link: { url: TextRequest } | null }
-  annotations: AnnotationResponse
-  plain_text: string
-  href: string | null
-}
+  type: "text";
+  text: { content: string; link: { url: TextRequest } | null };
+  annotations: AnnotationResponse;
+  plain_text: string;
+  href: string | null;
+};
 
 type TimeZoneRequest =
   | "Africa/Abidjan"
@@ -4551,89 +4551,89 @@ type TimeZoneRequest =
   | "Universal"
   | "W-SU"
   | "WET"
-  | "Zulu"
+  | "Zulu";
 
 type DateResponse = {
-  start: string
-  end: string | null
-  time_zone: TimeZoneRequest | null
-}
+  start: string;
+  end: string | null;
+  time_zone: TimeZoneRequest | null;
+};
 
-type LinkPreviewMentionResponse = { url: TextRequest }
+type LinkPreviewMentionResponse = { url: TextRequest };
 
 type TemplateMentionDateTemplateMentionResponse = {
-  type: "template_mention_date"
-  template_mention_date: "today" | "now"
-}
+  type: "template_mention_date";
+  template_mention_date: "today" | "now";
+};
 
 type TemplateMentionUserTemplateMentionResponse = {
-  type: "template_mention_user"
-  template_mention_user: "me"
-}
+  type: "template_mention_user";
+  template_mention_user: "me";
+};
 
 type TemplateMentionResponse =
   | TemplateMentionDateTemplateMentionResponse
-  | TemplateMentionUserTemplateMentionResponse
+  | TemplateMentionUserTemplateMentionResponse;
 
 export type MentionRichTextItemResponse = {
-  type: "mention"
+  type: "mention";
   mention:
     | { type: "user"; user: PartialUserObjectResponse | UserObjectResponse }
     | { type: "date"; date: DateResponse }
     | { type: "link_preview"; link_preview: LinkPreviewMentionResponse }
     | { type: "template_mention"; template_mention: TemplateMentionResponse }
     | { type: "page"; page: { id: IdRequest } }
-    | { type: "database"; database: { id: IdRequest } }
-  annotations: AnnotationResponse
-  plain_text: string
-  href: string | null
-}
+    | { type: "database"; database: { id: IdRequest } };
+  annotations: AnnotationResponse;
+  plain_text: string;
+  href: string | null;
+};
 
 export type EquationRichTextItemResponse = {
-  type: "equation"
-  equation: { expression: TextRequest }
-  annotations: AnnotationResponse
-  plain_text: string
-  href: string | null
-}
+  type: "equation";
+  equation: { expression: TextRequest };
+  annotations: AnnotationResponse;
+  plain_text: string;
+  href: string | null;
+};
 
 export type RichTextItemResponse =
   | TextRichTextItemResponse
   | MentionRichTextItemResponse
-  | EquationRichTextItemResponse
+  | EquationRichTextItemResponse;
 
 export type DatabaseObjectResponse = {
-  title: Array<RichTextItemResponse>
-  description: Array<RichTextItemResponse>
+  title: Array<RichTextItemResponse>;
+  description: Array<RichTextItemResponse>;
   icon:
     | { type: "emoji"; emoji: EmojiRequest }
     | null
     | { type: "external"; external: { url: TextRequest } }
     | null
     | { type: "file"; file: { url: string; expiry_time: string } }
-    | null
+    | null;
   cover:
     | { type: "external"; external: { url: TextRequest } }
     | null
     | { type: "file"; file: { url: string; expiry_time: string } }
-    | null
-  properties: Record<string, DatabasePropertyConfigResponse>
+    | null;
+  properties: Record<string, DatabasePropertyConfigResponse>;
   parent:
     | { type: "page_id"; page_id: string }
     | { type: "workspace"; workspace: true }
-    | { type: "block_id"; block_id: string }
-  created_by: PartialUserObjectResponse
-  last_edited_by: PartialUserObjectResponse
-  is_inline: boolean
-  object: "database"
-  id: string
-  created_time: string
-  last_edited_time: string
-  archived: boolean
-  url: string
-}
+    | { type: "block_id"; block_id: string };
+  created_by: PartialUserObjectResponse;
+  last_edited_by: PartialUserObjectResponse;
+  is_inline: boolean;
+  object: "database";
+  id: string;
+  created_time: string;
+  last_edited_time: string;
+  archived: boolean;
+  url: string;
+};
 
-export type PartialBlockObjectResponse = { object: "block"; id: string }
+export type PartialBlockObjectResponse = { object: "block"; id: string };
 
 type ApiColor =
   | "default"
@@ -4654,271 +4654,271 @@ type ApiColor =
   | "blue_background"
   | "purple_background"
   | "pink_background"
-  | "red_background"
+  | "red_background";
 
 export type ParagraphBlockObjectResponse = {
-  type: "paragraph"
-  paragraph: { rich_text: Array<RichTextItemResponse>; color: ApiColor }
+  type: "paragraph";
+  paragraph: { rich_text: Array<RichTextItemResponse>; color: ApiColor };
   parent:
     | { type: "database_id"; database_id: string }
     | { type: "page_id"; page_id: string }
     | { type: "block_id"; block_id: string }
-    | { type: "workspace"; workspace: true }
-  object: "block"
-  id: string
-  created_time: string
-  created_by: PartialUserObjectResponse
-  last_edited_time: string
-  last_edited_by: PartialUserObjectResponse
-  has_children: boolean
-  archived: boolean
-}
+    | { type: "workspace"; workspace: true };
+  object: "block";
+  id: string;
+  created_time: string;
+  created_by: PartialUserObjectResponse;
+  last_edited_time: string;
+  last_edited_by: PartialUserObjectResponse;
+  has_children: boolean;
+  archived: boolean;
+};
 
 export type Heading1BlockObjectResponse = {
-  type: "heading_1"
-  heading_1: { rich_text: Array<RichTextItemResponse>; color: ApiColor }
+  type: "heading_1";
+  heading_1: { rich_text: Array<RichTextItemResponse>; color: ApiColor };
   parent:
     | { type: "database_id"; database_id: string }
     | { type: "page_id"; page_id: string }
     | { type: "block_id"; block_id: string }
-    | { type: "workspace"; workspace: true }
-  object: "block"
-  id: string
-  created_time: string
-  created_by: PartialUserObjectResponse
-  last_edited_time: string
-  last_edited_by: PartialUserObjectResponse
-  has_children: boolean
-  archived: boolean
-}
+    | { type: "workspace"; workspace: true };
+  object: "block";
+  id: string;
+  created_time: string;
+  created_by: PartialUserObjectResponse;
+  last_edited_time: string;
+  last_edited_by: PartialUserObjectResponse;
+  has_children: boolean;
+  archived: boolean;
+};
 
 export type Heading2BlockObjectResponse = {
-  type: "heading_2"
-  heading_2: { rich_text: Array<RichTextItemResponse>; color: ApiColor }
+  type: "heading_2";
+  heading_2: { rich_text: Array<RichTextItemResponse>; color: ApiColor };
   parent:
     | { type: "database_id"; database_id: string }
     | { type: "page_id"; page_id: string }
     | { type: "block_id"; block_id: string }
-    | { type: "workspace"; workspace: true }
-  object: "block"
-  id: string
-  created_time: string
-  created_by: PartialUserObjectResponse
-  last_edited_time: string
-  last_edited_by: PartialUserObjectResponse
-  has_children: boolean
-  archived: boolean
-}
+    | { type: "workspace"; workspace: true };
+  object: "block";
+  id: string;
+  created_time: string;
+  created_by: PartialUserObjectResponse;
+  last_edited_time: string;
+  last_edited_by: PartialUserObjectResponse;
+  has_children: boolean;
+  archived: boolean;
+};
 
 export type Heading3BlockObjectResponse = {
-  type: "heading_3"
-  heading_3: { rich_text: Array<RichTextItemResponse>; color: ApiColor }
+  type: "heading_3";
+  heading_3: { rich_text: Array<RichTextItemResponse>; color: ApiColor };
   parent:
     | { type: "database_id"; database_id: string }
     | { type: "page_id"; page_id: string }
     | { type: "block_id"; block_id: string }
-    | { type: "workspace"; workspace: true }
-  object: "block"
-  id: string
-  created_time: string
-  created_by: PartialUserObjectResponse
-  last_edited_time: string
-  last_edited_by: PartialUserObjectResponse
-  has_children: boolean
-  archived: boolean
-}
+    | { type: "workspace"; workspace: true };
+  object: "block";
+  id: string;
+  created_time: string;
+  created_by: PartialUserObjectResponse;
+  last_edited_time: string;
+  last_edited_by: PartialUserObjectResponse;
+  has_children: boolean;
+  archived: boolean;
+};
 
 export type BulletedListItemBlockObjectResponse = {
-  type: "bulleted_list_item"
+  type: "bulleted_list_item";
   bulleted_list_item: {
-    rich_text: Array<RichTextItemResponse>
-    color: ApiColor
-  }
+    rich_text: Array<RichTextItemResponse>;
+    color: ApiColor;
+  };
   parent:
     | { type: "database_id"; database_id: string }
     | { type: "page_id"; page_id: string }
     | { type: "block_id"; block_id: string }
-    | { type: "workspace"; workspace: true }
-  object: "block"
-  id: string
-  created_time: string
-  created_by: PartialUserObjectResponse
-  last_edited_time: string
-  last_edited_by: PartialUserObjectResponse
-  has_children: boolean
-  archived: boolean
-}
+    | { type: "workspace"; workspace: true };
+  object: "block";
+  id: string;
+  created_time: string;
+  created_by: PartialUserObjectResponse;
+  last_edited_time: string;
+  last_edited_by: PartialUserObjectResponse;
+  has_children: boolean;
+  archived: boolean;
+};
 
 export type NumberedListItemBlockObjectResponse = {
-  type: "numbered_list_item"
+  type: "numbered_list_item";
   numbered_list_item: {
-    rich_text: Array<RichTextItemResponse>
-    color: ApiColor
-  }
+    rich_text: Array<RichTextItemResponse>;
+    color: ApiColor;
+  };
   parent:
     | { type: "database_id"; database_id: string }
     | { type: "page_id"; page_id: string }
     | { type: "block_id"; block_id: string }
-    | { type: "workspace"; workspace: true }
-  object: "block"
-  id: string
-  created_time: string
-  created_by: PartialUserObjectResponse
-  last_edited_time: string
-  last_edited_by: PartialUserObjectResponse
-  has_children: boolean
-  archived: boolean
-}
+    | { type: "workspace"; workspace: true };
+  object: "block";
+  id: string;
+  created_time: string;
+  created_by: PartialUserObjectResponse;
+  last_edited_time: string;
+  last_edited_by: PartialUserObjectResponse;
+  has_children: boolean;
+  archived: boolean;
+};
 
 export type QuoteBlockObjectResponse = {
-  type: "quote"
-  quote: { rich_text: Array<RichTextItemResponse>; color: ApiColor }
+  type: "quote";
+  quote: { rich_text: Array<RichTextItemResponse>; color: ApiColor };
   parent:
     | { type: "database_id"; database_id: string }
     | { type: "page_id"; page_id: string }
     | { type: "block_id"; block_id: string }
-    | { type: "workspace"; workspace: true }
-  object: "block"
-  id: string
-  created_time: string
-  created_by: PartialUserObjectResponse
-  last_edited_time: string
-  last_edited_by: PartialUserObjectResponse
-  has_children: boolean
-  archived: boolean
-}
+    | { type: "workspace"; workspace: true };
+  object: "block";
+  id: string;
+  created_time: string;
+  created_by: PartialUserObjectResponse;
+  last_edited_time: string;
+  last_edited_by: PartialUserObjectResponse;
+  has_children: boolean;
+  archived: boolean;
+};
 
 export type ToDoBlockObjectResponse = {
-  type: "to_do"
+  type: "to_do";
   to_do: {
-    rich_text: Array<RichTextItemResponse>
-    color: ApiColor
-    checked: boolean
-  }
+    rich_text: Array<RichTextItemResponse>;
+    color: ApiColor;
+    checked: boolean;
+  };
   parent:
     | { type: "database_id"; database_id: string }
     | { type: "page_id"; page_id: string }
     | { type: "block_id"; block_id: string }
-    | { type: "workspace"; workspace: true }
-  object: "block"
-  id: string
-  created_time: string
-  created_by: PartialUserObjectResponse
-  last_edited_time: string
-  last_edited_by: PartialUserObjectResponse
-  has_children: boolean
-  archived: boolean
-}
+    | { type: "workspace"; workspace: true };
+  object: "block";
+  id: string;
+  created_time: string;
+  created_by: PartialUserObjectResponse;
+  last_edited_time: string;
+  last_edited_by: PartialUserObjectResponse;
+  has_children: boolean;
+  archived: boolean;
+};
 
 export type ToggleBlockObjectResponse = {
-  type: "toggle"
-  toggle: { rich_text: Array<RichTextItemResponse>; color: ApiColor }
+  type: "toggle";
+  toggle: { rich_text: Array<RichTextItemResponse>; color: ApiColor };
   parent:
     | { type: "database_id"; database_id: string }
     | { type: "page_id"; page_id: string }
     | { type: "block_id"; block_id: string }
-    | { type: "workspace"; workspace: true }
-  object: "block"
-  id: string
-  created_time: string
-  created_by: PartialUserObjectResponse
-  last_edited_time: string
-  last_edited_by: PartialUserObjectResponse
-  has_children: boolean
-  archived: boolean
-}
+    | { type: "workspace"; workspace: true };
+  object: "block";
+  id: string;
+  created_time: string;
+  created_by: PartialUserObjectResponse;
+  last_edited_time: string;
+  last_edited_by: PartialUserObjectResponse;
+  has_children: boolean;
+  archived: boolean;
+};
 
 export type TemplateBlockObjectResponse = {
-  type: "template"
-  template: { rich_text: Array<RichTextItemResponse> }
+  type: "template";
+  template: { rich_text: Array<RichTextItemResponse> };
   parent:
     | { type: "database_id"; database_id: string }
     | { type: "page_id"; page_id: string }
     | { type: "block_id"; block_id: string }
-    | { type: "workspace"; workspace: true }
-  object: "block"
-  id: string
-  created_time: string
-  created_by: PartialUserObjectResponse
-  last_edited_time: string
-  last_edited_by: PartialUserObjectResponse
-  has_children: boolean
-  archived: boolean
-}
+    | { type: "workspace"; workspace: true };
+  object: "block";
+  id: string;
+  created_time: string;
+  created_by: PartialUserObjectResponse;
+  last_edited_time: string;
+  last_edited_by: PartialUserObjectResponse;
+  has_children: boolean;
+  archived: boolean;
+};
 
 export type SyncedBlockBlockObjectResponse = {
-  type: "synced_block"
+  type: "synced_block";
   synced_block: {
-    synced_from: { type: "block_id"; block_id: IdRequest } | null
-  }
+    synced_from: { type: "block_id"; block_id: IdRequest } | null;
+  };
   parent:
     | { type: "database_id"; database_id: string }
     | { type: "page_id"; page_id: string }
     | { type: "block_id"; block_id: string }
-    | { type: "workspace"; workspace: true }
-  object: "block"
-  id: string
-  created_time: string
-  created_by: PartialUserObjectResponse
-  last_edited_time: string
-  last_edited_by: PartialUserObjectResponse
-  has_children: boolean
-  archived: boolean
-}
+    | { type: "workspace"; workspace: true };
+  object: "block";
+  id: string;
+  created_time: string;
+  created_by: PartialUserObjectResponse;
+  last_edited_time: string;
+  last_edited_by: PartialUserObjectResponse;
+  has_children: boolean;
+  archived: boolean;
+};
 
 export type ChildPageBlockObjectResponse = {
-  type: "child_page"
-  child_page: { title: string }
+  type: "child_page";
+  child_page: { title: string };
   parent:
     | { type: "database_id"; database_id: string }
     | { type: "page_id"; page_id: string }
     | { type: "block_id"; block_id: string }
-    | { type: "workspace"; workspace: true }
-  object: "block"
-  id: string
-  created_time: string
-  created_by: PartialUserObjectResponse
-  last_edited_time: string
-  last_edited_by: PartialUserObjectResponse
-  has_children: boolean
-  archived: boolean
-}
+    | { type: "workspace"; workspace: true };
+  object: "block";
+  id: string;
+  created_time: string;
+  created_by: PartialUserObjectResponse;
+  last_edited_time: string;
+  last_edited_by: PartialUserObjectResponse;
+  has_children: boolean;
+  archived: boolean;
+};
 
 export type ChildDatabaseBlockObjectResponse = {
-  type: "child_database"
-  child_database: { title: string }
+  type: "child_database";
+  child_database: { title: string };
   parent:
     | { type: "database_id"; database_id: string }
     | { type: "page_id"; page_id: string }
     | { type: "block_id"; block_id: string }
-    | { type: "workspace"; workspace: true }
-  object: "block"
-  id: string
-  created_time: string
-  created_by: PartialUserObjectResponse
-  last_edited_time: string
-  last_edited_by: PartialUserObjectResponse
-  has_children: boolean
-  archived: boolean
-}
+    | { type: "workspace"; workspace: true };
+  object: "block";
+  id: string;
+  created_time: string;
+  created_by: PartialUserObjectResponse;
+  last_edited_time: string;
+  last_edited_by: PartialUserObjectResponse;
+  has_children: boolean;
+  archived: boolean;
+};
 
 export type EquationBlockObjectResponse = {
-  type: "equation"
-  equation: { expression: string }
+  type: "equation";
+  equation: { expression: string };
   parent:
     | { type: "database_id"; database_id: string }
     | { type: "page_id"; page_id: string }
     | { type: "block_id"; block_id: string }
-    | { type: "workspace"; workspace: true }
-  object: "block"
-  id: string
-  created_time: string
-  created_by: PartialUserObjectResponse
-  last_edited_time: string
-  last_edited_by: PartialUserObjectResponse
-  has_children: boolean
-  archived: boolean
-}
+    | { type: "workspace"; workspace: true };
+  object: "block";
+  id: string;
+  created_time: string;
+  created_by: PartialUserObjectResponse;
+  last_edited_time: string;
+  last_edited_by: PartialUserObjectResponse;
+  has_children: boolean;
+  archived: boolean;
+};
 
 type LanguageRequest =
   | "abap"
@@ -4993,419 +4993,419 @@ type LanguageRequest =
   | "webassembly"
   | "xml"
   | "yaml"
-  | "java/c/c++/c#"
+  | "java/c/c++/c#";
 
 export type CodeBlockObjectResponse = {
-  type: "code"
+  type: "code";
   code: {
-    rich_text: Array<RichTextItemResponse>
-    caption: Array<RichTextItemResponse>
-    language: LanguageRequest
-  }
+    rich_text: Array<RichTextItemResponse>;
+    caption: Array<RichTextItemResponse>;
+    language: LanguageRequest;
+  };
   parent:
     | { type: "database_id"; database_id: string }
     | { type: "page_id"; page_id: string }
     | { type: "block_id"; block_id: string }
-    | { type: "workspace"; workspace: true }
-  object: "block"
-  id: string
-  created_time: string
-  created_by: PartialUserObjectResponse
-  last_edited_time: string
-  last_edited_by: PartialUserObjectResponse
-  has_children: boolean
-  archived: boolean
-}
+    | { type: "workspace"; workspace: true };
+  object: "block";
+  id: string;
+  created_time: string;
+  created_by: PartialUserObjectResponse;
+  last_edited_time: string;
+  last_edited_by: PartialUserObjectResponse;
+  has_children: boolean;
+  archived: boolean;
+};
 
 export type CalloutBlockObjectResponse = {
-  type: "callout"
+  type: "callout";
   callout: {
-    rich_text: Array<RichTextItemResponse>
-    color: ApiColor
+    rich_text: Array<RichTextItemResponse>;
+    color: ApiColor;
     icon:
       | { type: "emoji"; emoji: EmojiRequest }
       | null
       | { type: "external"; external: { url: TextRequest } }
       | null
       | { type: "file"; file: { url: string; expiry_time: string } }
-      | null
-  }
+      | null;
+  };
   parent:
     | { type: "database_id"; database_id: string }
     | { type: "page_id"; page_id: string }
     | { type: "block_id"; block_id: string }
-    | { type: "workspace"; workspace: true }
-  object: "block"
-  id: string
-  created_time: string
-  created_by: PartialUserObjectResponse
-  last_edited_time: string
-  last_edited_by: PartialUserObjectResponse
-  has_children: boolean
-  archived: boolean
-}
+    | { type: "workspace"; workspace: true };
+  object: "block";
+  id: string;
+  created_time: string;
+  created_by: PartialUserObjectResponse;
+  last_edited_time: string;
+  last_edited_by: PartialUserObjectResponse;
+  has_children: boolean;
+  archived: boolean;
+};
 
 export type DividerBlockObjectResponse = {
-  type: "divider"
-  divider: EmptyObject
+  type: "divider";
+  divider: EmptyObject;
   parent:
     | { type: "database_id"; database_id: string }
     | { type: "page_id"; page_id: string }
     | { type: "block_id"; block_id: string }
-    | { type: "workspace"; workspace: true }
-  object: "block"
-  id: string
-  created_time: string
-  created_by: PartialUserObjectResponse
-  last_edited_time: string
-  last_edited_by: PartialUserObjectResponse
-  has_children: boolean
-  archived: boolean
-}
+    | { type: "workspace"; workspace: true };
+  object: "block";
+  id: string;
+  created_time: string;
+  created_by: PartialUserObjectResponse;
+  last_edited_time: string;
+  last_edited_by: PartialUserObjectResponse;
+  has_children: boolean;
+  archived: boolean;
+};
 
 export type BreadcrumbBlockObjectResponse = {
-  type: "breadcrumb"
-  breadcrumb: EmptyObject
+  type: "breadcrumb";
+  breadcrumb: EmptyObject;
   parent:
     | { type: "database_id"; database_id: string }
     | { type: "page_id"; page_id: string }
     | { type: "block_id"; block_id: string }
-    | { type: "workspace"; workspace: true }
-  object: "block"
-  id: string
-  created_time: string
-  created_by: PartialUserObjectResponse
-  last_edited_time: string
-  last_edited_by: PartialUserObjectResponse
-  has_children: boolean
-  archived: boolean
-}
+    | { type: "workspace"; workspace: true };
+  object: "block";
+  id: string;
+  created_time: string;
+  created_by: PartialUserObjectResponse;
+  last_edited_time: string;
+  last_edited_by: PartialUserObjectResponse;
+  has_children: boolean;
+  archived: boolean;
+};
 
 export type TableOfContentsBlockObjectResponse = {
-  type: "table_of_contents"
-  table_of_contents: { color: ApiColor }
+  type: "table_of_contents";
+  table_of_contents: { color: ApiColor };
   parent:
     | { type: "database_id"; database_id: string }
     | { type: "page_id"; page_id: string }
     | { type: "block_id"; block_id: string }
-    | { type: "workspace"; workspace: true }
-  object: "block"
-  id: string
-  created_time: string
-  created_by: PartialUserObjectResponse
-  last_edited_time: string
-  last_edited_by: PartialUserObjectResponse
-  has_children: boolean
-  archived: boolean
-}
+    | { type: "workspace"; workspace: true };
+  object: "block";
+  id: string;
+  created_time: string;
+  created_by: PartialUserObjectResponse;
+  last_edited_time: string;
+  last_edited_by: PartialUserObjectResponse;
+  has_children: boolean;
+  archived: boolean;
+};
 
 export type ColumnListBlockObjectResponse = {
-  type: "column_list"
-  column_list: EmptyObject
+  type: "column_list";
+  column_list: EmptyObject;
   parent:
     | { type: "database_id"; database_id: string }
     | { type: "page_id"; page_id: string }
     | { type: "block_id"; block_id: string }
-    | { type: "workspace"; workspace: true }
-  object: "block"
-  id: string
-  created_time: string
-  created_by: PartialUserObjectResponse
-  last_edited_time: string
-  last_edited_by: PartialUserObjectResponse
-  has_children: boolean
-  archived: boolean
-}
+    | { type: "workspace"; workspace: true };
+  object: "block";
+  id: string;
+  created_time: string;
+  created_by: PartialUserObjectResponse;
+  last_edited_time: string;
+  last_edited_by: PartialUserObjectResponse;
+  has_children: boolean;
+  archived: boolean;
+};
 
 export type ColumnBlockObjectResponse = {
-  type: "column"
-  column: EmptyObject
+  type: "column";
+  column: EmptyObject;
   parent:
     | { type: "database_id"; database_id: string }
     | { type: "page_id"; page_id: string }
     | { type: "block_id"; block_id: string }
-    | { type: "workspace"; workspace: true }
-  object: "block"
-  id: string
-  created_time: string
-  created_by: PartialUserObjectResponse
-  last_edited_time: string
-  last_edited_by: PartialUserObjectResponse
-  has_children: boolean
-  archived: boolean
-}
+    | { type: "workspace"; workspace: true };
+  object: "block";
+  id: string;
+  created_time: string;
+  created_by: PartialUserObjectResponse;
+  last_edited_time: string;
+  last_edited_by: PartialUserObjectResponse;
+  has_children: boolean;
+  archived: boolean;
+};
 
 export type LinkToPageBlockObjectResponse = {
-  type: "link_to_page"
+  type: "link_to_page";
   link_to_page:
     | { type: "page_id"; page_id: IdRequest }
-    | { type: "database_id"; database_id: IdRequest }
+    | { type: "database_id"; database_id: IdRequest };
   parent:
     | { type: "database_id"; database_id: string }
     | { type: "page_id"; page_id: string }
     | { type: "block_id"; block_id: string }
-    | { type: "workspace"; workspace: true }
-  object: "block"
-  id: string
-  created_time: string
-  created_by: PartialUserObjectResponse
-  last_edited_time: string
-  last_edited_by: PartialUserObjectResponse
-  has_children: boolean
-  archived: boolean
-}
+    | { type: "workspace"; workspace: true };
+  object: "block";
+  id: string;
+  created_time: string;
+  created_by: PartialUserObjectResponse;
+  last_edited_time: string;
+  last_edited_by: PartialUserObjectResponse;
+  has_children: boolean;
+  archived: boolean;
+};
 
 export type TableBlockObjectResponse = {
-  type: "table"
+  type: "table";
   table: {
-    has_column_header: boolean
-    has_row_header: boolean
-    table_width: number
-  }
+    has_column_header: boolean;
+    has_row_header: boolean;
+    table_width: number;
+  };
   parent:
     | { type: "database_id"; database_id: string }
     | { type: "page_id"; page_id: string }
     | { type: "block_id"; block_id: string }
-    | { type: "workspace"; workspace: true }
-  object: "block"
-  id: string
-  created_time: string
-  created_by: PartialUserObjectResponse
-  last_edited_time: string
-  last_edited_by: PartialUserObjectResponse
-  has_children: boolean
-  archived: boolean
-}
+    | { type: "workspace"; workspace: true };
+  object: "block";
+  id: string;
+  created_time: string;
+  created_by: PartialUserObjectResponse;
+  last_edited_time: string;
+  last_edited_by: PartialUserObjectResponse;
+  has_children: boolean;
+  archived: boolean;
+};
 
 export type TableRowBlockObjectResponse = {
-  type: "table_row"
-  table_row: { cells: Array<Array<RichTextItemResponse>> }
+  type: "table_row";
+  table_row: { cells: Array<Array<RichTextItemResponse>> };
   parent:
     | { type: "database_id"; database_id: string }
     | { type: "page_id"; page_id: string }
     | { type: "block_id"; block_id: string }
-    | { type: "workspace"; workspace: true }
-  object: "block"
-  id: string
-  created_time: string
-  created_by: PartialUserObjectResponse
-  last_edited_time: string
-  last_edited_by: PartialUserObjectResponse
-  has_children: boolean
-  archived: boolean
-}
+    | { type: "workspace"; workspace: true };
+  object: "block";
+  id: string;
+  created_time: string;
+  created_by: PartialUserObjectResponse;
+  last_edited_time: string;
+  last_edited_by: PartialUserObjectResponse;
+  has_children: boolean;
+  archived: boolean;
+};
 
 export type EmbedBlockObjectResponse = {
-  type: "embed"
-  embed: { url: string; caption: Array<RichTextItemResponse> }
+  type: "embed";
+  embed: { url: string; caption: Array<RichTextItemResponse> };
   parent:
     | { type: "database_id"; database_id: string }
     | { type: "page_id"; page_id: string }
     | { type: "block_id"; block_id: string }
-    | { type: "workspace"; workspace: true }
-  object: "block"
-  id: string
-  created_time: string
-  created_by: PartialUserObjectResponse
-  last_edited_time: string
-  last_edited_by: PartialUserObjectResponse
-  has_children: boolean
-  archived: boolean
-}
+    | { type: "workspace"; workspace: true };
+  object: "block";
+  id: string;
+  created_time: string;
+  created_by: PartialUserObjectResponse;
+  last_edited_time: string;
+  last_edited_by: PartialUserObjectResponse;
+  has_children: boolean;
+  archived: boolean;
+};
 
 export type BookmarkBlockObjectResponse = {
-  type: "bookmark"
-  bookmark: { url: string; caption: Array<RichTextItemResponse> }
+  type: "bookmark";
+  bookmark: { url: string; caption: Array<RichTextItemResponse> };
   parent:
     | { type: "database_id"; database_id: string }
     | { type: "page_id"; page_id: string }
     | { type: "block_id"; block_id: string }
-    | { type: "workspace"; workspace: true }
-  object: "block"
-  id: string
-  created_time: string
-  created_by: PartialUserObjectResponse
-  last_edited_time: string
-  last_edited_by: PartialUserObjectResponse
-  has_children: boolean
-  archived: boolean
-}
+    | { type: "workspace"; workspace: true };
+  object: "block";
+  id: string;
+  created_time: string;
+  created_by: PartialUserObjectResponse;
+  last_edited_time: string;
+  last_edited_by: PartialUserObjectResponse;
+  has_children: boolean;
+  archived: boolean;
+};
 
 export type ImageBlockObjectResponse = {
-  type: "image"
+  type: "image";
   image:
     | {
-        type: "external"
-        external: { url: TextRequest }
-        caption: Array<RichTextItemResponse>
+        type: "external";
+        external: { url: TextRequest };
+        caption: Array<RichTextItemResponse>;
       }
     | {
-        type: "file"
-        file: { url: string; expiry_time: string }
-        caption: Array<RichTextItemResponse>
-      }
+        type: "file";
+        file: { url: string; expiry_time: string };
+        caption: Array<RichTextItemResponse>;
+      };
   parent:
     | { type: "database_id"; database_id: string }
     | { type: "page_id"; page_id: string }
     | { type: "block_id"; block_id: string }
-    | { type: "workspace"; workspace: true }
-  object: "block"
-  id: string
-  created_time: string
-  created_by: PartialUserObjectResponse
-  last_edited_time: string
-  last_edited_by: PartialUserObjectResponse
-  has_children: boolean
-  archived: boolean
-}
+    | { type: "workspace"; workspace: true };
+  object: "block";
+  id: string;
+  created_time: string;
+  created_by: PartialUserObjectResponse;
+  last_edited_time: string;
+  last_edited_by: PartialUserObjectResponse;
+  has_children: boolean;
+  archived: boolean;
+};
 
 export type VideoBlockObjectResponse = {
-  type: "video"
+  type: "video";
   video:
     | {
-        type: "external"
-        external: { url: TextRequest }
-        caption: Array<RichTextItemResponse>
+        type: "external";
+        external: { url: TextRequest };
+        caption: Array<RichTextItemResponse>;
       }
     | {
-        type: "file"
-        file: { url: string; expiry_time: string }
-        caption: Array<RichTextItemResponse>
-      }
+        type: "file";
+        file: { url: string; expiry_time: string };
+        caption: Array<RichTextItemResponse>;
+      };
   parent:
     | { type: "database_id"; database_id: string }
     | { type: "page_id"; page_id: string }
     | { type: "block_id"; block_id: string }
-    | { type: "workspace"; workspace: true }
-  object: "block"
-  id: string
-  created_time: string
-  created_by: PartialUserObjectResponse
-  last_edited_time: string
-  last_edited_by: PartialUserObjectResponse
-  has_children: boolean
-  archived: boolean
-}
+    | { type: "workspace"; workspace: true };
+  object: "block";
+  id: string;
+  created_time: string;
+  created_by: PartialUserObjectResponse;
+  last_edited_time: string;
+  last_edited_by: PartialUserObjectResponse;
+  has_children: boolean;
+  archived: boolean;
+};
 
 export type PdfBlockObjectResponse = {
-  type: "pdf"
+  type: "pdf";
   pdf:
     | {
-        type: "external"
-        external: { url: TextRequest }
-        caption: Array<RichTextItemResponse>
+        type: "external";
+        external: { url: TextRequest };
+        caption: Array<RichTextItemResponse>;
       }
     | {
-        type: "file"
-        file: { url: string; expiry_time: string }
-        caption: Array<RichTextItemResponse>
-      }
+        type: "file";
+        file: { url: string; expiry_time: string };
+        caption: Array<RichTextItemResponse>;
+      };
   parent:
     | { type: "database_id"; database_id: string }
     | { type: "page_id"; page_id: string }
     | { type: "block_id"; block_id: string }
-    | { type: "workspace"; workspace: true }
-  object: "block"
-  id: string
-  created_time: string
-  created_by: PartialUserObjectResponse
-  last_edited_time: string
-  last_edited_by: PartialUserObjectResponse
-  has_children: boolean
-  archived: boolean
-}
+    | { type: "workspace"; workspace: true };
+  object: "block";
+  id: string;
+  created_time: string;
+  created_by: PartialUserObjectResponse;
+  last_edited_time: string;
+  last_edited_by: PartialUserObjectResponse;
+  has_children: boolean;
+  archived: boolean;
+};
 
 export type FileBlockObjectResponse = {
-  type: "file"
+  type: "file";
   file:
     | {
-        type: "external"
-        external: { url: TextRequest }
-        caption: Array<RichTextItemResponse>
+        type: "external";
+        external: { url: TextRequest };
+        caption: Array<RichTextItemResponse>;
       }
     | {
-        type: "file"
-        file: { url: string; expiry_time: string }
-        caption: Array<RichTextItemResponse>
-      }
+        type: "file";
+        file: { url: string; expiry_time: string };
+        caption: Array<RichTextItemResponse>;
+      };
   parent:
     | { type: "database_id"; database_id: string }
     | { type: "page_id"; page_id: string }
     | { type: "block_id"; block_id: string }
-    | { type: "workspace"; workspace: true }
-  object: "block"
-  id: string
-  created_time: string
-  created_by: PartialUserObjectResponse
-  last_edited_time: string
-  last_edited_by: PartialUserObjectResponse
-  has_children: boolean
-  archived: boolean
-}
+    | { type: "workspace"; workspace: true };
+  object: "block";
+  id: string;
+  created_time: string;
+  created_by: PartialUserObjectResponse;
+  last_edited_time: string;
+  last_edited_by: PartialUserObjectResponse;
+  has_children: boolean;
+  archived: boolean;
+};
 
 export type AudioBlockObjectResponse = {
-  type: "audio"
+  type: "audio";
   audio:
     | {
-        type: "external"
-        external: { url: TextRequest }
-        caption: Array<RichTextItemResponse>
+        type: "external";
+        external: { url: TextRequest };
+        caption: Array<RichTextItemResponse>;
       }
     | {
-        type: "file"
-        file: { url: string; expiry_time: string }
-        caption: Array<RichTextItemResponse>
-      }
+        type: "file";
+        file: { url: string; expiry_time: string };
+        caption: Array<RichTextItemResponse>;
+      };
   parent:
     | { type: "database_id"; database_id: string }
     | { type: "page_id"; page_id: string }
     | { type: "block_id"; block_id: string }
-    | { type: "workspace"; workspace: true }
-  object: "block"
-  id: string
-  created_time: string
-  created_by: PartialUserObjectResponse
-  last_edited_time: string
-  last_edited_by: PartialUserObjectResponse
-  has_children: boolean
-  archived: boolean
-}
+    | { type: "workspace"; workspace: true };
+  object: "block";
+  id: string;
+  created_time: string;
+  created_by: PartialUserObjectResponse;
+  last_edited_time: string;
+  last_edited_by: PartialUserObjectResponse;
+  has_children: boolean;
+  archived: boolean;
+};
 
 export type LinkPreviewBlockObjectResponse = {
-  type: "link_preview"
-  link_preview: { url: TextRequest }
+  type: "link_preview";
+  link_preview: { url: TextRequest };
   parent:
     | { type: "database_id"; database_id: string }
     | { type: "page_id"; page_id: string }
     | { type: "block_id"; block_id: string }
-    | { type: "workspace"; workspace: true }
-  object: "block"
-  id: string
-  created_time: string
-  created_by: PartialUserObjectResponse
-  last_edited_time: string
-  last_edited_by: PartialUserObjectResponse
-  has_children: boolean
-  archived: boolean
-}
+    | { type: "workspace"; workspace: true };
+  object: "block";
+  id: string;
+  created_time: string;
+  created_by: PartialUserObjectResponse;
+  last_edited_time: string;
+  last_edited_by: PartialUserObjectResponse;
+  has_children: boolean;
+  archived: boolean;
+};
 
 export type UnsupportedBlockObjectResponse = {
-  type: "unsupported"
-  unsupported: EmptyObject
+  type: "unsupported";
+  unsupported: EmptyObject;
   parent:
     | { type: "database_id"; database_id: string }
     | { type: "page_id"; page_id: string }
     | { type: "block_id"; block_id: string }
-    | { type: "workspace"; workspace: true }
-  object: "block"
-  id: string
-  created_time: string
-  created_by: PartialUserObjectResponse
-  last_edited_time: string
-  last_edited_by: PartialUserObjectResponse
-  has_children: boolean
-  archived: boolean
-}
+    | { type: "workspace"; workspace: true };
+  object: "block";
+  id: string;
+  created_time: string;
+  created_by: PartialUserObjectResponse;
+  last_edited_time: string;
+  last_edited_by: PartialUserObjectResponse;
+  has_children: boolean;
+  archived: boolean;
+};
 
 export type BlockObjectResponse =
   | ParagraphBlockObjectResponse
@@ -5440,180 +5440,180 @@ export type BlockObjectResponse =
   | FileBlockObjectResponse
   | AudioBlockObjectResponse
   | LinkPreviewBlockObjectResponse
-  | UnsupportedBlockObjectResponse
+  | UnsupportedBlockObjectResponse;
 
 export type NumberPropertyItemObjectResponse = {
-  type: "number"
-  number: number | null
-  object: "property_item"
-  id: string
-}
+  type: "number";
+  number: number | null;
+  object: "property_item";
+  id: string;
+};
 
 export type UrlPropertyItemObjectResponse = {
-  type: "url"
-  url: string | null
-  object: "property_item"
-  id: string
-}
+  type: "url";
+  url: string | null;
+  object: "property_item";
+  id: string;
+};
 
 export type SelectPropertyItemObjectResponse = {
-  type: "select"
-  select: SelectPropertyResponse | null
-  object: "property_item"
-  id: string
-}
+  type: "select";
+  select: SelectPropertyResponse | null;
+  object: "property_item";
+  id: string;
+};
 
 export type MultiSelectPropertyItemObjectResponse = {
-  type: "multi_select"
-  multi_select: Array<SelectPropertyResponse>
-  object: "property_item"
-  id: string
-}
+  type: "multi_select";
+  multi_select: Array<SelectPropertyResponse>;
+  object: "property_item";
+  id: string;
+};
 
 export type StatusPropertyItemObjectResponse = {
-  type: "status"
-  status: SelectPropertyResponse | null
-  object: "property_item"
-  id: string
-}
+  type: "status";
+  status: SelectPropertyResponse | null;
+  object: "property_item";
+  id: string;
+};
 
 export type DatePropertyItemObjectResponse = {
-  type: "date"
-  date: DateResponse | null
-  object: "property_item"
-  id: string
-}
+  type: "date";
+  date: DateResponse | null;
+  object: "property_item";
+  id: string;
+};
 
 export type EmailPropertyItemObjectResponse = {
-  type: "email"
-  email: string | null
-  object: "property_item"
-  id: string
-}
+  type: "email";
+  email: string | null;
+  object: "property_item";
+  id: string;
+};
 
 export type PhoneNumberPropertyItemObjectResponse = {
-  type: "phone_number"
-  phone_number: string | null
-  object: "property_item"
-  id: string
-}
+  type: "phone_number";
+  phone_number: string | null;
+  object: "property_item";
+  id: string;
+};
 
 export type CheckboxPropertyItemObjectResponse = {
-  type: "checkbox"
-  checkbox: boolean
-  object: "property_item"
-  id: string
-}
+  type: "checkbox";
+  checkbox: boolean;
+  object: "property_item";
+  id: string;
+};
 
 export type FilesPropertyItemObjectResponse = {
-  type: "files"
+  type: "files";
   files: Array<
     | {
-        file: { url: string; expiry_time: string }
-        name: StringRequest
-        type?: "file"
+        file: { url: string; expiry_time: string };
+        name: StringRequest;
+        type?: "file";
       }
     | { external: { url: TextRequest }; name: StringRequest; type?: "external" }
-  >
-  object: "property_item"
-  id: string
-}
+  >;
+  object: "property_item";
+  id: string;
+};
 
 export type CreatedByPropertyItemObjectResponse = {
-  type: "created_by"
-  created_by: PartialUserObjectResponse | UserObjectResponse
-  object: "property_item"
-  id: string
-}
+  type: "created_by";
+  created_by: PartialUserObjectResponse | UserObjectResponse;
+  object: "property_item";
+  id: string;
+};
 
 export type CreatedTimePropertyItemObjectResponse = {
-  type: "created_time"
-  created_time: string
-  object: "property_item"
-  id: string
-}
+  type: "created_time";
+  created_time: string;
+  object: "property_item";
+  id: string;
+};
 
 export type LastEditedByPropertyItemObjectResponse = {
-  type: "last_edited_by"
-  last_edited_by: PartialUserObjectResponse | UserObjectResponse
-  object: "property_item"
-  id: string
-}
+  type: "last_edited_by";
+  last_edited_by: PartialUserObjectResponse | UserObjectResponse;
+  object: "property_item";
+  id: string;
+};
 
 export type LastEditedTimePropertyItemObjectResponse = {
-  type: "last_edited_time"
-  last_edited_time: string
-  object: "property_item"
-  id: string
-}
+  type: "last_edited_time";
+  last_edited_time: string;
+  object: "property_item";
+  id: string;
+};
 
-type StringFormulaPropertyResponse = { type: "string"; string: string | null }
+type StringFormulaPropertyResponse = { type: "string"; string: string | null };
 
-type DateFormulaPropertyResponse = { type: "date"; date: DateResponse | null }
+type DateFormulaPropertyResponse = { type: "date"; date: DateResponse | null };
 
-type NumberFormulaPropertyResponse = { type: "number"; number: number | null }
+type NumberFormulaPropertyResponse = { type: "number"; number: number | null };
 
 type BooleanFormulaPropertyResponse = {
-  type: "boolean"
-  boolean: boolean | null
-}
+  type: "boolean";
+  boolean: boolean | null;
+};
 
 type FormulaPropertyResponse =
   | StringFormulaPropertyResponse
   | DateFormulaPropertyResponse
   | NumberFormulaPropertyResponse
-  | BooleanFormulaPropertyResponse
+  | BooleanFormulaPropertyResponse;
 
 export type FormulaPropertyItemObjectResponse = {
-  type: "formula"
-  formula: FormulaPropertyResponse
-  object: "property_item"
-  id: string
-}
+  type: "formula";
+  formula: FormulaPropertyResponse;
+  object: "property_item";
+  id: string;
+};
 
 export type TitlePropertyItemObjectResponse = {
-  type: "title"
-  title: RichTextItemResponse
-  object: "property_item"
-  id: string
-}
+  type: "title";
+  title: RichTextItemResponse;
+  object: "property_item";
+  id: string;
+};
 
 export type RichTextPropertyItemObjectResponse = {
-  type: "rich_text"
-  rich_text: RichTextItemResponse
-  object: "property_item"
-  id: string
-}
+  type: "rich_text";
+  rich_text: RichTextItemResponse;
+  object: "property_item";
+  id: string;
+};
 
 export type PeoplePropertyItemObjectResponse = {
-  type: "people"
-  people: PartialUserObjectResponse | UserObjectResponse
-  object: "property_item"
-  id: string
-}
+  type: "people";
+  people: PartialUserObjectResponse | UserObjectResponse;
+  object: "property_item";
+  id: string;
+};
 
 export type RelationPropertyItemObjectResponse = {
-  type: "relation"
-  relation: { id: string }
-  object: "property_item"
-  id: string
-}
+  type: "relation";
+  relation: { id: string };
+  object: "property_item";
+  id: string;
+};
 
 export type RollupPropertyItemObjectResponse = {
-  type: "rollup"
+  type: "rollup";
   rollup:
     | { type: "number"; number: number | null; function: RollupFunction }
     | { type: "date"; date: DateResponse | null; function: RollupFunction }
     | { type: "array"; array: Array<EmptyObject>; function: RollupFunction }
     | {
-        type: "unsupported"
-        unsupported: EmptyObject
-        function: RollupFunction
+        type: "unsupported";
+        unsupported: EmptyObject;
+        function: RollupFunction;
       }
-    | { type: "incomplete"; incomplete: EmptyObject; function: RollupFunction }
-  object: "property_item"
-  id: string
-}
+    | { type: "incomplete"; incomplete: EmptyObject; function: RollupFunction };
+  object: "property_item";
+  id: string;
+};
 
 export type PropertyItemObjectResponse =
   | NumberPropertyItemObjectResponse
@@ -5635,96 +5635,96 @@ export type PropertyItemObjectResponse =
   | RichTextPropertyItemObjectResponse
   | PeoplePropertyItemObjectResponse
   | RelationPropertyItemObjectResponse
-  | RollupPropertyItemObjectResponse
+  | RollupPropertyItemObjectResponse;
 
 export type CommentObjectResponse = {
-  object: "comment"
-  id: string
+  object: "comment";
+  id: string;
   parent:
     | { type: "page_id"; page_id: IdRequest }
-    | { type: "block_id"; block_id: IdRequest }
-  discussion_id: string
-  rich_text: Array<RichTextItemResponse>
-  created_by: PartialUserObjectResponse
-  created_time: string
-  last_edited_time: string
-}
+    | { type: "block_id"; block_id: IdRequest };
+  discussion_id: string;
+  rich_text: Array<RichTextItemResponse>;
+  created_by: PartialUserObjectResponse;
+  created_time: string;
+  last_edited_time: string;
+};
 
-export type PartialCommentObjectResponse = { object: "comment"; id: string }
+export type PartialCommentObjectResponse = { object: "comment"; id: string };
 
 export type PropertyItemPropertyItemListResponse = {
-  type: "property_item"
+  type: "property_item";
   property_item:
     | { type: "title"; title: EmptyObject; next_url: string | null; id: string }
     | {
-        type: "rich_text"
-        rich_text: EmptyObject
-        next_url: string | null
-        id: string
+        type: "rich_text";
+        rich_text: EmptyObject;
+        next_url: string | null;
+        id: string;
       }
     | {
-        type: "people"
-        people: EmptyObject
-        next_url: string | null
-        id: string
+        type: "people";
+        people: EmptyObject;
+        next_url: string | null;
+        id: string;
       }
     | {
-        type: "relation"
-        relation: EmptyObject
-        next_url: string | null
-        id: string
+        type: "relation";
+        relation: EmptyObject;
+        next_url: string | null;
+        id: string;
       }
     | {
-        type: "rollup"
+        type: "rollup";
         rollup:
           | { type: "number"; number: number | null; function: RollupFunction }
           | {
-              type: "date"
-              date: DateResponse | null
-              function: RollupFunction
+              type: "date";
+              date: DateResponse | null;
+              function: RollupFunction;
             }
           | {
-              type: "array"
-              array: Array<EmptyObject>
-              function: RollupFunction
+              type: "array";
+              array: Array<EmptyObject>;
+              function: RollupFunction;
             }
           | {
-              type: "unsupported"
-              unsupported: EmptyObject
-              function: RollupFunction
+              type: "unsupported";
+              unsupported: EmptyObject;
+              function: RollupFunction;
             }
           | {
-              type: "incomplete"
-              incomplete: EmptyObject
-              function: RollupFunction
-            }
-        next_url: string | null
-        id: string
-      }
-  object: "list"
-  next_cursor: string | null
-  has_more: boolean
-  results: Array<PropertyItemObjectResponse>
-}
+              type: "incomplete";
+              incomplete: EmptyObject;
+              function: RollupFunction;
+            };
+        next_url: string | null;
+        id: string;
+      };
+  object: "list";
+  next_cursor: string | null;
+  has_more: boolean;
+  results: Array<PropertyItemObjectResponse>;
+};
 
-export type PropertyItemListResponse = PropertyItemPropertyItemListResponse
+export type PropertyItemListResponse = PropertyItemPropertyItemListResponse;
 
 type DateRequest = {
-  start: string
-  end?: string | null
-  time_zone?: TimeZoneRequest | null
-}
+  start: string;
+  end?: string | null;
+  time_zone?: TimeZoneRequest | null;
+};
 
 type RichTextItemRequest =
   | {
-      text: { content: string; link?: { url: TextRequest } | null }
-      type?: "text"
+      text: { content: string; link?: { url: TextRequest } | null };
+      type?: "text";
       annotations?: {
-        bold?: boolean
-        italic?: boolean
-        strikethrough?: boolean
-        underline?: boolean
-        code?: boolean
+        bold?: boolean;
+        italic?: boolean;
+        strikethrough?: boolean;
+        underline?: boolean;
+        code?: boolean;
         color?:
           | "default"
           | "gray"
@@ -5744,8 +5744,8 @@ type RichTextItemRequest =
           | "blue_background"
           | "purple_background"
           | "pink_background"
-          | "red_background"
-      }
+          | "red_background";
+      };
     }
   | {
       mention:
@@ -5753,12 +5753,12 @@ type RichTextItemRequest =
             user:
               | { id: IdRequest }
               | {
-                  person: { email?: string }
-                  id: IdRequest
-                  type?: "person"
-                  name?: string | null
-                  avatar_url?: string | null
-                  object?: "user"
+                  person: { email?: string };
+                  id: IdRequest;
+                  type?: "person";
+                  name?: string | null;
+                  avatar_url?: string | null;
+                  object?: "user";
                 }
               | {
                   bot:
@@ -5766,37 +5766,37 @@ type RichTextItemRequest =
                     | {
                         owner:
                           | {
-                              type: "user"
+                              type: "user";
                               user:
                                 | {
-                                    type: "person"
-                                    person: { email: string }
-                                    name: string | null
-                                    avatar_url: string | null
-                                    id: IdRequest
-                                    object: "user"
+                                    type: "person";
+                                    person: { email: string };
+                                    name: string | null;
+                                    avatar_url: string | null;
+                                    id: IdRequest;
+                                    object: "user";
                                   }
-                                | PartialUserObjectResponse
+                                | PartialUserObjectResponse;
                             }
-                          | { type: "workspace"; workspace: true }
-                      }
-                  id: IdRequest
-                  type?: "bot"
-                  name?: string | null
-                  avatar_url?: string | null
-                  object?: "user"
-                }
+                          | { type: "workspace"; workspace: true };
+                      };
+                  id: IdRequest;
+                  type?: "bot";
+                  name?: string | null;
+                  avatar_url?: string | null;
+                  object?: "user";
+                };
           }
         | { date: DateRequest }
         | { page: { id: IdRequest } }
-        | { database: { id: IdRequest } }
-      type?: "mention"
+        | { database: { id: IdRequest } };
+      type?: "mention";
       annotations?: {
-        bold?: boolean
-        italic?: boolean
-        strikethrough?: boolean
-        underline?: boolean
-        code?: boolean
+        bold?: boolean;
+        italic?: boolean;
+        strikethrough?: boolean;
+        underline?: boolean;
+        code?: boolean;
         color?:
           | "default"
           | "gray"
@@ -5816,18 +5816,18 @@ type RichTextItemRequest =
           | "blue_background"
           | "purple_background"
           | "pink_background"
-          | "red_background"
-      }
+          | "red_background";
+      };
     }
   | {
-      equation: { expression: TextRequest }
-      type?: "equation"
+      equation: { expression: TextRequest };
+      type?: "equation";
       annotations?: {
-        bold?: boolean
-        italic?: boolean
-        strikethrough?: boolean
-        underline?: boolean
-        code?: boolean
+        bold?: boolean;
+        italic?: boolean;
+        strikethrough?: boolean;
+        underline?: boolean;
+        code?: boolean;
         color?:
           | "default"
           | "gray"
@@ -5847,258 +5847,258 @@ type RichTextItemRequest =
           | "blue_background"
           | "purple_background"
           | "pink_background"
-          | "red_background"
-      }
-    }
+          | "red_background";
+      };
+    };
 
 type BlockObjectRequestWithoutChildren =
   | {
-      embed: { url: string; caption?: Array<RichTextItemRequest> }
-      type?: "embed"
-      object?: "block"
+      embed: { url: string; caption?: Array<RichTextItemRequest> };
+      type?: "embed";
+      object?: "block";
     }
   | {
-      bookmark: { url: string; caption?: Array<RichTextItemRequest> }
-      type?: "bookmark"
-      object?: "block"
+      bookmark: { url: string; caption?: Array<RichTextItemRequest> };
+      type?: "bookmark";
+      object?: "block";
     }
   | {
       image: {
-        external: { url: TextRequest }
-        type?: "external"
-        caption?: Array<RichTextItemRequest>
-      }
-      type?: "image"
-      object?: "block"
+        external: { url: TextRequest };
+        type?: "external";
+        caption?: Array<RichTextItemRequest>;
+      };
+      type?: "image";
+      object?: "block";
     }
   | {
       video: {
-        external: { url: TextRequest }
-        type?: "external"
-        caption?: Array<RichTextItemRequest>
-      }
-      type?: "video"
-      object?: "block"
+        external: { url: TextRequest };
+        type?: "external";
+        caption?: Array<RichTextItemRequest>;
+      };
+      type?: "video";
+      object?: "block";
     }
   | {
       pdf: {
-        external: { url: TextRequest }
-        type?: "external"
-        caption?: Array<RichTextItemRequest>
-      }
-      type?: "pdf"
-      object?: "block"
+        external: { url: TextRequest };
+        type?: "external";
+        caption?: Array<RichTextItemRequest>;
+      };
+      type?: "pdf";
+      object?: "block";
     }
   | {
       file: {
-        external: { url: TextRequest }
-        type?: "external"
-        caption?: Array<RichTextItemRequest>
-      }
-      type?: "file"
-      object?: "block"
+        external: { url: TextRequest };
+        type?: "external";
+        caption?: Array<RichTextItemRequest>;
+      };
+      type?: "file";
+      object?: "block";
     }
   | {
       audio: {
-        external: { url: TextRequest }
-        type?: "external"
-        caption?: Array<RichTextItemRequest>
-      }
-      type?: "audio"
-      object?: "block"
+        external: { url: TextRequest };
+        type?: "external";
+        caption?: Array<RichTextItemRequest>;
+      };
+      type?: "audio";
+      object?: "block";
     }
   | {
       code: {
-        rich_text: Array<RichTextItemRequest>
-        language: LanguageRequest
-        caption?: Array<RichTextItemRequest>
-      }
-      type?: "code"
-      object?: "block"
+        rich_text: Array<RichTextItemRequest>;
+        language: LanguageRequest;
+        caption?: Array<RichTextItemRequest>;
+      };
+      type?: "code";
+      object?: "block";
     }
   | { equation: { expression: string }; type?: "equation"; object?: "block" }
   | { divider: EmptyObject; type?: "divider"; object?: "block" }
   | { breadcrumb: EmptyObject; type?: "breadcrumb"; object?: "block" }
   | {
-      table_of_contents: { color?: ApiColor }
-      type?: "table_of_contents"
-      object?: "block"
+      table_of_contents: { color?: ApiColor };
+      type?: "table_of_contents";
+      object?: "block";
     }
   | {
       link_to_page:
         | { page_id: IdRequest; type?: "page_id" }
-        | { database_id: IdRequest; type?: "database_id" }
-      type?: "link_to_page"
-      object?: "block"
+        | { database_id: IdRequest; type?: "database_id" };
+      type?: "link_to_page";
+      object?: "block";
     }
   | {
-      table_row: { cells: Array<Array<RichTextItemRequest>> }
-      type?: "table_row"
-      object?: "block"
+      table_row: { cells: Array<Array<RichTextItemRequest>> };
+      type?: "table_row";
+      object?: "block";
     }
   | {
-      heading_1: { rich_text: Array<RichTextItemRequest>; color?: ApiColor }
-      type?: "heading_1"
-      object?: "block"
+      heading_1: { rich_text: Array<RichTextItemRequest>; color?: ApiColor };
+      type?: "heading_1";
+      object?: "block";
     }
   | {
-      heading_2: { rich_text: Array<RichTextItemRequest>; color?: ApiColor }
-      type?: "heading_2"
-      object?: "block"
+      heading_2: { rich_text: Array<RichTextItemRequest>; color?: ApiColor };
+      type?: "heading_2";
+      object?: "block";
     }
   | {
-      heading_3: { rich_text: Array<RichTextItemRequest>; color?: ApiColor }
-      type?: "heading_3"
-      object?: "block"
+      heading_3: { rich_text: Array<RichTextItemRequest>; color?: ApiColor };
+      type?: "heading_3";
+      object?: "block";
     }
   | {
-      paragraph: { rich_text: Array<RichTextItemRequest>; color?: ApiColor }
-      type?: "paragraph"
-      object?: "block"
+      paragraph: { rich_text: Array<RichTextItemRequest>; color?: ApiColor };
+      type?: "paragraph";
+      object?: "block";
     }
   | {
       bulleted_list_item: {
-        rich_text: Array<RichTextItemRequest>
-        color?: ApiColor
-      }
-      type?: "bulleted_list_item"
-      object?: "block"
+        rich_text: Array<RichTextItemRequest>;
+        color?: ApiColor;
+      };
+      type?: "bulleted_list_item";
+      object?: "block";
     }
   | {
       numbered_list_item: {
-        rich_text: Array<RichTextItemRequest>
-        color?: ApiColor
-      }
-      type?: "numbered_list_item"
-      object?: "block"
+        rich_text: Array<RichTextItemRequest>;
+        color?: ApiColor;
+      };
+      type?: "numbered_list_item";
+      object?: "block";
     }
   | {
-      quote: { rich_text: Array<RichTextItemRequest>; color?: ApiColor }
-      type?: "quote"
-      object?: "block"
+      quote: { rich_text: Array<RichTextItemRequest>; color?: ApiColor };
+      type?: "quote";
+      object?: "block";
     }
   | {
       to_do: {
-        rich_text: Array<RichTextItemRequest>
-        checked?: boolean
-        color?: ApiColor
-      }
-      type?: "to_do"
-      object?: "block"
+        rich_text: Array<RichTextItemRequest>;
+        checked?: boolean;
+        color?: ApiColor;
+      };
+      type?: "to_do";
+      object?: "block";
     }
   | {
-      toggle: { rich_text: Array<RichTextItemRequest>; color?: ApiColor }
-      type?: "toggle"
-      object?: "block"
+      toggle: { rich_text: Array<RichTextItemRequest>; color?: ApiColor };
+      type?: "toggle";
+      object?: "block";
     }
   | {
-      template: { rich_text: Array<RichTextItemRequest> }
-      type?: "template"
-      object?: "block"
+      template: { rich_text: Array<RichTextItemRequest> };
+      type?: "template";
+      object?: "block";
     }
   | {
       callout: {
-        rich_text: Array<RichTextItemRequest>
+        rich_text: Array<RichTextItemRequest>;
         icon?:
           | { emoji: EmojiRequest; type?: "emoji" }
-          | { external: { url: TextRequest }; type?: "external" }
-        color?: ApiColor
-      }
-      type?: "callout"
-      object?: "block"
+          | { external: { url: TextRequest }; type?: "external" };
+        color?: ApiColor;
+      };
+      type?: "callout";
+      object?: "block";
     }
   | {
       synced_block: {
-        synced_from: { block_id: IdRequest; type?: "block_id" } | null
-      }
-      type?: "synced_block"
-      object?: "block"
-    }
+        synced_from: { block_id: IdRequest; type?: "block_id" } | null;
+      };
+      type?: "synced_block";
+      object?: "block";
+    };
 
 type BlockObjectRequest =
   | {
-      embed: { url: string; caption?: Array<RichTextItemRequest> }
-      type?: "embed"
-      object?: "block"
+      embed: { url: string; caption?: Array<RichTextItemRequest> };
+      type?: "embed";
+      object?: "block";
     }
   | {
-      bookmark: { url: string; caption?: Array<RichTextItemRequest> }
-      type?: "bookmark"
-      object?: "block"
+      bookmark: { url: string; caption?: Array<RichTextItemRequest> };
+      type?: "bookmark";
+      object?: "block";
     }
   | {
       image: {
-        external: { url: TextRequest }
-        type?: "external"
-        caption?: Array<RichTextItemRequest>
-      }
-      type?: "image"
-      object?: "block"
+        external: { url: TextRequest };
+        type?: "external";
+        caption?: Array<RichTextItemRequest>;
+      };
+      type?: "image";
+      object?: "block";
     }
   | {
       video: {
-        external: { url: TextRequest }
-        type?: "external"
-        caption?: Array<RichTextItemRequest>
-      }
-      type?: "video"
-      object?: "block"
+        external: { url: TextRequest };
+        type?: "external";
+        caption?: Array<RichTextItemRequest>;
+      };
+      type?: "video";
+      object?: "block";
     }
   | {
       pdf: {
-        external: { url: TextRequest }
-        type?: "external"
-        caption?: Array<RichTextItemRequest>
-      }
-      type?: "pdf"
-      object?: "block"
+        external: { url: TextRequest };
+        type?: "external";
+        caption?: Array<RichTextItemRequest>;
+      };
+      type?: "pdf";
+      object?: "block";
     }
   | {
       file: {
-        external: { url: TextRequest }
-        type?: "external"
-        caption?: Array<RichTextItemRequest>
-      }
-      type?: "file"
-      object?: "block"
+        external: { url: TextRequest };
+        type?: "external";
+        caption?: Array<RichTextItemRequest>;
+      };
+      type?: "file";
+      object?: "block";
     }
   | {
       audio: {
-        external: { url: TextRequest }
-        type?: "external"
-        caption?: Array<RichTextItemRequest>
-      }
-      type?: "audio"
-      object?: "block"
+        external: { url: TextRequest };
+        type?: "external";
+        caption?: Array<RichTextItemRequest>;
+      };
+      type?: "audio";
+      object?: "block";
     }
   | {
       code: {
-        rich_text: Array<RichTextItemRequest>
-        language: LanguageRequest
-        caption?: Array<RichTextItemRequest>
-      }
-      type?: "code"
-      object?: "block"
+        rich_text: Array<RichTextItemRequest>;
+        language: LanguageRequest;
+        caption?: Array<RichTextItemRequest>;
+      };
+      type?: "code";
+      object?: "block";
     }
   | { equation: { expression: string }; type?: "equation"; object?: "block" }
   | { divider: EmptyObject; type?: "divider"; object?: "block" }
   | { breadcrumb: EmptyObject; type?: "breadcrumb"; object?: "block" }
   | {
-      table_of_contents: { color?: ApiColor }
-      type?: "table_of_contents"
-      object?: "block"
+      table_of_contents: { color?: ApiColor };
+      type?: "table_of_contents";
+      object?: "block";
     }
   | {
       link_to_page:
         | { page_id: IdRequest; type?: "page_id" }
-        | { database_id: IdRequest; type?: "database_id" }
-      type?: "link_to_page"
-      object?: "block"
+        | { database_id: IdRequest; type?: "database_id" };
+      type?: "link_to_page";
+      object?: "block";
     }
   | {
-      table_row: { cells: Array<Array<RichTextItemRequest>> }
-      type?: "table_row"
-      object?: "block"
+      table_row: { cells: Array<Array<RichTextItemRequest>> };
+      type?: "table_row";
+      object?: "block";
     }
   | {
       column_list: {
@@ -6106,2938 +6106,2938 @@ type BlockObjectRequest =
           column: {
             children: Array<
               | {
-                  embed: { url: string; caption?: Array<RichTextItemRequest> }
-                  type?: "embed"
-                  object?: "block"
+                  embed: { url: string; caption?: Array<RichTextItemRequest> };
+                  type?: "embed";
+                  object?: "block";
                 }
               | {
                   bookmark: {
-                    url: string
-                    caption?: Array<RichTextItemRequest>
-                  }
-                  type?: "bookmark"
-                  object?: "block"
+                    url: string;
+                    caption?: Array<RichTextItemRequest>;
+                  };
+                  type?: "bookmark";
+                  object?: "block";
                 }
               | {
                   image: {
-                    external: { url: TextRequest }
-                    type?: "external"
-                    caption?: Array<RichTextItemRequest>
-                  }
-                  type?: "image"
-                  object?: "block"
+                    external: { url: TextRequest };
+                    type?: "external";
+                    caption?: Array<RichTextItemRequest>;
+                  };
+                  type?: "image";
+                  object?: "block";
                 }
               | {
                   video: {
-                    external: { url: TextRequest }
-                    type?: "external"
-                    caption?: Array<RichTextItemRequest>
-                  }
-                  type?: "video"
-                  object?: "block"
+                    external: { url: TextRequest };
+                    type?: "external";
+                    caption?: Array<RichTextItemRequest>;
+                  };
+                  type?: "video";
+                  object?: "block";
                 }
               | {
                   pdf: {
-                    external: { url: TextRequest }
-                    type?: "external"
-                    caption?: Array<RichTextItemRequest>
-                  }
-                  type?: "pdf"
-                  object?: "block"
+                    external: { url: TextRequest };
+                    type?: "external";
+                    caption?: Array<RichTextItemRequest>;
+                  };
+                  type?: "pdf";
+                  object?: "block";
                 }
               | {
                   file: {
-                    external: { url: TextRequest }
-                    type?: "external"
-                    caption?: Array<RichTextItemRequest>
-                  }
-                  type?: "file"
-                  object?: "block"
+                    external: { url: TextRequest };
+                    type?: "external";
+                    caption?: Array<RichTextItemRequest>;
+                  };
+                  type?: "file";
+                  object?: "block";
                 }
               | {
                   audio: {
-                    external: { url: TextRequest }
-                    type?: "external"
-                    caption?: Array<RichTextItemRequest>
-                  }
-                  type?: "audio"
-                  object?: "block"
+                    external: { url: TextRequest };
+                    type?: "external";
+                    caption?: Array<RichTextItemRequest>;
+                  };
+                  type?: "audio";
+                  object?: "block";
                 }
               | {
                   code: {
-                    rich_text: Array<RichTextItemRequest>
-                    language: LanguageRequest
-                    caption?: Array<RichTextItemRequest>
-                  }
-                  type?: "code"
-                  object?: "block"
+                    rich_text: Array<RichTextItemRequest>;
+                    language: LanguageRequest;
+                    caption?: Array<RichTextItemRequest>;
+                  };
+                  type?: "code";
+                  object?: "block";
                 }
               | {
-                  equation: { expression: string }
-                  type?: "equation"
-                  object?: "block"
+                  equation: { expression: string };
+                  type?: "equation";
+                  object?: "block";
                 }
               | { divider: EmptyObject; type?: "divider"; object?: "block" }
               | {
-                  breadcrumb: EmptyObject
-                  type?: "breadcrumb"
-                  object?: "block"
+                  breadcrumb: EmptyObject;
+                  type?: "breadcrumb";
+                  object?: "block";
                 }
               | {
-                  table_of_contents: { color?: ApiColor }
-                  type?: "table_of_contents"
-                  object?: "block"
+                  table_of_contents: { color?: ApiColor };
+                  type?: "table_of_contents";
+                  object?: "block";
                 }
               | {
                   link_to_page:
                     | { page_id: IdRequest; type?: "page_id" }
-                    | { database_id: IdRequest; type?: "database_id" }
-                  type?: "link_to_page"
-                  object?: "block"
+                    | { database_id: IdRequest; type?: "database_id" };
+                  type?: "link_to_page";
+                  object?: "block";
                 }
               | {
-                  table_row: { cells: Array<Array<RichTextItemRequest>> }
-                  type?: "table_row"
-                  object?: "block"
+                  table_row: { cells: Array<Array<RichTextItemRequest>> };
+                  type?: "table_row";
+                  object?: "block";
                 }
               | {
                   heading_1: {
-                    rich_text: Array<RichTextItemRequest>
-                    color?: ApiColor
-                    children?: Array<BlockObjectRequestWithoutChildren>
-                  }
-                  type?: "heading_1"
-                  object?: "block"
+                    rich_text: Array<RichTextItemRequest>;
+                    color?: ApiColor;
+                    children?: Array<BlockObjectRequestWithoutChildren>;
+                  };
+                  type?: "heading_1";
+                  object?: "block";
                 }
               | {
                   heading_2: {
-                    rich_text: Array<RichTextItemRequest>
-                    color?: ApiColor
-                    children?: Array<BlockObjectRequestWithoutChildren>
-                  }
-                  type?: "heading_2"
-                  object?: "block"
+                    rich_text: Array<RichTextItemRequest>;
+                    color?: ApiColor;
+                    children?: Array<BlockObjectRequestWithoutChildren>;
+                  };
+                  type?: "heading_2";
+                  object?: "block";
                 }
               | {
                   heading_3: {
-                    rich_text: Array<RichTextItemRequest>
-                    color?: ApiColor
-                    children?: Array<BlockObjectRequestWithoutChildren>
-                  }
-                  type?: "heading_3"
-                  object?: "block"
+                    rich_text: Array<RichTextItemRequest>;
+                    color?: ApiColor;
+                    children?: Array<BlockObjectRequestWithoutChildren>;
+                  };
+                  type?: "heading_3";
+                  object?: "block";
                 }
               | {
                   paragraph: {
-                    rich_text: Array<RichTextItemRequest>
-                    color?: ApiColor
-                    children?: Array<BlockObjectRequestWithoutChildren>
-                  }
-                  type?: "paragraph"
-                  object?: "block"
+                    rich_text: Array<RichTextItemRequest>;
+                    color?: ApiColor;
+                    children?: Array<BlockObjectRequestWithoutChildren>;
+                  };
+                  type?: "paragraph";
+                  object?: "block";
                 }
               | {
                   bulleted_list_item: {
-                    rich_text: Array<RichTextItemRequest>
-                    color?: ApiColor
-                    children?: Array<BlockObjectRequestWithoutChildren>
-                  }
-                  type?: "bulleted_list_item"
-                  object?: "block"
+                    rich_text: Array<RichTextItemRequest>;
+                    color?: ApiColor;
+                    children?: Array<BlockObjectRequestWithoutChildren>;
+                  };
+                  type?: "bulleted_list_item";
+                  object?: "block";
                 }
               | {
                   numbered_list_item: {
-                    rich_text: Array<RichTextItemRequest>
-                    color?: ApiColor
-                    children?: Array<BlockObjectRequestWithoutChildren>
-                  }
-                  type?: "numbered_list_item"
-                  object?: "block"
+                    rich_text: Array<RichTextItemRequest>;
+                    color?: ApiColor;
+                    children?: Array<BlockObjectRequestWithoutChildren>;
+                  };
+                  type?: "numbered_list_item";
+                  object?: "block";
                 }
               | {
                   quote: {
-                    rich_text: Array<RichTextItemRequest>
-                    color?: ApiColor
-                    children?: Array<BlockObjectRequestWithoutChildren>
-                  }
-                  type?: "quote"
-                  object?: "block"
+                    rich_text: Array<RichTextItemRequest>;
+                    color?: ApiColor;
+                    children?: Array<BlockObjectRequestWithoutChildren>;
+                  };
+                  type?: "quote";
+                  object?: "block";
                 }
               | {
                   to_do: {
-                    rich_text: Array<RichTextItemRequest>
-                    color?: ApiColor
-                    children?: Array<BlockObjectRequestWithoutChildren>
-                    checked?: boolean
-                  }
-                  type?: "to_do"
-                  object?: "block"
+                    rich_text: Array<RichTextItemRequest>;
+                    color?: ApiColor;
+                    children?: Array<BlockObjectRequestWithoutChildren>;
+                    checked?: boolean;
+                  };
+                  type?: "to_do";
+                  object?: "block";
                 }
               | {
                   toggle: {
-                    rich_text: Array<RichTextItemRequest>
-                    color?: ApiColor
-                    children?: Array<BlockObjectRequestWithoutChildren>
-                  }
-                  type?: "toggle"
-                  object?: "block"
+                    rich_text: Array<RichTextItemRequest>;
+                    color?: ApiColor;
+                    children?: Array<BlockObjectRequestWithoutChildren>;
+                  };
+                  type?: "toggle";
+                  object?: "block";
                 }
               | {
                   template: {
-                    rich_text: Array<RichTextItemRequest>
-                    children?: Array<BlockObjectRequestWithoutChildren>
-                  }
-                  type?: "template"
-                  object?: "block"
+                    rich_text: Array<RichTextItemRequest>;
+                    children?: Array<BlockObjectRequestWithoutChildren>;
+                  };
+                  type?: "template";
+                  object?: "block";
                 }
               | {
                   callout: {
-                    rich_text: Array<RichTextItemRequest>
-                    color?: ApiColor
-                    children?: Array<BlockObjectRequestWithoutChildren>
+                    rich_text: Array<RichTextItemRequest>;
+                    color?: ApiColor;
+                    children?: Array<BlockObjectRequestWithoutChildren>;
                     icon?:
                       | { emoji: EmojiRequest; type?: "emoji" }
-                      | { external: { url: TextRequest }; type?: "external" }
-                  }
-                  type?: "callout"
-                  object?: "block"
+                      | { external: { url: TextRequest }; type?: "external" };
+                  };
+                  type?: "callout";
+                  object?: "block";
                 }
               | {
                   synced_block: {
                     synced_from: {
-                      block_id: IdRequest
-                      type?: "block_id"
-                    } | null
-                    children?: Array<BlockObjectRequestWithoutChildren>
-                  }
-                  type?: "synced_block"
-                  object?: "block"
+                      block_id: IdRequest;
+                      type?: "block_id";
+                    } | null;
+                    children?: Array<BlockObjectRequestWithoutChildren>;
+                  };
+                  type?: "synced_block";
+                  object?: "block";
                 }
-            >
-          }
-          type?: "column"
-          object?: "block"
-        }>
-      }
-      type?: "column_list"
-      object?: "block"
+            >;
+          };
+          type?: "column";
+          object?: "block";
+        }>;
+      };
+      type?: "column_list";
+      object?: "block";
     }
   | {
       column: {
         children: Array<
           | {
-              embed: { url: string; caption?: Array<RichTextItemRequest> }
-              type?: "embed"
-              object?: "block"
+              embed: { url: string; caption?: Array<RichTextItemRequest> };
+              type?: "embed";
+              object?: "block";
             }
           | {
-              bookmark: { url: string; caption?: Array<RichTextItemRequest> }
-              type?: "bookmark"
-              object?: "block"
+              bookmark: { url: string; caption?: Array<RichTextItemRequest> };
+              type?: "bookmark";
+              object?: "block";
             }
           | {
               image: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "image"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "image";
+              object?: "block";
             }
           | {
               video: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "video"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "video";
+              object?: "block";
             }
           | {
               pdf: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "pdf"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "pdf";
+              object?: "block";
             }
           | {
               file: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "file"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "file";
+              object?: "block";
             }
           | {
               audio: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "audio"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "audio";
+              object?: "block";
             }
           | {
               code: {
-                rich_text: Array<RichTextItemRequest>
-                language: LanguageRequest
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "code"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                language: LanguageRequest;
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "code";
+              object?: "block";
             }
           | {
-              equation: { expression: string }
-              type?: "equation"
-              object?: "block"
+              equation: { expression: string };
+              type?: "equation";
+              object?: "block";
             }
           | { divider: EmptyObject; type?: "divider"; object?: "block" }
           | { breadcrumb: EmptyObject; type?: "breadcrumb"; object?: "block" }
           | {
-              table_of_contents: { color?: ApiColor }
-              type?: "table_of_contents"
-              object?: "block"
+              table_of_contents: { color?: ApiColor };
+              type?: "table_of_contents";
+              object?: "block";
             }
           | {
               link_to_page:
                 | { page_id: IdRequest; type?: "page_id" }
-                | { database_id: IdRequest; type?: "database_id" }
-              type?: "link_to_page"
-              object?: "block"
+                | { database_id: IdRequest; type?: "database_id" };
+              type?: "link_to_page";
+              object?: "block";
             }
           | {
-              table_row: { cells: Array<Array<RichTextItemRequest>> }
-              type?: "table_row"
-              object?: "block"
+              table_row: { cells: Array<Array<RichTextItemRequest>> };
+              type?: "table_row";
+              object?: "block";
             }
           | {
               heading_1: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "heading_1"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "heading_1";
+              object?: "block";
             }
           | {
               heading_2: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "heading_2"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "heading_2";
+              object?: "block";
             }
           | {
               heading_3: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "heading_3"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "heading_3";
+              object?: "block";
             }
           | {
               paragraph: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "paragraph"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "paragraph";
+              object?: "block";
             }
           | {
               bulleted_list_item: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "bulleted_list_item"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "bulleted_list_item";
+              object?: "block";
             }
           | {
               numbered_list_item: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "numbered_list_item"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "numbered_list_item";
+              object?: "block";
             }
           | {
               quote: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "quote"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "quote";
+              object?: "block";
             }
           | {
               to_do: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-                checked?: boolean
-              }
-              type?: "to_do"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+                checked?: boolean;
+              };
+              type?: "to_do";
+              object?: "block";
             }
           | {
               toggle: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "toggle"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "toggle";
+              object?: "block";
             }
           | {
               template: {
-                rich_text: Array<RichTextItemRequest>
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "template"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "template";
+              object?: "block";
             }
           | {
               callout: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
                 icon?:
                   | { emoji: EmojiRequest; type?: "emoji" }
-                  | { external: { url: TextRequest }; type?: "external" }
-              }
-              type?: "callout"
-              object?: "block"
+                  | { external: { url: TextRequest }; type?: "external" };
+              };
+              type?: "callout";
+              object?: "block";
             }
           | {
               synced_block: {
-                synced_from: { block_id: IdRequest; type?: "block_id" } | null
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "synced_block"
-              object?: "block"
+                synced_from: { block_id: IdRequest; type?: "block_id" } | null;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "synced_block";
+              object?: "block";
             }
-        >
-      }
-      type?: "column"
-      object?: "block"
+        >;
+      };
+      type?: "column";
+      object?: "block";
     }
   | {
       table: {
-        table_width: number
-        children: Array<BlockObjectRequestWithoutChildren>
-        has_column_header?: boolean
-        has_row_header?: boolean
-      }
-      type?: "table"
-      object?: "block"
+        table_width: number;
+        children: Array<BlockObjectRequestWithoutChildren>;
+        has_column_header?: boolean;
+        has_row_header?: boolean;
+      };
+      type?: "table";
+      object?: "block";
     }
   | {
       heading_1: {
-        rich_text: Array<RichTextItemRequest>
-        color?: ApiColor
+        rich_text: Array<RichTextItemRequest>;
+        color?: ApiColor;
         children?: Array<
           | {
-              embed: { url: string; caption?: Array<RichTextItemRequest> }
-              type?: "embed"
-              object?: "block"
+              embed: { url: string; caption?: Array<RichTextItemRequest> };
+              type?: "embed";
+              object?: "block";
             }
           | {
-              bookmark: { url: string; caption?: Array<RichTextItemRequest> }
-              type?: "bookmark"
-              object?: "block"
+              bookmark: { url: string; caption?: Array<RichTextItemRequest> };
+              type?: "bookmark";
+              object?: "block";
             }
           | {
               image: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "image"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "image";
+              object?: "block";
             }
           | {
               video: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "video"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "video";
+              object?: "block";
             }
           | {
               pdf: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "pdf"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "pdf";
+              object?: "block";
             }
           | {
               file: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "file"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "file";
+              object?: "block";
             }
           | {
               audio: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "audio"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "audio";
+              object?: "block";
             }
           | {
               code: {
-                rich_text: Array<RichTextItemRequest>
-                language: LanguageRequest
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "code"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                language: LanguageRequest;
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "code";
+              object?: "block";
             }
           | {
-              equation: { expression: string }
-              type?: "equation"
-              object?: "block"
+              equation: { expression: string };
+              type?: "equation";
+              object?: "block";
             }
           | { divider: EmptyObject; type?: "divider"; object?: "block" }
           | { breadcrumb: EmptyObject; type?: "breadcrumb"; object?: "block" }
           | {
-              table_of_contents: { color?: ApiColor }
-              type?: "table_of_contents"
-              object?: "block"
+              table_of_contents: { color?: ApiColor };
+              type?: "table_of_contents";
+              object?: "block";
             }
           | {
               link_to_page:
                 | { page_id: IdRequest; type?: "page_id" }
-                | { database_id: IdRequest; type?: "database_id" }
-              type?: "link_to_page"
-              object?: "block"
+                | { database_id: IdRequest; type?: "database_id" };
+              type?: "link_to_page";
+              object?: "block";
             }
           | {
-              table_row: { cells: Array<Array<RichTextItemRequest>> }
-              type?: "table_row"
-              object?: "block"
+              table_row: { cells: Array<Array<RichTextItemRequest>> };
+              type?: "table_row";
+              object?: "block";
             }
           | {
               heading_1: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "heading_1"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "heading_1";
+              object?: "block";
             }
           | {
               heading_2: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "heading_2"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "heading_2";
+              object?: "block";
             }
           | {
               heading_3: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "heading_3"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "heading_3";
+              object?: "block";
             }
           | {
               paragraph: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "paragraph"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "paragraph";
+              object?: "block";
             }
           | {
               bulleted_list_item: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "bulleted_list_item"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "bulleted_list_item";
+              object?: "block";
             }
           | {
               numbered_list_item: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "numbered_list_item"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "numbered_list_item";
+              object?: "block";
             }
           | {
               quote: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "quote"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "quote";
+              object?: "block";
             }
           | {
               to_do: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-                checked?: boolean
-              }
-              type?: "to_do"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+                checked?: boolean;
+              };
+              type?: "to_do";
+              object?: "block";
             }
           | {
               toggle: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "toggle"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "toggle";
+              object?: "block";
             }
           | {
               template: {
-                rich_text: Array<RichTextItemRequest>
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "template"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "template";
+              object?: "block";
             }
           | {
               callout: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
                 icon?:
                   | { emoji: EmojiRequest; type?: "emoji" }
-                  | { external: { url: TextRequest }; type?: "external" }
-              }
-              type?: "callout"
-              object?: "block"
+                  | { external: { url: TextRequest }; type?: "external" };
+              };
+              type?: "callout";
+              object?: "block";
             }
           | {
               synced_block: {
-                synced_from: { block_id: IdRequest; type?: "block_id" } | null
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "synced_block"
-              object?: "block"
+                synced_from: { block_id: IdRequest; type?: "block_id" } | null;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "synced_block";
+              object?: "block";
             }
-        >
-      }
-      type?: "heading_1"
-      object?: "block"
+        >;
+      };
+      type?: "heading_1";
+      object?: "block";
     }
   | {
       heading_2: {
-        rich_text: Array<RichTextItemRequest>
-        color?: ApiColor
+        rich_text: Array<RichTextItemRequest>;
+        color?: ApiColor;
         children?: Array<
           | {
-              embed: { url: string; caption?: Array<RichTextItemRequest> }
-              type?: "embed"
-              object?: "block"
+              embed: { url: string; caption?: Array<RichTextItemRequest> };
+              type?: "embed";
+              object?: "block";
             }
           | {
-              bookmark: { url: string; caption?: Array<RichTextItemRequest> }
-              type?: "bookmark"
-              object?: "block"
+              bookmark: { url: string; caption?: Array<RichTextItemRequest> };
+              type?: "bookmark";
+              object?: "block";
             }
           | {
               image: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "image"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "image";
+              object?: "block";
             }
           | {
               video: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "video"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "video";
+              object?: "block";
             }
           | {
               pdf: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "pdf"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "pdf";
+              object?: "block";
             }
           | {
               file: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "file"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "file";
+              object?: "block";
             }
           | {
               audio: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "audio"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "audio";
+              object?: "block";
             }
           | {
               code: {
-                rich_text: Array<RichTextItemRequest>
-                language: LanguageRequest
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "code"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                language: LanguageRequest;
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "code";
+              object?: "block";
             }
           | {
-              equation: { expression: string }
-              type?: "equation"
-              object?: "block"
+              equation: { expression: string };
+              type?: "equation";
+              object?: "block";
             }
           | { divider: EmptyObject; type?: "divider"; object?: "block" }
           | { breadcrumb: EmptyObject; type?: "breadcrumb"; object?: "block" }
           | {
-              table_of_contents: { color?: ApiColor }
-              type?: "table_of_contents"
-              object?: "block"
+              table_of_contents: { color?: ApiColor };
+              type?: "table_of_contents";
+              object?: "block";
             }
           | {
               link_to_page:
                 | { page_id: IdRequest; type?: "page_id" }
-                | { database_id: IdRequest; type?: "database_id" }
-              type?: "link_to_page"
-              object?: "block"
+                | { database_id: IdRequest; type?: "database_id" };
+              type?: "link_to_page";
+              object?: "block";
             }
           | {
-              table_row: { cells: Array<Array<RichTextItemRequest>> }
-              type?: "table_row"
-              object?: "block"
+              table_row: { cells: Array<Array<RichTextItemRequest>> };
+              type?: "table_row";
+              object?: "block";
             }
           | {
               heading_1: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "heading_1"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "heading_1";
+              object?: "block";
             }
           | {
               heading_2: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "heading_2"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "heading_2";
+              object?: "block";
             }
           | {
               heading_3: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "heading_3"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "heading_3";
+              object?: "block";
             }
           | {
               paragraph: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "paragraph"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "paragraph";
+              object?: "block";
             }
           | {
               bulleted_list_item: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "bulleted_list_item"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "bulleted_list_item";
+              object?: "block";
             }
           | {
               numbered_list_item: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "numbered_list_item"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "numbered_list_item";
+              object?: "block";
             }
           | {
               quote: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "quote"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "quote";
+              object?: "block";
             }
           | {
               to_do: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-                checked?: boolean
-              }
-              type?: "to_do"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+                checked?: boolean;
+              };
+              type?: "to_do";
+              object?: "block";
             }
           | {
               toggle: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "toggle"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "toggle";
+              object?: "block";
             }
           | {
               template: {
-                rich_text: Array<RichTextItemRequest>
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "template"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "template";
+              object?: "block";
             }
           | {
               callout: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
                 icon?:
                   | { emoji: EmojiRequest; type?: "emoji" }
-                  | { external: { url: TextRequest }; type?: "external" }
-              }
-              type?: "callout"
-              object?: "block"
+                  | { external: { url: TextRequest }; type?: "external" };
+              };
+              type?: "callout";
+              object?: "block";
             }
           | {
               synced_block: {
-                synced_from: { block_id: IdRequest; type?: "block_id" } | null
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "synced_block"
-              object?: "block"
+                synced_from: { block_id: IdRequest; type?: "block_id" } | null;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "synced_block";
+              object?: "block";
             }
-        >
-      }
-      type?: "heading_2"
-      object?: "block"
+        >;
+      };
+      type?: "heading_2";
+      object?: "block";
     }
   | {
       heading_3: {
-        rich_text: Array<RichTextItemRequest>
-        color?: ApiColor
+        rich_text: Array<RichTextItemRequest>;
+        color?: ApiColor;
         children?: Array<
           | {
-              embed: { url: string; caption?: Array<RichTextItemRequest> }
-              type?: "embed"
-              object?: "block"
+              embed: { url: string; caption?: Array<RichTextItemRequest> };
+              type?: "embed";
+              object?: "block";
             }
           | {
-              bookmark: { url: string; caption?: Array<RichTextItemRequest> }
-              type?: "bookmark"
-              object?: "block"
+              bookmark: { url: string; caption?: Array<RichTextItemRequest> };
+              type?: "bookmark";
+              object?: "block";
             }
           | {
               image: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "image"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "image";
+              object?: "block";
             }
           | {
               video: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "video"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "video";
+              object?: "block";
             }
           | {
               pdf: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "pdf"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "pdf";
+              object?: "block";
             }
           | {
               file: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "file"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "file";
+              object?: "block";
             }
           | {
               audio: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "audio"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "audio";
+              object?: "block";
             }
           | {
               code: {
-                rich_text: Array<RichTextItemRequest>
-                language: LanguageRequest
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "code"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                language: LanguageRequest;
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "code";
+              object?: "block";
             }
           | {
-              equation: { expression: string }
-              type?: "equation"
-              object?: "block"
+              equation: { expression: string };
+              type?: "equation";
+              object?: "block";
             }
           | { divider: EmptyObject; type?: "divider"; object?: "block" }
           | { breadcrumb: EmptyObject; type?: "breadcrumb"; object?: "block" }
           | {
-              table_of_contents: { color?: ApiColor }
-              type?: "table_of_contents"
-              object?: "block"
+              table_of_contents: { color?: ApiColor };
+              type?: "table_of_contents";
+              object?: "block";
             }
           | {
               link_to_page:
                 | { page_id: IdRequest; type?: "page_id" }
-                | { database_id: IdRequest; type?: "database_id" }
-              type?: "link_to_page"
-              object?: "block"
+                | { database_id: IdRequest; type?: "database_id" };
+              type?: "link_to_page";
+              object?: "block";
             }
           | {
-              table_row: { cells: Array<Array<RichTextItemRequest>> }
-              type?: "table_row"
-              object?: "block"
+              table_row: { cells: Array<Array<RichTextItemRequest>> };
+              type?: "table_row";
+              object?: "block";
             }
           | {
               heading_1: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "heading_1"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "heading_1";
+              object?: "block";
             }
           | {
               heading_2: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "heading_2"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "heading_2";
+              object?: "block";
             }
           | {
               heading_3: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "heading_3"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "heading_3";
+              object?: "block";
             }
           | {
               paragraph: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "paragraph"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "paragraph";
+              object?: "block";
             }
           | {
               bulleted_list_item: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "bulleted_list_item"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "bulleted_list_item";
+              object?: "block";
             }
           | {
               numbered_list_item: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "numbered_list_item"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "numbered_list_item";
+              object?: "block";
             }
           | {
               quote: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "quote"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "quote";
+              object?: "block";
             }
           | {
               to_do: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-                checked?: boolean
-              }
-              type?: "to_do"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+                checked?: boolean;
+              };
+              type?: "to_do";
+              object?: "block";
             }
           | {
               toggle: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "toggle"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "toggle";
+              object?: "block";
             }
           | {
               template: {
-                rich_text: Array<RichTextItemRequest>
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "template"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "template";
+              object?: "block";
             }
           | {
               callout: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
                 icon?:
                   | { emoji: EmojiRequest; type?: "emoji" }
-                  | { external: { url: TextRequest }; type?: "external" }
-              }
-              type?: "callout"
-              object?: "block"
+                  | { external: { url: TextRequest }; type?: "external" };
+              };
+              type?: "callout";
+              object?: "block";
             }
           | {
               synced_block: {
-                synced_from: { block_id: IdRequest; type?: "block_id" } | null
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "synced_block"
-              object?: "block"
+                synced_from: { block_id: IdRequest; type?: "block_id" } | null;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "synced_block";
+              object?: "block";
             }
-        >
-      }
-      type?: "heading_3"
-      object?: "block"
+        >;
+      };
+      type?: "heading_3";
+      object?: "block";
     }
   | {
       paragraph: {
-        rich_text: Array<RichTextItemRequest>
-        color?: ApiColor
+        rich_text: Array<RichTextItemRequest>;
+        color?: ApiColor;
         children?: Array<
           | {
-              embed: { url: string; caption?: Array<RichTextItemRequest> }
-              type?: "embed"
-              object?: "block"
+              embed: { url: string; caption?: Array<RichTextItemRequest> };
+              type?: "embed";
+              object?: "block";
             }
           | {
-              bookmark: { url: string; caption?: Array<RichTextItemRequest> }
-              type?: "bookmark"
-              object?: "block"
+              bookmark: { url: string; caption?: Array<RichTextItemRequest> };
+              type?: "bookmark";
+              object?: "block";
             }
           | {
               image: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "image"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "image";
+              object?: "block";
             }
           | {
               video: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "video"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "video";
+              object?: "block";
             }
           | {
               pdf: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "pdf"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "pdf";
+              object?: "block";
             }
           | {
               file: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "file"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "file";
+              object?: "block";
             }
           | {
               audio: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "audio"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "audio";
+              object?: "block";
             }
           | {
               code: {
-                rich_text: Array<RichTextItemRequest>
-                language: LanguageRequest
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "code"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                language: LanguageRequest;
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "code";
+              object?: "block";
             }
           | {
-              equation: { expression: string }
-              type?: "equation"
-              object?: "block"
+              equation: { expression: string };
+              type?: "equation";
+              object?: "block";
             }
           | { divider: EmptyObject; type?: "divider"; object?: "block" }
           | { breadcrumb: EmptyObject; type?: "breadcrumb"; object?: "block" }
           | {
-              table_of_contents: { color?: ApiColor }
-              type?: "table_of_contents"
-              object?: "block"
+              table_of_contents: { color?: ApiColor };
+              type?: "table_of_contents";
+              object?: "block";
             }
           | {
               link_to_page:
                 | { page_id: IdRequest; type?: "page_id" }
-                | { database_id: IdRequest; type?: "database_id" }
-              type?: "link_to_page"
-              object?: "block"
+                | { database_id: IdRequest; type?: "database_id" };
+              type?: "link_to_page";
+              object?: "block";
             }
           | {
-              table_row: { cells: Array<Array<RichTextItemRequest>> }
-              type?: "table_row"
-              object?: "block"
+              table_row: { cells: Array<Array<RichTextItemRequest>> };
+              type?: "table_row";
+              object?: "block";
             }
           | {
               heading_1: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "heading_1"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "heading_1";
+              object?: "block";
             }
           | {
               heading_2: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "heading_2"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "heading_2";
+              object?: "block";
             }
           | {
               heading_3: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "heading_3"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "heading_3";
+              object?: "block";
             }
           | {
               paragraph: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "paragraph"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "paragraph";
+              object?: "block";
             }
           | {
               bulleted_list_item: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "bulleted_list_item"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "bulleted_list_item";
+              object?: "block";
             }
           | {
               numbered_list_item: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "numbered_list_item"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "numbered_list_item";
+              object?: "block";
             }
           | {
               quote: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "quote"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "quote";
+              object?: "block";
             }
           | {
               to_do: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-                checked?: boolean
-              }
-              type?: "to_do"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+                checked?: boolean;
+              };
+              type?: "to_do";
+              object?: "block";
             }
           | {
               toggle: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "toggle"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "toggle";
+              object?: "block";
             }
           | {
               template: {
-                rich_text: Array<RichTextItemRequest>
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "template"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "template";
+              object?: "block";
             }
           | {
               callout: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
                 icon?:
                   | { emoji: EmojiRequest; type?: "emoji" }
-                  | { external: { url: TextRequest }; type?: "external" }
-              }
-              type?: "callout"
-              object?: "block"
+                  | { external: { url: TextRequest }; type?: "external" };
+              };
+              type?: "callout";
+              object?: "block";
             }
           | {
               synced_block: {
-                synced_from: { block_id: IdRequest; type?: "block_id" } | null
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "synced_block"
-              object?: "block"
+                synced_from: { block_id: IdRequest; type?: "block_id" } | null;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "synced_block";
+              object?: "block";
             }
-        >
-      }
-      type?: "paragraph"
-      object?: "block"
+        >;
+      };
+      type?: "paragraph";
+      object?: "block";
     }
   | {
       bulleted_list_item: {
-        rich_text: Array<RichTextItemRequest>
-        color?: ApiColor
+        rich_text: Array<RichTextItemRequest>;
+        color?: ApiColor;
         children?: Array<
           | {
-              embed: { url: string; caption?: Array<RichTextItemRequest> }
-              type?: "embed"
-              object?: "block"
+              embed: { url: string; caption?: Array<RichTextItemRequest> };
+              type?: "embed";
+              object?: "block";
             }
           | {
-              bookmark: { url: string; caption?: Array<RichTextItemRequest> }
-              type?: "bookmark"
-              object?: "block"
+              bookmark: { url: string; caption?: Array<RichTextItemRequest> };
+              type?: "bookmark";
+              object?: "block";
             }
           | {
               image: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "image"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "image";
+              object?: "block";
             }
           | {
               video: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "video"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "video";
+              object?: "block";
             }
           | {
               pdf: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "pdf"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "pdf";
+              object?: "block";
             }
           | {
               file: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "file"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "file";
+              object?: "block";
             }
           | {
               audio: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "audio"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "audio";
+              object?: "block";
             }
           | {
               code: {
-                rich_text: Array<RichTextItemRequest>
-                language: LanguageRequest
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "code"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                language: LanguageRequest;
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "code";
+              object?: "block";
             }
           | {
-              equation: { expression: string }
-              type?: "equation"
-              object?: "block"
+              equation: { expression: string };
+              type?: "equation";
+              object?: "block";
             }
           | { divider: EmptyObject; type?: "divider"; object?: "block" }
           | { breadcrumb: EmptyObject; type?: "breadcrumb"; object?: "block" }
           | {
-              table_of_contents: { color?: ApiColor }
-              type?: "table_of_contents"
-              object?: "block"
+              table_of_contents: { color?: ApiColor };
+              type?: "table_of_contents";
+              object?: "block";
             }
           | {
               link_to_page:
                 | { page_id: IdRequest; type?: "page_id" }
-                | { database_id: IdRequest; type?: "database_id" }
-              type?: "link_to_page"
-              object?: "block"
+                | { database_id: IdRequest; type?: "database_id" };
+              type?: "link_to_page";
+              object?: "block";
             }
           | {
-              table_row: { cells: Array<Array<RichTextItemRequest>> }
-              type?: "table_row"
-              object?: "block"
+              table_row: { cells: Array<Array<RichTextItemRequest>> };
+              type?: "table_row";
+              object?: "block";
             }
           | {
               heading_1: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "heading_1"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "heading_1";
+              object?: "block";
             }
           | {
               heading_2: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "heading_2"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "heading_2";
+              object?: "block";
             }
           | {
               heading_3: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "heading_3"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "heading_3";
+              object?: "block";
             }
           | {
               paragraph: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "paragraph"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "paragraph";
+              object?: "block";
             }
           | {
               bulleted_list_item: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "bulleted_list_item"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "bulleted_list_item";
+              object?: "block";
             }
           | {
               numbered_list_item: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "numbered_list_item"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "numbered_list_item";
+              object?: "block";
             }
           | {
               quote: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "quote"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "quote";
+              object?: "block";
             }
           | {
               to_do: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-                checked?: boolean
-              }
-              type?: "to_do"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+                checked?: boolean;
+              };
+              type?: "to_do";
+              object?: "block";
             }
           | {
               toggle: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "toggle"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "toggle";
+              object?: "block";
             }
           | {
               template: {
-                rich_text: Array<RichTextItemRequest>
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "template"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "template";
+              object?: "block";
             }
           | {
               callout: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
                 icon?:
                   | { emoji: EmojiRequest; type?: "emoji" }
-                  | { external: { url: TextRequest }; type?: "external" }
-              }
-              type?: "callout"
-              object?: "block"
+                  | { external: { url: TextRequest }; type?: "external" };
+              };
+              type?: "callout";
+              object?: "block";
             }
           | {
               synced_block: {
-                synced_from: { block_id: IdRequest; type?: "block_id" } | null
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "synced_block"
-              object?: "block"
+                synced_from: { block_id: IdRequest; type?: "block_id" } | null;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "synced_block";
+              object?: "block";
             }
-        >
-      }
-      type?: "bulleted_list_item"
-      object?: "block"
+        >;
+      };
+      type?: "bulleted_list_item";
+      object?: "block";
     }
   | {
       numbered_list_item: {
-        rich_text: Array<RichTextItemRequest>
-        color?: ApiColor
+        rich_text: Array<RichTextItemRequest>;
+        color?: ApiColor;
         children?: Array<
           | {
-              embed: { url: string; caption?: Array<RichTextItemRequest> }
-              type?: "embed"
-              object?: "block"
+              embed: { url: string; caption?: Array<RichTextItemRequest> };
+              type?: "embed";
+              object?: "block";
             }
           | {
-              bookmark: { url: string; caption?: Array<RichTextItemRequest> }
-              type?: "bookmark"
-              object?: "block"
+              bookmark: { url: string; caption?: Array<RichTextItemRequest> };
+              type?: "bookmark";
+              object?: "block";
             }
           | {
               image: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "image"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "image";
+              object?: "block";
             }
           | {
               video: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "video"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "video";
+              object?: "block";
             }
           | {
               pdf: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "pdf"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "pdf";
+              object?: "block";
             }
           | {
               file: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "file"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "file";
+              object?: "block";
             }
           | {
               audio: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "audio"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "audio";
+              object?: "block";
             }
           | {
               code: {
-                rich_text: Array<RichTextItemRequest>
-                language: LanguageRequest
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "code"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                language: LanguageRequest;
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "code";
+              object?: "block";
             }
           | {
-              equation: { expression: string }
-              type?: "equation"
-              object?: "block"
+              equation: { expression: string };
+              type?: "equation";
+              object?: "block";
             }
           | { divider: EmptyObject; type?: "divider"; object?: "block" }
           | { breadcrumb: EmptyObject; type?: "breadcrumb"; object?: "block" }
           | {
-              table_of_contents: { color?: ApiColor }
-              type?: "table_of_contents"
-              object?: "block"
+              table_of_contents: { color?: ApiColor };
+              type?: "table_of_contents";
+              object?: "block";
             }
           | {
               link_to_page:
                 | { page_id: IdRequest; type?: "page_id" }
-                | { database_id: IdRequest; type?: "database_id" }
-              type?: "link_to_page"
-              object?: "block"
+                | { database_id: IdRequest; type?: "database_id" };
+              type?: "link_to_page";
+              object?: "block";
             }
           | {
-              table_row: { cells: Array<Array<RichTextItemRequest>> }
-              type?: "table_row"
-              object?: "block"
+              table_row: { cells: Array<Array<RichTextItemRequest>> };
+              type?: "table_row";
+              object?: "block";
             }
           | {
               heading_1: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "heading_1"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "heading_1";
+              object?: "block";
             }
           | {
               heading_2: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "heading_2"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "heading_2";
+              object?: "block";
             }
           | {
               heading_3: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "heading_3"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "heading_3";
+              object?: "block";
             }
           | {
               paragraph: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "paragraph"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "paragraph";
+              object?: "block";
             }
           | {
               bulleted_list_item: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "bulleted_list_item"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "bulleted_list_item";
+              object?: "block";
             }
           | {
               numbered_list_item: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "numbered_list_item"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "numbered_list_item";
+              object?: "block";
             }
           | {
               quote: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "quote"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "quote";
+              object?: "block";
             }
           | {
               to_do: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-                checked?: boolean
-              }
-              type?: "to_do"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+                checked?: boolean;
+              };
+              type?: "to_do";
+              object?: "block";
             }
           | {
               toggle: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "toggle"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "toggle";
+              object?: "block";
             }
           | {
               template: {
-                rich_text: Array<RichTextItemRequest>
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "template"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "template";
+              object?: "block";
             }
           | {
               callout: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
                 icon?:
                   | { emoji: EmojiRequest; type?: "emoji" }
-                  | { external: { url: TextRequest }; type?: "external" }
-              }
-              type?: "callout"
-              object?: "block"
+                  | { external: { url: TextRequest }; type?: "external" };
+              };
+              type?: "callout";
+              object?: "block";
             }
           | {
               synced_block: {
-                synced_from: { block_id: IdRequest; type?: "block_id" } | null
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "synced_block"
-              object?: "block"
+                synced_from: { block_id: IdRequest; type?: "block_id" } | null;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "synced_block";
+              object?: "block";
             }
-        >
-      }
-      type?: "numbered_list_item"
-      object?: "block"
+        >;
+      };
+      type?: "numbered_list_item";
+      object?: "block";
     }
   | {
       quote: {
-        rich_text: Array<RichTextItemRequest>
-        color?: ApiColor
+        rich_text: Array<RichTextItemRequest>;
+        color?: ApiColor;
         children?: Array<
           | {
-              embed: { url: string; caption?: Array<RichTextItemRequest> }
-              type?: "embed"
-              object?: "block"
+              embed: { url: string; caption?: Array<RichTextItemRequest> };
+              type?: "embed";
+              object?: "block";
             }
           | {
-              bookmark: { url: string; caption?: Array<RichTextItemRequest> }
-              type?: "bookmark"
-              object?: "block"
+              bookmark: { url: string; caption?: Array<RichTextItemRequest> };
+              type?: "bookmark";
+              object?: "block";
             }
           | {
               image: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "image"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "image";
+              object?: "block";
             }
           | {
               video: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "video"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "video";
+              object?: "block";
             }
           | {
               pdf: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "pdf"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "pdf";
+              object?: "block";
             }
           | {
               file: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "file"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "file";
+              object?: "block";
             }
           | {
               audio: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "audio"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "audio";
+              object?: "block";
             }
           | {
               code: {
-                rich_text: Array<RichTextItemRequest>
-                language: LanguageRequest
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "code"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                language: LanguageRequest;
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "code";
+              object?: "block";
             }
           | {
-              equation: { expression: string }
-              type?: "equation"
-              object?: "block"
+              equation: { expression: string };
+              type?: "equation";
+              object?: "block";
             }
           | { divider: EmptyObject; type?: "divider"; object?: "block" }
           | { breadcrumb: EmptyObject; type?: "breadcrumb"; object?: "block" }
           | {
-              table_of_contents: { color?: ApiColor }
-              type?: "table_of_contents"
-              object?: "block"
+              table_of_contents: { color?: ApiColor };
+              type?: "table_of_contents";
+              object?: "block";
             }
           | {
               link_to_page:
                 | { page_id: IdRequest; type?: "page_id" }
-                | { database_id: IdRequest; type?: "database_id" }
-              type?: "link_to_page"
-              object?: "block"
+                | { database_id: IdRequest; type?: "database_id" };
+              type?: "link_to_page";
+              object?: "block";
             }
           | {
-              table_row: { cells: Array<Array<RichTextItemRequest>> }
-              type?: "table_row"
-              object?: "block"
+              table_row: { cells: Array<Array<RichTextItemRequest>> };
+              type?: "table_row";
+              object?: "block";
             }
           | {
               heading_1: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "heading_1"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "heading_1";
+              object?: "block";
             }
           | {
               heading_2: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "heading_2"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "heading_2";
+              object?: "block";
             }
           | {
               heading_3: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "heading_3"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "heading_3";
+              object?: "block";
             }
           | {
               paragraph: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "paragraph"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "paragraph";
+              object?: "block";
             }
           | {
               bulleted_list_item: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "bulleted_list_item"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "bulleted_list_item";
+              object?: "block";
             }
           | {
               numbered_list_item: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "numbered_list_item"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "numbered_list_item";
+              object?: "block";
             }
           | {
               quote: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "quote"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "quote";
+              object?: "block";
             }
           | {
               to_do: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-                checked?: boolean
-              }
-              type?: "to_do"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+                checked?: boolean;
+              };
+              type?: "to_do";
+              object?: "block";
             }
           | {
               toggle: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "toggle"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "toggle";
+              object?: "block";
             }
           | {
               template: {
-                rich_text: Array<RichTextItemRequest>
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "template"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "template";
+              object?: "block";
             }
           | {
               callout: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
                 icon?:
                   | { emoji: EmojiRequest; type?: "emoji" }
-                  | { external: { url: TextRequest }; type?: "external" }
-              }
-              type?: "callout"
-              object?: "block"
+                  | { external: { url: TextRequest }; type?: "external" };
+              };
+              type?: "callout";
+              object?: "block";
             }
           | {
               synced_block: {
-                synced_from: { block_id: IdRequest; type?: "block_id" } | null
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "synced_block"
-              object?: "block"
+                synced_from: { block_id: IdRequest; type?: "block_id" } | null;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "synced_block";
+              object?: "block";
             }
-        >
-      }
-      type?: "quote"
-      object?: "block"
+        >;
+      };
+      type?: "quote";
+      object?: "block";
     }
   | {
       to_do: {
-        rich_text: Array<RichTextItemRequest>
-        color?: ApiColor
+        rich_text: Array<RichTextItemRequest>;
+        color?: ApiColor;
         children?: Array<
           | {
-              embed: { url: string; caption?: Array<RichTextItemRequest> }
-              type?: "embed"
-              object?: "block"
+              embed: { url: string; caption?: Array<RichTextItemRequest> };
+              type?: "embed";
+              object?: "block";
             }
           | {
-              bookmark: { url: string; caption?: Array<RichTextItemRequest> }
-              type?: "bookmark"
-              object?: "block"
+              bookmark: { url: string; caption?: Array<RichTextItemRequest> };
+              type?: "bookmark";
+              object?: "block";
             }
           | {
               image: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "image"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "image";
+              object?: "block";
             }
           | {
               video: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "video"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "video";
+              object?: "block";
             }
           | {
               pdf: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "pdf"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "pdf";
+              object?: "block";
             }
           | {
               file: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "file"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "file";
+              object?: "block";
             }
           | {
               audio: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "audio"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "audio";
+              object?: "block";
             }
           | {
               code: {
-                rich_text: Array<RichTextItemRequest>
-                language: LanguageRequest
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "code"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                language: LanguageRequest;
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "code";
+              object?: "block";
             }
           | {
-              equation: { expression: string }
-              type?: "equation"
-              object?: "block"
+              equation: { expression: string };
+              type?: "equation";
+              object?: "block";
             }
           | { divider: EmptyObject; type?: "divider"; object?: "block" }
           | { breadcrumb: EmptyObject; type?: "breadcrumb"; object?: "block" }
           | {
-              table_of_contents: { color?: ApiColor }
-              type?: "table_of_contents"
-              object?: "block"
+              table_of_contents: { color?: ApiColor };
+              type?: "table_of_contents";
+              object?: "block";
             }
           | {
               link_to_page:
                 | { page_id: IdRequest; type?: "page_id" }
-                | { database_id: IdRequest; type?: "database_id" }
-              type?: "link_to_page"
-              object?: "block"
+                | { database_id: IdRequest; type?: "database_id" };
+              type?: "link_to_page";
+              object?: "block";
             }
           | {
-              table_row: { cells: Array<Array<RichTextItemRequest>> }
-              type?: "table_row"
-              object?: "block"
+              table_row: { cells: Array<Array<RichTextItemRequest>> };
+              type?: "table_row";
+              object?: "block";
             }
           | {
               heading_1: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "heading_1"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "heading_1";
+              object?: "block";
             }
           | {
               heading_2: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "heading_2"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "heading_2";
+              object?: "block";
             }
           | {
               heading_3: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "heading_3"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "heading_3";
+              object?: "block";
             }
           | {
               paragraph: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "paragraph"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "paragraph";
+              object?: "block";
             }
           | {
               bulleted_list_item: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "bulleted_list_item"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "bulleted_list_item";
+              object?: "block";
             }
           | {
               numbered_list_item: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "numbered_list_item"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "numbered_list_item";
+              object?: "block";
             }
           | {
               quote: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "quote"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "quote";
+              object?: "block";
             }
           | {
               to_do: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-                checked?: boolean
-              }
-              type?: "to_do"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+                checked?: boolean;
+              };
+              type?: "to_do";
+              object?: "block";
             }
           | {
               toggle: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "toggle"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "toggle";
+              object?: "block";
             }
           | {
               template: {
-                rich_text: Array<RichTextItemRequest>
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "template"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "template";
+              object?: "block";
             }
           | {
               callout: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
                 icon?:
                   | { emoji: EmojiRequest; type?: "emoji" }
-                  | { external: { url: TextRequest }; type?: "external" }
-              }
-              type?: "callout"
-              object?: "block"
+                  | { external: { url: TextRequest }; type?: "external" };
+              };
+              type?: "callout";
+              object?: "block";
             }
           | {
               synced_block: {
-                synced_from: { block_id: IdRequest; type?: "block_id" } | null
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "synced_block"
-              object?: "block"
+                synced_from: { block_id: IdRequest; type?: "block_id" } | null;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "synced_block";
+              object?: "block";
             }
-        >
-        checked?: boolean
-      }
-      type?: "to_do"
-      object?: "block"
+        >;
+        checked?: boolean;
+      };
+      type?: "to_do";
+      object?: "block";
     }
   | {
       toggle: {
-        rich_text: Array<RichTextItemRequest>
-        color?: ApiColor
+        rich_text: Array<RichTextItemRequest>;
+        color?: ApiColor;
         children?: Array<
           | {
-              embed: { url: string; caption?: Array<RichTextItemRequest> }
-              type?: "embed"
-              object?: "block"
+              embed: { url: string; caption?: Array<RichTextItemRequest> };
+              type?: "embed";
+              object?: "block";
             }
           | {
-              bookmark: { url: string; caption?: Array<RichTextItemRequest> }
-              type?: "bookmark"
-              object?: "block"
+              bookmark: { url: string; caption?: Array<RichTextItemRequest> };
+              type?: "bookmark";
+              object?: "block";
             }
           | {
               image: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "image"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "image";
+              object?: "block";
             }
           | {
               video: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "video"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "video";
+              object?: "block";
             }
           | {
               pdf: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "pdf"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "pdf";
+              object?: "block";
             }
           | {
               file: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "file"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "file";
+              object?: "block";
             }
           | {
               audio: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "audio"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "audio";
+              object?: "block";
             }
           | {
               code: {
-                rich_text: Array<RichTextItemRequest>
-                language: LanguageRequest
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "code"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                language: LanguageRequest;
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "code";
+              object?: "block";
             }
           | {
-              equation: { expression: string }
-              type?: "equation"
-              object?: "block"
+              equation: { expression: string };
+              type?: "equation";
+              object?: "block";
             }
           | { divider: EmptyObject; type?: "divider"; object?: "block" }
           | { breadcrumb: EmptyObject; type?: "breadcrumb"; object?: "block" }
           | {
-              table_of_contents: { color?: ApiColor }
-              type?: "table_of_contents"
-              object?: "block"
+              table_of_contents: { color?: ApiColor };
+              type?: "table_of_contents";
+              object?: "block";
             }
           | {
               link_to_page:
                 | { page_id: IdRequest; type?: "page_id" }
-                | { database_id: IdRequest; type?: "database_id" }
-              type?: "link_to_page"
-              object?: "block"
+                | { database_id: IdRequest; type?: "database_id" };
+              type?: "link_to_page";
+              object?: "block";
             }
           | {
-              table_row: { cells: Array<Array<RichTextItemRequest>> }
-              type?: "table_row"
-              object?: "block"
+              table_row: { cells: Array<Array<RichTextItemRequest>> };
+              type?: "table_row";
+              object?: "block";
             }
           | {
               heading_1: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "heading_1"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "heading_1";
+              object?: "block";
             }
           | {
               heading_2: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "heading_2"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "heading_2";
+              object?: "block";
             }
           | {
               heading_3: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "heading_3"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "heading_3";
+              object?: "block";
             }
           | {
               paragraph: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "paragraph"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "paragraph";
+              object?: "block";
             }
           | {
               bulleted_list_item: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "bulleted_list_item"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "bulleted_list_item";
+              object?: "block";
             }
           | {
               numbered_list_item: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "numbered_list_item"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "numbered_list_item";
+              object?: "block";
             }
           | {
               quote: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "quote"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "quote";
+              object?: "block";
             }
           | {
               to_do: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-                checked?: boolean
-              }
-              type?: "to_do"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+                checked?: boolean;
+              };
+              type?: "to_do";
+              object?: "block";
             }
           | {
               toggle: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "toggle"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "toggle";
+              object?: "block";
             }
           | {
               template: {
-                rich_text: Array<RichTextItemRequest>
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "template"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "template";
+              object?: "block";
             }
           | {
               callout: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
                 icon?:
                   | { emoji: EmojiRequest; type?: "emoji" }
-                  | { external: { url: TextRequest }; type?: "external" }
-              }
-              type?: "callout"
-              object?: "block"
+                  | { external: { url: TextRequest }; type?: "external" };
+              };
+              type?: "callout";
+              object?: "block";
             }
           | {
               synced_block: {
-                synced_from: { block_id: IdRequest; type?: "block_id" } | null
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "synced_block"
-              object?: "block"
+                synced_from: { block_id: IdRequest; type?: "block_id" } | null;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "synced_block";
+              object?: "block";
             }
-        >
-      }
-      type?: "toggle"
-      object?: "block"
+        >;
+      };
+      type?: "toggle";
+      object?: "block";
     }
   | {
       template: {
-        rich_text: Array<RichTextItemRequest>
+        rich_text: Array<RichTextItemRequest>;
         children?: Array<
           | {
-              embed: { url: string; caption?: Array<RichTextItemRequest> }
-              type?: "embed"
-              object?: "block"
+              embed: { url: string; caption?: Array<RichTextItemRequest> };
+              type?: "embed";
+              object?: "block";
             }
           | {
-              bookmark: { url: string; caption?: Array<RichTextItemRequest> }
-              type?: "bookmark"
-              object?: "block"
+              bookmark: { url: string; caption?: Array<RichTextItemRequest> };
+              type?: "bookmark";
+              object?: "block";
             }
           | {
               image: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "image"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "image";
+              object?: "block";
             }
           | {
               video: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "video"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "video";
+              object?: "block";
             }
           | {
               pdf: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "pdf"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "pdf";
+              object?: "block";
             }
           | {
               file: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "file"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "file";
+              object?: "block";
             }
           | {
               audio: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "audio"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "audio";
+              object?: "block";
             }
           | {
               code: {
-                rich_text: Array<RichTextItemRequest>
-                language: LanguageRequest
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "code"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                language: LanguageRequest;
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "code";
+              object?: "block";
             }
           | {
-              equation: { expression: string }
-              type?: "equation"
-              object?: "block"
+              equation: { expression: string };
+              type?: "equation";
+              object?: "block";
             }
           | { divider: EmptyObject; type?: "divider"; object?: "block" }
           | { breadcrumb: EmptyObject; type?: "breadcrumb"; object?: "block" }
           | {
-              table_of_contents: { color?: ApiColor }
-              type?: "table_of_contents"
-              object?: "block"
+              table_of_contents: { color?: ApiColor };
+              type?: "table_of_contents";
+              object?: "block";
             }
           | {
               link_to_page:
                 | { page_id: IdRequest; type?: "page_id" }
-                | { database_id: IdRequest; type?: "database_id" }
-              type?: "link_to_page"
-              object?: "block"
+                | { database_id: IdRequest; type?: "database_id" };
+              type?: "link_to_page";
+              object?: "block";
             }
           | {
-              table_row: { cells: Array<Array<RichTextItemRequest>> }
-              type?: "table_row"
-              object?: "block"
+              table_row: { cells: Array<Array<RichTextItemRequest>> };
+              type?: "table_row";
+              object?: "block";
             }
           | {
               heading_1: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "heading_1"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "heading_1";
+              object?: "block";
             }
           | {
               heading_2: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "heading_2"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "heading_2";
+              object?: "block";
             }
           | {
               heading_3: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "heading_3"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "heading_3";
+              object?: "block";
             }
           | {
               paragraph: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "paragraph"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "paragraph";
+              object?: "block";
             }
           | {
               bulleted_list_item: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "bulleted_list_item"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "bulleted_list_item";
+              object?: "block";
             }
           | {
               numbered_list_item: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "numbered_list_item"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "numbered_list_item";
+              object?: "block";
             }
           | {
               quote: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "quote"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "quote";
+              object?: "block";
             }
           | {
               to_do: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-                checked?: boolean
-              }
-              type?: "to_do"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+                checked?: boolean;
+              };
+              type?: "to_do";
+              object?: "block";
             }
           | {
               toggle: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "toggle"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "toggle";
+              object?: "block";
             }
           | {
               template: {
-                rich_text: Array<RichTextItemRequest>
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "template"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "template";
+              object?: "block";
             }
           | {
               callout: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
                 icon?:
                   | { emoji: EmojiRequest; type?: "emoji" }
-                  | { external: { url: TextRequest }; type?: "external" }
-              }
-              type?: "callout"
-              object?: "block"
+                  | { external: { url: TextRequest }; type?: "external" };
+              };
+              type?: "callout";
+              object?: "block";
             }
           | {
               synced_block: {
-                synced_from: { block_id: IdRequest; type?: "block_id" } | null
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "synced_block"
-              object?: "block"
+                synced_from: { block_id: IdRequest; type?: "block_id" } | null;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "synced_block";
+              object?: "block";
             }
-        >
-      }
-      type?: "template"
-      object?: "block"
+        >;
+      };
+      type?: "template";
+      object?: "block";
     }
   | {
       callout: {
-        rich_text: Array<RichTextItemRequest>
-        color?: ApiColor
+        rich_text: Array<RichTextItemRequest>;
+        color?: ApiColor;
         children?: Array<
           | {
-              embed: { url: string; caption?: Array<RichTextItemRequest> }
-              type?: "embed"
-              object?: "block"
+              embed: { url: string; caption?: Array<RichTextItemRequest> };
+              type?: "embed";
+              object?: "block";
             }
           | {
-              bookmark: { url: string; caption?: Array<RichTextItemRequest> }
-              type?: "bookmark"
-              object?: "block"
+              bookmark: { url: string; caption?: Array<RichTextItemRequest> };
+              type?: "bookmark";
+              object?: "block";
             }
           | {
               image: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "image"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "image";
+              object?: "block";
             }
           | {
               video: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "video"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "video";
+              object?: "block";
             }
           | {
               pdf: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "pdf"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "pdf";
+              object?: "block";
             }
           | {
               file: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "file"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "file";
+              object?: "block";
             }
           | {
               audio: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "audio"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "audio";
+              object?: "block";
             }
           | {
               code: {
-                rich_text: Array<RichTextItemRequest>
-                language: LanguageRequest
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "code"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                language: LanguageRequest;
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "code";
+              object?: "block";
             }
           | {
-              equation: { expression: string }
-              type?: "equation"
-              object?: "block"
+              equation: { expression: string };
+              type?: "equation";
+              object?: "block";
             }
           | { divider: EmptyObject; type?: "divider"; object?: "block" }
           | { breadcrumb: EmptyObject; type?: "breadcrumb"; object?: "block" }
           | {
-              table_of_contents: { color?: ApiColor }
-              type?: "table_of_contents"
-              object?: "block"
+              table_of_contents: { color?: ApiColor };
+              type?: "table_of_contents";
+              object?: "block";
             }
           | {
               link_to_page:
                 | { page_id: IdRequest; type?: "page_id" }
-                | { database_id: IdRequest; type?: "database_id" }
-              type?: "link_to_page"
-              object?: "block"
+                | { database_id: IdRequest; type?: "database_id" };
+              type?: "link_to_page";
+              object?: "block";
             }
           | {
-              table_row: { cells: Array<Array<RichTextItemRequest>> }
-              type?: "table_row"
-              object?: "block"
+              table_row: { cells: Array<Array<RichTextItemRequest>> };
+              type?: "table_row";
+              object?: "block";
             }
           | {
               heading_1: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "heading_1"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "heading_1";
+              object?: "block";
             }
           | {
               heading_2: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "heading_2"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "heading_2";
+              object?: "block";
             }
           | {
               heading_3: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "heading_3"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "heading_3";
+              object?: "block";
             }
           | {
               paragraph: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "paragraph"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "paragraph";
+              object?: "block";
             }
           | {
               bulleted_list_item: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "bulleted_list_item"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "bulleted_list_item";
+              object?: "block";
             }
           | {
               numbered_list_item: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "numbered_list_item"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "numbered_list_item";
+              object?: "block";
             }
           | {
               quote: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "quote"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "quote";
+              object?: "block";
             }
           | {
               to_do: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-                checked?: boolean
-              }
-              type?: "to_do"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+                checked?: boolean;
+              };
+              type?: "to_do";
+              object?: "block";
             }
           | {
               toggle: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "toggle"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "toggle";
+              object?: "block";
             }
           | {
               template: {
-                rich_text: Array<RichTextItemRequest>
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "template"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "template";
+              object?: "block";
             }
           | {
               callout: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
                 icon?:
                   | { emoji: EmojiRequest; type?: "emoji" }
-                  | { external: { url: TextRequest }; type?: "external" }
-              }
-              type?: "callout"
-              object?: "block"
+                  | { external: { url: TextRequest }; type?: "external" };
+              };
+              type?: "callout";
+              object?: "block";
             }
           | {
               synced_block: {
-                synced_from: { block_id: IdRequest; type?: "block_id" } | null
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "synced_block"
-              object?: "block"
+                synced_from: { block_id: IdRequest; type?: "block_id" } | null;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "synced_block";
+              object?: "block";
             }
-        >
+        >;
         icon?:
           | { emoji: EmojiRequest; type?: "emoji" }
-          | { external: { url: TextRequest }; type?: "external" }
-      }
-      type?: "callout"
-      object?: "block"
+          | { external: { url: TextRequest }; type?: "external" };
+      };
+      type?: "callout";
+      object?: "block";
     }
   | {
       synced_block: {
-        synced_from: { block_id: IdRequest; type?: "block_id" } | null
+        synced_from: { block_id: IdRequest; type?: "block_id" } | null;
         children?: Array<
           | {
-              embed: { url: string; caption?: Array<RichTextItemRequest> }
-              type?: "embed"
-              object?: "block"
+              embed: { url: string; caption?: Array<RichTextItemRequest> };
+              type?: "embed";
+              object?: "block";
             }
           | {
-              bookmark: { url: string; caption?: Array<RichTextItemRequest> }
-              type?: "bookmark"
-              object?: "block"
+              bookmark: { url: string; caption?: Array<RichTextItemRequest> };
+              type?: "bookmark";
+              object?: "block";
             }
           | {
               image: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "image"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "image";
+              object?: "block";
             }
           | {
               video: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "video"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "video";
+              object?: "block";
             }
           | {
               pdf: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "pdf"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "pdf";
+              object?: "block";
             }
           | {
               file: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "file"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "file";
+              object?: "block";
             }
           | {
               audio: {
-                external: { url: TextRequest }
-                type?: "external"
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "audio"
-              object?: "block"
+                external: { url: TextRequest };
+                type?: "external";
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "audio";
+              object?: "block";
             }
           | {
               code: {
-                rich_text: Array<RichTextItemRequest>
-                language: LanguageRequest
-                caption?: Array<RichTextItemRequest>
-              }
-              type?: "code"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                language: LanguageRequest;
+                caption?: Array<RichTextItemRequest>;
+              };
+              type?: "code";
+              object?: "block";
             }
           | {
-              equation: { expression: string }
-              type?: "equation"
-              object?: "block"
+              equation: { expression: string };
+              type?: "equation";
+              object?: "block";
             }
           | { divider: EmptyObject; type?: "divider"; object?: "block" }
           | { breadcrumb: EmptyObject; type?: "breadcrumb"; object?: "block" }
           | {
-              table_of_contents: { color?: ApiColor }
-              type?: "table_of_contents"
-              object?: "block"
+              table_of_contents: { color?: ApiColor };
+              type?: "table_of_contents";
+              object?: "block";
             }
           | {
               link_to_page:
                 | { page_id: IdRequest; type?: "page_id" }
-                | { database_id: IdRequest; type?: "database_id" }
-              type?: "link_to_page"
-              object?: "block"
+                | { database_id: IdRequest; type?: "database_id" };
+              type?: "link_to_page";
+              object?: "block";
             }
           | {
-              table_row: { cells: Array<Array<RichTextItemRequest>> }
-              type?: "table_row"
-              object?: "block"
+              table_row: { cells: Array<Array<RichTextItemRequest>> };
+              type?: "table_row";
+              object?: "block";
             }
           | {
               heading_1: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "heading_1"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "heading_1";
+              object?: "block";
             }
           | {
               heading_2: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "heading_2"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "heading_2";
+              object?: "block";
             }
           | {
               heading_3: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "heading_3"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "heading_3";
+              object?: "block";
             }
           | {
               paragraph: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "paragraph"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "paragraph";
+              object?: "block";
             }
           | {
               bulleted_list_item: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "bulleted_list_item"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "bulleted_list_item";
+              object?: "block";
             }
           | {
               numbered_list_item: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "numbered_list_item"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "numbered_list_item";
+              object?: "block";
             }
           | {
               quote: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "quote"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "quote";
+              object?: "block";
             }
           | {
               to_do: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-                checked?: boolean
-              }
-              type?: "to_do"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+                checked?: boolean;
+              };
+              type?: "to_do";
+              object?: "block";
             }
           | {
               toggle: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "toggle"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "toggle";
+              object?: "block";
             }
           | {
               template: {
-                rich_text: Array<RichTextItemRequest>
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "template"
-              object?: "block"
+                rich_text: Array<RichTextItemRequest>;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "template";
+              object?: "block";
             }
           | {
               callout: {
-                rich_text: Array<RichTextItemRequest>
-                color?: ApiColor
-                children?: Array<BlockObjectRequestWithoutChildren>
+                rich_text: Array<RichTextItemRequest>;
+                color?: ApiColor;
+                children?: Array<BlockObjectRequestWithoutChildren>;
                 icon?:
                   | { emoji: EmojiRequest; type?: "emoji" }
-                  | { external: { url: TextRequest }; type?: "external" }
-              }
-              type?: "callout"
-              object?: "block"
+                  | { external: { url: TextRequest }; type?: "external" };
+              };
+              type?: "callout";
+              object?: "block";
             }
           | {
               synced_block: {
-                synced_from: { block_id: IdRequest; type?: "block_id" } | null
-                children?: Array<BlockObjectRequestWithoutChildren>
-              }
-              type?: "synced_block"
-              object?: "block"
+                synced_from: { block_id: IdRequest; type?: "block_id" } | null;
+                children?: Array<BlockObjectRequestWithoutChildren>;
+              };
+              type?: "synced_block";
+              object?: "block";
             }
-        >
-      }
-      type?: "synced_block"
-      object?: "block"
-    }
+        >;
+      };
+      type?: "synced_block";
+      object?: "block";
+    };
 
-type ExistencePropertyFilter = { is_empty: true } | { is_not_empty: true }
+type ExistencePropertyFilter = { is_empty: true } | { is_not_empty: true };
 
 type TextPropertyFilter =
   | { equals: string }
@@ -9046,7 +9046,7 @@ type TextPropertyFilter =
   | { does_not_contain: string }
   | { starts_with: string }
   | { ends_with: string }
-  | ExistencePropertyFilter
+  | ExistencePropertyFilter;
 
 type NumberPropertyFilter =
   | { equals: number }
@@ -9055,19 +9055,19 @@ type NumberPropertyFilter =
   | { less_than: number }
   | { greater_than_or_equal_to: number }
   | { less_than_or_equal_to: number }
-  | ExistencePropertyFilter
+  | ExistencePropertyFilter;
 
-type CheckboxPropertyFilter = { equals: boolean } | { does_not_equal: boolean }
+type CheckboxPropertyFilter = { equals: boolean } | { does_not_equal: boolean };
 
 type SelectPropertyFilter =
   | { equals: string }
   | { does_not_equal: string }
-  | ExistencePropertyFilter
+  | ExistencePropertyFilter;
 
 type MultiSelectPropertyFilter =
   | { contains: string }
   | { does_not_contain: string }
-  | ExistencePropertyFilter
+  | ExistencePropertyFilter;
 
 type DatePropertyFilter =
   | { equals: string }
@@ -9081,23 +9081,23 @@ type DatePropertyFilter =
   | { next_week: EmptyObject }
   | { next_month: EmptyObject }
   | { next_year: EmptyObject }
-  | ExistencePropertyFilter
+  | ExistencePropertyFilter;
 
 type PeoplePropertyFilter =
   | { contains: IdRequest }
   | { does_not_contain: IdRequest }
-  | ExistencePropertyFilter
+  | ExistencePropertyFilter;
 
 type RelationPropertyFilter =
   | { contains: IdRequest }
   | { does_not_contain: IdRequest }
-  | ExistencePropertyFilter
+  | ExistencePropertyFilter;
 
 type FormulaPropertyFilter =
   | { string: TextPropertyFilter }
   | { checkbox: CheckboxPropertyFilter }
   | { number: NumberPropertyFilter }
-  | { date: DatePropertyFilter }
+  | { date: DatePropertyFilter };
 
 type RollupSubfilterPropertyFilter =
   | { rich_text: TextPropertyFilter }
@@ -9108,14 +9108,14 @@ type RollupSubfilterPropertyFilter =
   | { relation: RelationPropertyFilter }
   | { date: DatePropertyFilter }
   | { people: PeoplePropertyFilter }
-  | { files: ExistencePropertyFilter }
+  | { files: ExistencePropertyFilter };
 
 type RollupPropertyFilter =
   | { any: RollupSubfilterPropertyFilter }
   | { none: RollupSubfilterPropertyFilter }
   | { every: RollupSubfilterPropertyFilter }
   | { date: DatePropertyFilter }
-  | { number: NumberPropertyFilter }
+  | { number: NumberPropertyFilter };
 
 type PropertyFilter =
   | { title: TextPropertyFilter; property: string; type?: "title" }
@@ -9124,9 +9124,9 @@ type PropertyFilter =
   | { checkbox: CheckboxPropertyFilter; property: string; type?: "checkbox" }
   | { select: SelectPropertyFilter; property: string; type?: "select" }
   | {
-      multi_select: MultiSelectPropertyFilter
-      property: string
-      type?: "multi_select"
+      multi_select: MultiSelectPropertyFilter;
+      property: string;
+      type?: "multi_select";
     }
   | { date: DatePropertyFilter; property: string; type?: "date" }
   | { people: PeoplePropertyFilter; property: string; type?: "people" }
@@ -9134,44 +9134,44 @@ type PropertyFilter =
   | { url: TextPropertyFilter; property: string; type?: "url" }
   | { email: TextPropertyFilter; property: string; type?: "email" }
   | {
-      phone_number: TextPropertyFilter
-      property: string
-      type?: "phone_number"
+      phone_number: TextPropertyFilter;
+      property: string;
+      type?: "phone_number";
     }
   | { relation: RelationPropertyFilter; property: string; type?: "relation" }
   | { created_by: PeoplePropertyFilter; property: string; type?: "created_by" }
   | {
-      created_time: DatePropertyFilter
-      property: string
-      type?: "created_time"
+      created_time: DatePropertyFilter;
+      property: string;
+      type?: "created_time";
     }
   | {
-      last_edited_by: PeoplePropertyFilter
-      property: string
-      type?: "last_edited_by"
+      last_edited_by: PeoplePropertyFilter;
+      property: string;
+      type?: "last_edited_by";
     }
   | {
-      last_edited_time: DatePropertyFilter
-      property: string
-      type?: "last_edited_time"
+      last_edited_time: DatePropertyFilter;
+      property: string;
+      type?: "last_edited_time";
     }
   | { formula: FormulaPropertyFilter; property: string; type?: "formula" }
-  | { rollup: RollupPropertyFilter; property: string; type?: "rollup" }
+  | { rollup: RollupPropertyFilter; property: string; type?: "rollup" };
 
 type TimestampCreatedTimeFilter = {
-  created_time: DatePropertyFilter
-  timestamp: "created_time"
-  type?: "created_time"
-}
+  created_time: DatePropertyFilter;
+  timestamp: "created_time";
+  type?: "created_time";
+};
 
 type TimestampLastEditedTimeFilter = {
-  last_edited_time: DatePropertyFilter
-  timestamp: "last_edited_time"
-  type?: "last_edited_time"
-}
-export type GetSelfParameters = Record<string, never>
+  last_edited_time: DatePropertyFilter;
+  timestamp: "last_edited_time";
+  type?: "last_edited_time";
+};
+export type GetSelfParameters = Record<string, never>;
 
-export type GetSelfResponse = UserObjectResponse
+export type GetSelfResponse = UserObjectResponse;
 
 export const getSelf = {
   method: "get",
@@ -9179,15 +9179,15 @@ export const getSelf = {
   queryParams: [],
   bodyParams: [],
   path: (): string => `users/me`,
-} as const
+} as const;
 
 type GetUserPathParameters = {
-  user_id: IdRequest
-}
+  user_id: IdRequest;
+};
 
-export type GetUserParameters = GetUserPathParameters
+export type GetUserParameters = GetUserPathParameters;
 
-export type GetUserResponse = UserObjectResponse
+export type GetUserResponse = UserObjectResponse;
 
 export const getUser = {
   method: "get",
@@ -9195,23 +9195,23 @@ export const getUser = {
   queryParams: [],
   bodyParams: [],
   path: (p: GetUserPathParameters): string => `users/${p.user_id}`,
-} as const
+} as const;
 
 type ListUsersQueryParameters = {
-  start_cursor?: string
-  page_size?: number
-}
+  start_cursor?: string;
+  page_size?: number;
+};
 
-export type ListUsersParameters = ListUsersQueryParameters
+export type ListUsersParameters = ListUsersQueryParameters;
 
 export type ListUsersResponse = {
-  type: "user"
-  user: EmptyObject
-  object: "list"
-  next_cursor: string | null
-  has_more: boolean
-  results: Array<UserObjectResponse>
-}
+  type: "user";
+  user: EmptyObject;
+  object: "list";
+  next_cursor: string | null;
+  has_more: boolean;
+  results: Array<UserObjectResponse>;
+};
 
 export const listUsers = {
   method: "get",
@@ -9219,11 +9219,11 @@ export const listUsers = {
   queryParams: ["start_cursor", "page_size"],
   bodyParams: [],
   path: (): string => `users`,
-} as const
+} as const;
 
 type CreatePageBodyParameters =
   | {
-      parent: { database_id: IdRequest; type?: "database_id" }
+      parent: { database_id: IdRequest; type?: "database_id" };
       properties:
         | Record<
             string,
@@ -9234,44 +9234,44 @@ type CreatePageBodyParameters =
             | {
                 select:
                   | {
-                      id: StringRequest
-                      name?: StringRequest
-                      color?: SelectColor
+                      id: StringRequest;
+                      name?: StringRequest;
+                      color?: SelectColor;
                     }
                   | null
                   | {
-                      name: StringRequest
-                      id?: StringRequest
-                      color?: SelectColor
+                      name: StringRequest;
+                      id?: StringRequest;
+                      color?: SelectColor;
                     }
-                  | null
-                type?: "select"
+                  | null;
+                type?: "select";
               }
             | {
                 multi_select: Array<
                   | {
-                      id: StringRequest
-                      name?: StringRequest
-                      color?: SelectColor
+                      id: StringRequest;
+                      name?: StringRequest;
+                      color?: SelectColor;
                     }
                   | {
-                      name: StringRequest
-                      id?: StringRequest
-                      color?: SelectColor
+                      name: StringRequest;
+                      id?: StringRequest;
+                      color?: SelectColor;
                     }
-                >
-                type?: "multi_select"
+                >;
+                type?: "multi_select";
               }
             | {
                 people: Array<
                   | { id: IdRequest }
                   | {
-                      person: { email?: string }
-                      id: IdRequest
-                      type?: "person"
-                      name?: string | null
-                      avatar_url?: string | null
-                      object?: "user"
+                      person: { email?: string };
+                      id: IdRequest;
+                      type?: "person";
+                      name?: string | null;
+                      avatar_url?: string | null;
+                      object?: "user";
                     }
                   | {
                       bot:
@@ -9279,28 +9279,28 @@ type CreatePageBodyParameters =
                         | {
                             owner:
                               | {
-                                  type: "user"
+                                  type: "user";
                                   user:
                                     | {
-                                        type: "person"
-                                        person: { email: string }
-                                        name: string | null
-                                        avatar_url: string | null
-                                        id: IdRequest
-                                        object: "user"
+                                        type: "person";
+                                        person: { email: string };
+                                        name: string | null;
+                                        avatar_url: string | null;
+                                        id: IdRequest;
+                                        object: "user";
                                       }
-                                    | PartialUserObjectResponse
+                                    | PartialUserObjectResponse;
                                 }
-                              | { type: "workspace"; workspace: true }
-                          }
-                      id: IdRequest
-                      type?: "bot"
-                      name?: string | null
-                      avatar_url?: string | null
-                      object?: "user"
+                              | { type: "workspace"; workspace: true };
+                          };
+                      id: IdRequest;
+                      type?: "bot";
+                      name?: string | null;
+                      avatar_url?: string | null;
+                      object?: "user";
                     }
-                >
-                type?: "people"
+                >;
+                type?: "people";
               }
             | { email: StringRequest | null; type?: "email" }
             | { phone_number: StringRequest | null; type?: "phone_number" }
@@ -9310,17 +9310,17 @@ type CreatePageBodyParameters =
             | {
                 files: Array<
                   | {
-                      file: { url: string; expiry_time?: string }
-                      name: StringRequest
-                      type?: "file"
+                      file: { url: string; expiry_time?: string };
+                      name: StringRequest;
+                      type?: "file";
                     }
                   | {
-                      external: { url: TextRequest }
-                      name: StringRequest
-                      type?: "external"
+                      external: { url: TextRequest };
+                      name: StringRequest;
+                      type?: "external";
                     }
-                >
-                type?: "files"
+                >;
+                type?: "files";
               }
           >
         | Record<
@@ -9337,25 +9337,25 @@ type CreatePageBodyParameters =
             | null
             | Array<
                 | {
-                    id: StringRequest
-                    name?: StringRequest
-                    color?: SelectColor
+                    id: StringRequest;
+                    name?: StringRequest;
+                    color?: SelectColor;
                   }
                 | {
-                    name: StringRequest
-                    id?: StringRequest
-                    color?: SelectColor
+                    name: StringRequest;
+                    id?: StringRequest;
+                    color?: SelectColor;
                   }
               >
             | Array<
                 | { id: IdRequest }
                 | {
-                    person: { email?: string }
-                    id: IdRequest
-                    type?: "person"
-                    name?: string | null
-                    avatar_url?: string | null
-                    object?: "user"
+                    person: { email?: string };
+                    id: IdRequest;
+                    type?: "person";
+                    name?: string | null;
+                    avatar_url?: string | null;
+                    object?: "user";
                   }
                 | {
                     bot:
@@ -9363,25 +9363,25 @@ type CreatePageBodyParameters =
                       | {
                           owner:
                             | {
-                                type: "user"
+                                type: "user";
                                 user:
                                   | {
-                                      type: "person"
-                                      person: { email: string }
-                                      name: string | null
-                                      avatar_url: string | null
-                                      id: IdRequest
-                                      object: "user"
+                                      type: "person";
+                                      person: { email: string };
+                                      name: string | null;
+                                      avatar_url: string | null;
+                                      id: IdRequest;
+                                      object: "user";
                                     }
-                                  | PartialUserObjectResponse
+                                  | PartialUserObjectResponse;
                               }
-                            | { type: "workspace"; workspace: true }
-                        }
-                    id: IdRequest
-                    type?: "bot"
-                    name?: string | null
-                    avatar_url?: string | null
-                    object?: "user"
+                            | { type: "workspace"; workspace: true };
+                        };
+                    id: IdRequest;
+                    type?: "bot";
+                    name?: string | null;
+                    avatar_url?: string | null;
+                    object?: "user";
                   }
               >
             | StringRequest
@@ -9394,45 +9394,45 @@ type CreatePageBodyParameters =
             | Array<{ id: IdRequest }>
             | Array<
                 | {
-                    file: { url: string; expiry_time?: string }
-                    name: StringRequest
-                    type?: "file"
+                    file: { url: string; expiry_time?: string };
+                    name: StringRequest;
+                    type?: "file";
                   }
                 | {
-                    external: { url: TextRequest }
-                    name: StringRequest
-                    type?: "external"
+                    external: { url: TextRequest };
+                    name: StringRequest;
+                    type?: "external";
                   }
               >
-          >
+          >;
       icon?:
         | { emoji: EmojiRequest; type?: "emoji" }
         | null
         | { external: { url: TextRequest }; type?: "external" }
-        | null
-      cover?: { external: { url: TextRequest }; type?: "external" } | null
-      content?: Array<BlockObjectRequest>
-      children?: Array<BlockObjectRequest>
+        | null;
+      cover?: { external: { url: TextRequest }; type?: "external" } | null;
+      content?: Array<BlockObjectRequest>;
+      children?: Array<BlockObjectRequest>;
     }
   | {
-      parent: { page_id: IdRequest; type?: "page_id" }
+      parent: { page_id: IdRequest; type?: "page_id" };
       properties: {
         title?:
           | { title: Array<RichTextItemRequest>; type?: "title" }
-          | Array<RichTextItemRequest>
-      }
+          | Array<RichTextItemRequest>;
+      };
       icon?:
         | { emoji: EmojiRequest; type?: "emoji" }
         | null
         | { external: { url: TextRequest }; type?: "external" }
-        | null
-      cover?: { external: { url: TextRequest }; type?: "external" } | null
-      children?: Array<BlockObjectRequest>
-    }
+        | null;
+      cover?: { external: { url: TextRequest }; type?: "external" } | null;
+      children?: Array<BlockObjectRequest>;
+    };
 
-export type CreatePageParameters = CreatePageBodyParameters
+export type CreatePageParameters = CreatePageBodyParameters;
 
-export type CreatePageResponse = PageObjectResponse | PartialPageObjectResponse
+export type CreatePageResponse = PageObjectResponse | PartialPageObjectResponse;
 
 export const createPage = {
   method: "post",
@@ -9440,15 +9440,15 @@ export const createPage = {
   queryParams: [],
   bodyParams: ["parent", "properties", "icon", "cover", "content", "children"],
   path: (): string => `pages`,
-} as const
+} as const;
 
 type GetPagePathParameters = {
-  page_id: IdRequest
-}
+  page_id: IdRequest;
+};
 
-export type GetPageParameters = GetPagePathParameters
+export type GetPageParameters = GetPagePathParameters;
 
-export type GetPageResponse = PageObjectResponse | PartialPageObjectResponse
+export type GetPageResponse = PageObjectResponse | PartialPageObjectResponse;
 
 export const getPage = {
   method: "get",
@@ -9456,11 +9456,11 @@ export const getPage = {
   queryParams: [],
   bodyParams: [],
   path: (p: GetPagePathParameters): string => `pages/${p.page_id}`,
-} as const
+} as const;
 
 type UpdatePagePathParameters = {
-  page_id: IdRequest
-}
+  page_id: IdRequest;
+};
 
 type UpdatePageBodyParameters = {
   properties?:
@@ -9475,26 +9475,26 @@ type UpdatePageBodyParameters = {
               | { id: StringRequest; name?: StringRequest; color?: SelectColor }
               | null
               | { name: StringRequest; id?: StringRequest; color?: SelectColor }
-              | null
-            type?: "select"
+              | null;
+            type?: "select";
           }
         | {
             multi_select: Array<
               | { id: StringRequest; name?: StringRequest; color?: SelectColor }
               | { name: StringRequest; id?: StringRequest; color?: SelectColor }
-            >
-            type?: "multi_select"
+            >;
+            type?: "multi_select";
           }
         | {
             people: Array<
               | { id: IdRequest }
               | {
-                  person: { email?: string }
-                  id: IdRequest
-                  type?: "person"
-                  name?: string | null
-                  avatar_url?: string | null
-                  object?: "user"
+                  person: { email?: string };
+                  id: IdRequest;
+                  type?: "person";
+                  name?: string | null;
+                  avatar_url?: string | null;
+                  object?: "user";
                 }
               | {
                   bot:
@@ -9502,28 +9502,28 @@ type UpdatePageBodyParameters = {
                     | {
                         owner:
                           | {
-                              type: "user"
+                              type: "user";
                               user:
                                 | {
-                                    type: "person"
-                                    person: { email: string }
-                                    name: string | null
-                                    avatar_url: string | null
-                                    id: IdRequest
-                                    object: "user"
+                                    type: "person";
+                                    person: { email: string };
+                                    name: string | null;
+                                    avatar_url: string | null;
+                                    id: IdRequest;
+                                    object: "user";
                                   }
-                                | PartialUserObjectResponse
+                                | PartialUserObjectResponse;
                             }
-                          | { type: "workspace"; workspace: true }
-                      }
-                  id: IdRequest
-                  type?: "bot"
-                  name?: string | null
-                  avatar_url?: string | null
-                  object?: "user"
+                          | { type: "workspace"; workspace: true };
+                      };
+                  id: IdRequest;
+                  type?: "bot";
+                  name?: string | null;
+                  avatar_url?: string | null;
+                  object?: "user";
                 }
-            >
-            type?: "people"
+            >;
+            type?: "people";
           }
         | { email: StringRequest | null; type?: "email" }
         | { phone_number: StringRequest | null; type?: "phone_number" }
@@ -9533,17 +9533,17 @@ type UpdatePageBodyParameters = {
         | {
             files: Array<
               | {
-                  file: { url: string; expiry_time?: string }
-                  name: StringRequest
-                  type?: "file"
+                  file: { url: string; expiry_time?: string };
+                  name: StringRequest;
+                  type?: "file";
                 }
               | {
-                  external: { url: TextRequest }
-                  name: StringRequest
-                  type?: "external"
+                  external: { url: TextRequest };
+                  name: StringRequest;
+                  type?: "external";
                 }
-            >
-            type?: "files"
+            >;
+            type?: "files";
           }
       >
     | Record<
@@ -9565,12 +9565,12 @@ type UpdatePageBodyParameters = {
         | Array<
             | { id: IdRequest }
             | {
-                person: { email?: string }
-                id: IdRequest
-                type?: "person"
-                name?: string | null
-                avatar_url?: string | null
-                object?: "user"
+                person: { email?: string };
+                id: IdRequest;
+                type?: "person";
+                name?: string | null;
+                avatar_url?: string | null;
+                object?: "user";
               }
             | {
                 bot:
@@ -9578,25 +9578,25 @@ type UpdatePageBodyParameters = {
                   | {
                       owner:
                         | {
-                            type: "user"
+                            type: "user";
                             user:
                               | {
-                                  type: "person"
-                                  person: { email: string }
-                                  name: string | null
-                                  avatar_url: string | null
-                                  id: IdRequest
-                                  object: "user"
+                                  type: "person";
+                                  person: { email: string };
+                                  name: string | null;
+                                  avatar_url: string | null;
+                                  id: IdRequest;
+                                  object: "user";
                                 }
-                              | PartialUserObjectResponse
+                              | PartialUserObjectResponse;
                           }
-                        | { type: "workspace"; workspace: true }
-                    }
-                id: IdRequest
-                type?: "bot"
-                name?: string | null
-                avatar_url?: string | null
-                object?: "user"
+                        | { type: "workspace"; workspace: true };
+                    };
+                id: IdRequest;
+                type?: "bot";
+                name?: string | null;
+                avatar_url?: string | null;
+                object?: "user";
               }
           >
         | StringRequest
@@ -9609,30 +9609,30 @@ type UpdatePageBodyParameters = {
         | Array<{ id: IdRequest }>
         | Array<
             | {
-                file: { url: string; expiry_time?: string }
-                name: StringRequest
-                type?: "file"
+                file: { url: string; expiry_time?: string };
+                name: StringRequest;
+                type?: "file";
               }
             | {
-                external: { url: TextRequest }
-                name: StringRequest
-                type?: "external"
+                external: { url: TextRequest };
+                name: StringRequest;
+                type?: "external";
               }
           >
-      >
+      >;
   icon?:
     | { emoji: EmojiRequest; type?: "emoji" }
     | null
     | { external: { url: TextRequest }; type?: "external" }
-    | null
-  cover?: { external: { url: TextRequest }; type?: "external" } | null
-  archived?: boolean
-}
+    | null;
+  cover?: { external: { url: TextRequest }; type?: "external" } | null;
+  archived?: boolean;
+};
 
 export type UpdatePageParameters = UpdatePagePathParameters &
-  UpdatePageBodyParameters
+  UpdatePageBodyParameters;
 
-export type UpdatePageResponse = PageObjectResponse | PartialPageObjectResponse
+export type UpdatePageResponse = PageObjectResponse | PartialPageObjectResponse;
 
 export const updatePage = {
   method: "patch",
@@ -9640,24 +9640,24 @@ export const updatePage = {
   queryParams: [],
   bodyParams: ["properties", "icon", "cover", "archived"],
   path: (p: UpdatePagePathParameters): string => `pages/${p.page_id}`,
-} as const
+} as const;
 
 type GetPagePropertyPathParameters = {
-  page_id: IdRequest
-  property_id: string
-}
+  page_id: IdRequest;
+  property_id: string;
+};
 
 type GetPagePropertyQueryParameters = {
-  start_cursor?: string
-  page_size?: number
-}
+  start_cursor?: string;
+  page_size?: number;
+};
 
 export type GetPagePropertyParameters = GetPagePropertyPathParameters &
-  GetPagePropertyQueryParameters
+  GetPagePropertyQueryParameters;
 
 export type GetPagePropertyResponse =
   | PropertyItemObjectResponse
-  | PropertyItemListResponse
+  | PropertyItemListResponse;
 
 export const getPageProperty = {
   method: "get",
@@ -9666,15 +9666,15 @@ export const getPageProperty = {
   bodyParams: [],
   path: (p: GetPagePropertyPathParameters): string =>
     `pages/${p.page_id}/properties/${p.property_id}`,
-} as const
+} as const;
 
 type GetBlockPathParameters = {
-  block_id: IdRequest
-}
+  block_id: IdRequest;
+};
 
-export type GetBlockParameters = GetBlockPathParameters
+export type GetBlockParameters = GetBlockPathParameters;
 
-export type GetBlockResponse = PartialBlockObjectResponse | BlockObjectResponse
+export type GetBlockResponse = PartialBlockObjectResponse | BlockObjectResponse;
 
 export const getBlock = {
   method: "get",
@@ -9682,183 +9682,183 @@ export const getBlock = {
   queryParams: [],
   bodyParams: [],
   path: (p: GetBlockPathParameters): string => `blocks/${p.block_id}`,
-} as const
+} as const;
 
 type UpdateBlockPathParameters = {
-  block_id: IdRequest
-}
+  block_id: IdRequest;
+};
 
 type UpdateBlockBodyParameters =
   | {
-      embed: { url?: string; caption?: Array<RichTextItemRequest> }
-      type?: "embed"
-      archived?: boolean
+      embed: { url?: string; caption?: Array<RichTextItemRequest> };
+      type?: "embed";
+      archived?: boolean;
     }
   | {
-      bookmark: { url?: string; caption?: Array<RichTextItemRequest> }
-      type?: "bookmark"
-      archived?: boolean
+      bookmark: { url?: string; caption?: Array<RichTextItemRequest> };
+      type?: "bookmark";
+      archived?: boolean;
     }
   | {
       image: {
-        caption?: Array<RichTextItemRequest>
-        external?: { url: TextRequest }
-      }
-      type?: "image"
-      archived?: boolean
+        caption?: Array<RichTextItemRequest>;
+        external?: { url: TextRequest };
+      };
+      type?: "image";
+      archived?: boolean;
     }
   | {
       video: {
-        caption?: Array<RichTextItemRequest>
-        external?: { url: TextRequest }
-      }
-      type?: "video"
-      archived?: boolean
+        caption?: Array<RichTextItemRequest>;
+        external?: { url: TextRequest };
+      };
+      type?: "video";
+      archived?: boolean;
     }
   | {
       pdf: {
-        caption?: Array<RichTextItemRequest>
-        external?: { url: TextRequest }
-      }
-      type?: "pdf"
-      archived?: boolean
+        caption?: Array<RichTextItemRequest>;
+        external?: { url: TextRequest };
+      };
+      type?: "pdf";
+      archived?: boolean;
     }
   | {
       file: {
-        caption?: Array<RichTextItemRequest>
-        external?: { url: TextRequest }
-      }
-      type?: "file"
-      archived?: boolean
+        caption?: Array<RichTextItemRequest>;
+        external?: { url: TextRequest };
+      };
+      type?: "file";
+      archived?: boolean;
     }
   | {
       audio: {
-        caption?: Array<RichTextItemRequest>
-        external?: { url: TextRequest }
-      }
-      type?: "audio"
-      archived?: boolean
+        caption?: Array<RichTextItemRequest>;
+        external?: { url: TextRequest };
+      };
+      type?: "audio";
+      archived?: boolean;
     }
   | {
       code: {
-        rich_text?: Array<RichTextItemRequest>
-        language?: LanguageRequest
-        caption?: Array<RichTextItemRequest>
-      }
-      type?: "code"
-      archived?: boolean
+        rich_text?: Array<RichTextItemRequest>;
+        language?: LanguageRequest;
+        caption?: Array<RichTextItemRequest>;
+      };
+      type?: "code";
+      archived?: boolean;
     }
   | { equation: { expression: string }; type?: "equation"; archived?: boolean }
   | { divider: EmptyObject; type?: "divider"; archived?: boolean }
   | { breadcrumb: EmptyObject; type?: "breadcrumb"; archived?: boolean }
   | {
-      table_of_contents: { color?: ApiColor }
-      type?: "table_of_contents"
-      archived?: boolean
+      table_of_contents: { color?: ApiColor };
+      type?: "table_of_contents";
+      archived?: boolean;
     }
   | {
       link_to_page:
         | { page_id: IdRequest; type?: "page_id" }
-        | { database_id: IdRequest; type?: "database_id" }
-      type?: "link_to_page"
-      archived?: boolean
+        | { database_id: IdRequest; type?: "database_id" };
+      type?: "link_to_page";
+      archived?: boolean;
     }
   | {
-      table_row: { cells: Array<Array<RichTextItemRequest>> }
-      type?: "table_row"
-      archived?: boolean
+      table_row: { cells: Array<Array<RichTextItemRequest>> };
+      type?: "table_row";
+      archived?: boolean;
     }
   | {
-      heading_1: { rich_text: Array<RichTextItemRequest>; color?: ApiColor }
-      type?: "heading_1"
-      archived?: boolean
+      heading_1: { rich_text: Array<RichTextItemRequest>; color?: ApiColor };
+      type?: "heading_1";
+      archived?: boolean;
     }
   | {
-      heading_2: { rich_text: Array<RichTextItemRequest>; color?: ApiColor }
-      type?: "heading_2"
-      archived?: boolean
+      heading_2: { rich_text: Array<RichTextItemRequest>; color?: ApiColor };
+      type?: "heading_2";
+      archived?: boolean;
     }
   | {
-      heading_3: { rich_text: Array<RichTextItemRequest>; color?: ApiColor }
-      type?: "heading_3"
-      archived?: boolean
+      heading_3: { rich_text: Array<RichTextItemRequest>; color?: ApiColor };
+      type?: "heading_3";
+      archived?: boolean;
     }
   | {
-      paragraph: { rich_text: Array<RichTextItemRequest>; color?: ApiColor }
-      type?: "paragraph"
-      archived?: boolean
+      paragraph: { rich_text: Array<RichTextItemRequest>; color?: ApiColor };
+      type?: "paragraph";
+      archived?: boolean;
     }
   | {
       bulleted_list_item: {
-        rich_text: Array<RichTextItemRequest>
-        color?: ApiColor
-      }
-      type?: "bulleted_list_item"
-      archived?: boolean
+        rich_text: Array<RichTextItemRequest>;
+        color?: ApiColor;
+      };
+      type?: "bulleted_list_item";
+      archived?: boolean;
     }
   | {
       numbered_list_item: {
-        rich_text: Array<RichTextItemRequest>
-        color?: ApiColor
-      }
-      type?: "numbered_list_item"
-      archived?: boolean
+        rich_text: Array<RichTextItemRequest>;
+        color?: ApiColor;
+      };
+      type?: "numbered_list_item";
+      archived?: boolean;
     }
   | {
-      quote: { rich_text: Array<RichTextItemRequest>; color?: ApiColor }
-      type?: "quote"
-      archived?: boolean
+      quote: { rich_text: Array<RichTextItemRequest>; color?: ApiColor };
+      type?: "quote";
+      archived?: boolean;
     }
   | {
       to_do: {
-        rich_text?: Array<RichTextItemRequest>
-        checked?: boolean
-        color?: ApiColor
-      }
-      type?: "to_do"
-      archived?: boolean
+        rich_text?: Array<RichTextItemRequest>;
+        checked?: boolean;
+        color?: ApiColor;
+      };
+      type?: "to_do";
+      archived?: boolean;
     }
   | {
-      toggle: { rich_text: Array<RichTextItemRequest>; color?: ApiColor }
-      type?: "toggle"
-      archived?: boolean
+      toggle: { rich_text: Array<RichTextItemRequest>; color?: ApiColor };
+      type?: "toggle";
+      archived?: boolean;
     }
   | {
-      template: { rich_text: Array<RichTextItemRequest> }
-      type?: "template"
-      archived?: boolean
+      template: { rich_text: Array<RichTextItemRequest> };
+      type?: "template";
+      archived?: boolean;
     }
   | {
       callout: {
-        rich_text?: Array<RichTextItemRequest>
+        rich_text?: Array<RichTextItemRequest>;
         icon?:
           | { emoji: EmojiRequest; type?: "emoji" }
-          | { external: { url: TextRequest }; type?: "external" }
-        color?: ApiColor
-      }
-      type?: "callout"
-      archived?: boolean
+          | { external: { url: TextRequest }; type?: "external" };
+        color?: ApiColor;
+      };
+      type?: "callout";
+      archived?: boolean;
     }
   | {
       synced_block: {
-        synced_from: { block_id: IdRequest; type?: "block_id" } | null
-      }
-      type?: "synced_block"
-      archived?: boolean
+        synced_from: { block_id: IdRequest; type?: "block_id" } | null;
+      };
+      type?: "synced_block";
+      archived?: boolean;
     }
   | {
-      table: { has_column_header?: boolean; has_row_header?: boolean }
-      type?: "table"
-      archived?: boolean
+      table: { has_column_header?: boolean; has_row_header?: boolean };
+      type?: "table";
+      archived?: boolean;
     }
-  | { archived?: boolean }
+  | { archived?: boolean };
 
 export type UpdateBlockParameters = UpdateBlockPathParameters &
-  UpdateBlockBodyParameters
+  UpdateBlockBodyParameters;
 
 export type UpdateBlockResponse =
   | PartialBlockObjectResponse
-  | BlockObjectResponse
+  | BlockObjectResponse;
 
 export const updateBlock = {
   method: "patch",
@@ -9896,17 +9896,17 @@ export const updateBlock = {
     "table",
   ],
   path: (p: UpdateBlockPathParameters): string => `blocks/${p.block_id}`,
-} as const
+} as const;
 
 type DeleteBlockPathParameters = {
-  block_id: IdRequest
-}
+  block_id: IdRequest;
+};
 
-export type DeleteBlockParameters = DeleteBlockPathParameters
+export type DeleteBlockParameters = DeleteBlockPathParameters;
 
 export type DeleteBlockResponse =
   | PartialBlockObjectResponse
-  | BlockObjectResponse
+  | BlockObjectResponse;
 
 export const deleteBlock = {
   method: "delete",
@@ -9914,28 +9914,28 @@ export const deleteBlock = {
   queryParams: [],
   bodyParams: [],
   path: (p: DeleteBlockPathParameters): string => `blocks/${p.block_id}`,
-} as const
+} as const;
 
 type ListBlockChildrenPathParameters = {
-  block_id: IdRequest
-}
+  block_id: IdRequest;
+};
 
 type ListBlockChildrenQueryParameters = {
-  start_cursor?: string
-  page_size?: number
-}
+  start_cursor?: string;
+  page_size?: number;
+};
 
 export type ListBlockChildrenParameters = ListBlockChildrenPathParameters &
-  ListBlockChildrenQueryParameters
+  ListBlockChildrenQueryParameters;
 
 export type ListBlockChildrenResponse = {
-  type: "block"
-  block: EmptyObject
-  object: "list"
-  next_cursor: string | null
-  has_more: boolean
-  results: Array<PartialBlockObjectResponse | BlockObjectResponse>
-}
+  type: "block";
+  block: EmptyObject;
+  object: "list";
+  next_cursor: string | null;
+  has_more: boolean;
+  results: Array<PartialBlockObjectResponse | BlockObjectResponse>;
+};
 
 export const listBlockChildren = {
   method: "get",
@@ -9944,25 +9944,27 @@ export const listBlockChildren = {
   bodyParams: [],
   path: (p: ListBlockChildrenPathParameters): string =>
     `blocks/${p.block_id}/children`,
-} as const
+} as const;
 
 type AppendBlockChildrenPathParameters = {
-  block_id: IdRequest
-}
+  block_id: IdRequest;
+};
 
-type AppendBlockChildrenBodyParameters = { children: Array<BlockObjectRequest> }
+type AppendBlockChildrenBodyParameters = {
+  children: Array<BlockObjectRequest>;
+};
 
 export type AppendBlockChildrenParameters = AppendBlockChildrenPathParameters &
-  AppendBlockChildrenBodyParameters
+  AppendBlockChildrenBodyParameters;
 
 export type AppendBlockChildrenResponse = {
-  type: "block"
-  block: EmptyObject
-  object: "list"
-  next_cursor: string | null
-  has_more: boolean
-  results: Array<PartialBlockObjectResponse | BlockObjectResponse>
-}
+  type: "block";
+  block: EmptyObject;
+  object: "list";
+  next_cursor: string | null;
+  has_more: boolean;
+  results: Array<PartialBlockObjectResponse | BlockObjectResponse>;
+};
 
 export const appendBlockChildren = {
   method: "patch",
@@ -9971,17 +9973,17 @@ export const appendBlockChildren = {
   bodyParams: ["children"],
   path: (p: AppendBlockChildrenPathParameters): string =>
     `blocks/${p.block_id}/children`,
-} as const
+} as const;
 
 type GetDatabasePathParameters = {
-  database_id: IdRequest
-}
+  database_id: IdRequest;
+};
 
-export type GetDatabaseParameters = GetDatabasePathParameters
+export type GetDatabaseParameters = GetDatabasePathParameters;
 
 export type GetDatabaseResponse =
   | PartialDatabaseObjectResponse
-  | DatabaseObjectResponse
+  | DatabaseObjectResponse;
 
 export const getDatabase = {
   method: "get",
@@ -9989,21 +9991,21 @@ export const getDatabase = {
   queryParams: [],
   bodyParams: [],
   path: (p: GetDatabasePathParameters): string => `databases/${p.database_id}`,
-} as const
+} as const;
 
 type UpdateDatabasePathParameters = {
-  database_id: IdRequest
-}
+  database_id: IdRequest;
+};
 
 type UpdateDatabaseBodyParameters = {
-  title?: Array<RichTextItemRequest>
-  description?: Array<RichTextItemRequest>
+  title?: Array<RichTextItemRequest>;
+  description?: Array<RichTextItemRequest>;
   icon?:
     | { emoji: EmojiRequest; type?: "emoji" }
     | null
     | { external: { url: TextRequest }; type?: "external" }
-    | null
-  cover?: { external: { url: TextRequest }; type?: "external" } | null
+    | null;
+  cover?: { external: { url: TextRequest }; type?: "external" } | null;
   properties?: Record<
     string,
     | { number: { format?: NumberFormat }; type?: "number"; name?: string }
@@ -10015,10 +10017,10 @@ type UpdateDatabaseBodyParameters = {
           options?: Array<
             | { id: StringRequest; name?: StringRequest; color?: SelectColor }
             | { name: StringRequest; id?: StringRequest; color?: SelectColor }
-          >
-        }
-        type?: "select"
-        name?: string
+          >;
+        };
+        type?: "select";
+        name?: string;
       }
     | null
     | {
@@ -10026,10 +10028,10 @@ type UpdateDatabaseBodyParameters = {
           options?: Array<
             | { id: StringRequest; name?: StringRequest; color?: SelectColor }
             | { name: StringRequest; id?: StringRequest; color?: SelectColor }
-          >
-        }
-        type?: "multi_select"
-        name?: string
+          >;
+        };
+        type?: "multi_select";
+        name?: string;
       }
     | null
     | { status: EmptyObject; type?: "status"; name?: string }
@@ -10037,51 +10039,51 @@ type UpdateDatabaseBodyParameters = {
     | {
         relation:
           | {
-              single_property: EmptyObject
-              database_id: IdRequest
-              type?: "single_property"
+              single_property: EmptyObject;
+              database_id: IdRequest;
+              type?: "single_property";
             }
           | {
-              dual_property: Record<string, never>
-              database_id: IdRequest
-              type?: "dual_property"
-            }
-        type?: "relation"
-        name?: string
+              dual_property: Record<string, never>;
+              database_id: IdRequest;
+              type?: "dual_property";
+            };
+        type?: "relation";
+        name?: string;
       }
     | null
     | {
         rollup:
           | {
-              rollup_property_name: string
-              relation_property_name: string
-              function: RollupFunction
-              rollup_property_id?: string
-              relation_property_id?: string
+              rollup_property_name: string;
+              relation_property_name: string;
+              function: RollupFunction;
+              rollup_property_id?: string;
+              relation_property_id?: string;
             }
           | {
-              rollup_property_name: string
-              relation_property_id: string
-              function: RollupFunction
-              relation_property_name?: string
-              rollup_property_id?: string
+              rollup_property_name: string;
+              relation_property_id: string;
+              function: RollupFunction;
+              relation_property_name?: string;
+              rollup_property_id?: string;
             }
           | {
-              relation_property_name: string
-              rollup_property_id: string
-              function: RollupFunction
-              rollup_property_name?: string
-              relation_property_id?: string
+              relation_property_name: string;
+              rollup_property_id: string;
+              function: RollupFunction;
+              rollup_property_name?: string;
+              relation_property_id?: string;
             }
           | {
-              rollup_property_id: string
-              relation_property_id: string
-              function: RollupFunction
-              rollup_property_name?: string
-              relation_property_name?: string
-            }
-        type?: "rollup"
-        name?: string
+              rollup_property_id: string;
+              relation_property_id: string;
+              function: RollupFunction;
+              rollup_property_name?: string;
+              relation_property_name?: string;
+            };
+        type?: "rollup";
+        name?: string;
       }
     | null
     | { title: EmptyObject; type?: "title"; name?: string }
@@ -10109,24 +10111,24 @@ type UpdateDatabaseBodyParameters = {
     | { last_edited_by: EmptyObject; type?: "last_edited_by"; name?: string }
     | null
     | {
-        last_edited_time: EmptyObject
-        type?: "last_edited_time"
-        name?: string
+        last_edited_time: EmptyObject;
+        type?: "last_edited_time";
+        name?: string;
       }
     | null
     | { name: string }
     | null
-  >
-  is_inline?: boolean
-  archived?: boolean
-}
+  >;
+  is_inline?: boolean;
+  archived?: boolean;
+};
 
 export type UpdateDatabaseParameters = UpdateDatabasePathParameters &
-  UpdateDatabaseBodyParameters
+  UpdateDatabaseBodyParameters;
 
 export type UpdateDatabaseResponse =
   | PartialDatabaseObjectResponse
-  | DatabaseObjectResponse
+  | DatabaseObjectResponse;
 
 export const updateDatabase = {
   method: "patch",
@@ -10143,20 +10145,20 @@ export const updateDatabase = {
   ],
   path: (p: UpdateDatabasePathParameters): string =>
     `databases/${p.database_id}`,
-} as const
+} as const;
 
 type QueryDatabasePathParameters = {
-  database_id: IdRequest
-}
+  database_id: IdRequest;
+};
 
 type QueryDatabaseBodyParameters = {
   sorts?: Array<
     | { property: string; direction: "ascending" | "descending" }
     | {
-        timestamp: "created_time" | "last_edited_time"
-        direction: "ascending" | "descending"
+        timestamp: "created_time" | "last_edited_time";
+        direction: "ascending" | "descending";
       }
-  >
+  >;
   filter?:
     | {
         or: Array<
@@ -10165,7 +10167,7 @@ type QueryDatabaseBodyParameters = {
           | TimestampLastEditedTimeFilter
           | { or: Array<PropertyFilter> }
           | { and: Array<PropertyFilter> }
-        >
+        >;
       }
     | {
         and: Array<
@@ -10174,27 +10176,27 @@ type QueryDatabaseBodyParameters = {
           | TimestampLastEditedTimeFilter
           | { or: Array<PropertyFilter> }
           | { and: Array<PropertyFilter> }
-        >
+        >;
       }
     | PropertyFilter
     | TimestampCreatedTimeFilter
-    | TimestampLastEditedTimeFilter
-  start_cursor?: string
-  page_size?: number
-  archived?: boolean
-}
+    | TimestampLastEditedTimeFilter;
+  start_cursor?: string;
+  page_size?: number;
+  archived?: boolean;
+};
 
 export type QueryDatabaseParameters = QueryDatabasePathParameters &
-  QueryDatabaseBodyParameters
+  QueryDatabaseBodyParameters;
 
 export type QueryDatabaseResponse = {
-  type: "page"
-  page: EmptyObject
-  object: "list"
-  next_cursor: string | null
-  has_more: boolean
-  results: Array<PageObjectResponse | PartialPageObjectResponse>
-}
+  type: "page";
+  page: EmptyObject;
+  object: "list";
+  next_cursor: string | null;
+  has_more: boolean;
+  results: Array<PageObjectResponse | PartialPageObjectResponse>;
+};
 
 export const queryDatabase = {
   method: "post",
@@ -10203,23 +10205,23 @@ export const queryDatabase = {
   bodyParams: ["sorts", "filter", "start_cursor", "page_size", "archived"],
   path: (p: QueryDatabasePathParameters): string =>
     `databases/${p.database_id}/query`,
-} as const
+} as const;
 
 type ListDatabasesQueryParameters = {
-  start_cursor?: string
-  page_size?: number
-}
+  start_cursor?: string;
+  page_size?: number;
+};
 
-export type ListDatabasesParameters = ListDatabasesQueryParameters
+export type ListDatabasesParameters = ListDatabasesQueryParameters;
 
 export type ListDatabasesResponse = {
-  type: "database"
-  database: EmptyObject
-  object: "list"
-  next_cursor: string | null
-  has_more: boolean
-  results: Array<PartialDatabaseObjectResponse | DatabaseObjectResponse>
-}
+  type: "database";
+  database: EmptyObject;
+  object: "list";
+  next_cursor: string | null;
+  has_more: boolean;
+  results: Array<PartialDatabaseObjectResponse | DatabaseObjectResponse>;
+};
 
 export const listDatabases = {
   method: "get",
@@ -10227,72 +10229,72 @@ export const listDatabases = {
   queryParams: ["start_cursor", "page_size"],
   bodyParams: [],
   path: (): string => `databases`,
-} as const
+} as const;
 
 type CreateDatabaseBodyParameters = {
-  parent: { page_id: IdRequest; type?: "page_id" }
+  parent: { page_id: IdRequest; type?: "page_id" };
   properties: Record<
     string,
     | { number: { format?: NumberFormat }; type?: "number" }
     | { formula: { expression?: string }; type?: "formula" }
     | {
         select: {
-          options?: Array<{ name: StringRequest; color?: SelectColor }>
-        }
-        type?: "select"
+          options?: Array<{ name: StringRequest; color?: SelectColor }>;
+        };
+        type?: "select";
       }
     | {
         multi_select: {
-          options?: Array<{ name: StringRequest; color?: SelectColor }>
-        }
-        type?: "multi_select"
+          options?: Array<{ name: StringRequest; color?: SelectColor }>;
+        };
+        type?: "multi_select";
       }
     | { status: EmptyObject; type?: "status" }
     | {
         relation:
           | {
-              single_property: EmptyObject
-              database_id: IdRequest
-              type?: "single_property"
+              single_property: EmptyObject;
+              database_id: IdRequest;
+              type?: "single_property";
             }
           | {
-              dual_property: Record<string, never>
-              database_id: IdRequest
-              type?: "dual_property"
-            }
-        type?: "relation"
+              dual_property: Record<string, never>;
+              database_id: IdRequest;
+              type?: "dual_property";
+            };
+        type?: "relation";
       }
     | {
         rollup:
           | {
-              rollup_property_name: string
-              relation_property_name: string
-              function: RollupFunction
-              rollup_property_id?: string
-              relation_property_id?: string
+              rollup_property_name: string;
+              relation_property_name: string;
+              function: RollupFunction;
+              rollup_property_id?: string;
+              relation_property_id?: string;
             }
           | {
-              rollup_property_name: string
-              relation_property_id: string
-              function: RollupFunction
-              relation_property_name?: string
-              rollup_property_id?: string
+              rollup_property_name: string;
+              relation_property_id: string;
+              function: RollupFunction;
+              relation_property_name?: string;
+              rollup_property_id?: string;
             }
           | {
-              relation_property_name: string
-              rollup_property_id: string
-              function: RollupFunction
-              rollup_property_name?: string
-              relation_property_id?: string
+              relation_property_name: string;
+              rollup_property_id: string;
+              function: RollupFunction;
+              rollup_property_name?: string;
+              relation_property_id?: string;
             }
           | {
-              rollup_property_id: string
-              relation_property_id: string
-              function: RollupFunction
-              rollup_property_name?: string
-              relation_property_name?: string
-            }
-        type?: "rollup"
+              rollup_property_id: string;
+              relation_property_id: string;
+              function: RollupFunction;
+              rollup_property_name?: string;
+              relation_property_name?: string;
+            };
+        type?: "rollup";
       }
     | { title: EmptyObject; type?: "title" }
     | { rich_text: EmptyObject; type?: "rich_text" }
@@ -10307,23 +10309,23 @@ type CreateDatabaseBodyParameters = {
     | { created_time: EmptyObject; type?: "created_time" }
     | { last_edited_by: EmptyObject; type?: "last_edited_by" }
     | { last_edited_time: EmptyObject; type?: "last_edited_time" }
-  >
+  >;
   icon?:
     | { emoji: EmojiRequest; type?: "emoji" }
     | null
     | { external: { url: TextRequest }; type?: "external" }
-    | null
-  cover?: { external: { url: TextRequest }; type?: "external" } | null
-  title?: Array<RichTextItemRequest>
-  description?: Array<RichTextItemRequest>
-  is_inline?: boolean
-}
+    | null;
+  cover?: { external: { url: TextRequest }; type?: "external" } | null;
+  title?: Array<RichTextItemRequest>;
+  description?: Array<RichTextItemRequest>;
+  is_inline?: boolean;
+};
 
-export type CreateDatabaseParameters = CreateDatabaseBodyParameters
+export type CreateDatabaseParameters = CreateDatabaseBodyParameters;
 
 export type CreateDatabaseResponse =
   | PartialDatabaseObjectResponse
-  | DatabaseObjectResponse
+  | DatabaseObjectResponse;
 
 export const createDatabase = {
   method: "post",
@@ -10339,34 +10341,34 @@ export const createDatabase = {
     "is_inline",
   ],
   path: (): string => `databases`,
-} as const
+} as const;
 
 type SearchBodyParameters = {
   sort?: {
-    timestamp: "last_edited_time"
-    direction: "ascending" | "descending"
-  }
-  query?: string
-  start_cursor?: string
-  page_size?: number
-  filter?: { property: "object"; value: "page" | "database" }
-}
+    timestamp: "last_edited_time";
+    direction: "ascending" | "descending";
+  };
+  query?: string;
+  start_cursor?: string;
+  page_size?: number;
+  filter?: { property: "object"; value: "page" | "database" };
+};
 
-export type SearchParameters = SearchBodyParameters
+export type SearchParameters = SearchBodyParameters;
 
 export type SearchResponse = {
-  type: "page_or_database"
-  page_or_database: EmptyObject
-  object: "list"
-  next_cursor: string | null
-  has_more: boolean
+  type: "page_or_database";
+  page_or_database: EmptyObject;
+  object: "list";
+  next_cursor: string | null;
+  has_more: boolean;
   results: Array<
     | PageObjectResponse
     | PartialPageObjectResponse
     | PartialDatabaseObjectResponse
     | DatabaseObjectResponse
-  >
-}
+  >;
+};
 
 export const search = {
   method: "post",
@@ -10374,20 +10376,20 @@ export const search = {
   queryParams: [],
   bodyParams: ["sort", "query", "start_cursor", "page_size", "filter"],
   path: (): string => `search`,
-} as const
+} as const;
 
 type CreateCommentBodyParameters =
   | {
-      parent: { page_id: IdRequest; type?: "page_id" }
-      rich_text: Array<RichTextItemRequest>
+      parent: { page_id: IdRequest; type?: "page_id" };
+      rich_text: Array<RichTextItemRequest>;
     }
-  | { discussion_id: IdRequest; rich_text: Array<RichTextItemRequest> }
+  | { discussion_id: IdRequest; rich_text: Array<RichTextItemRequest> };
 
-export type CreateCommentParameters = CreateCommentBodyParameters
+export type CreateCommentParameters = CreateCommentBodyParameters;
 
 export type CreateCommentResponse =
   | CommentObjectResponse
-  | PartialCommentObjectResponse
+  | PartialCommentObjectResponse;
 
 export const createComment = {
   method: "post",
@@ -10395,24 +10397,24 @@ export const createComment = {
   queryParams: [],
   bodyParams: ["parent", "rich_text", "discussion_id"],
   path: (): string => `comments`,
-} as const
+} as const;
 
 type ListCommentsQueryParameters = {
-  block_id: IdRequest
-  start_cursor?: string
-  page_size?: number
-}
+  block_id: IdRequest;
+  start_cursor?: string;
+  page_size?: number;
+};
 
-export type ListCommentsParameters = ListCommentsQueryParameters
+export type ListCommentsParameters = ListCommentsQueryParameters;
 
 export type ListCommentsResponse = {
-  type: "comment"
-  comment: EmptyObject
-  object: "list"
-  next_cursor: string | null
-  has_more: boolean
-  results: Array<CommentObjectResponse>
-}
+  type: "comment";
+  comment: EmptyObject;
+  object: "list";
+  next_cursor: string | null;
+  has_more: boolean;
+  results: Array<CommentObjectResponse>;
+};
 
 export const listComments = {
   method: "get",
@@ -10420,4 +10422,4 @@ export const listComments = {
   queryParams: ["block_id", "start_cursor", "page_size"],
   bodyParams: [],
   path: (): string => `comments`,
-} as const
+} as const;

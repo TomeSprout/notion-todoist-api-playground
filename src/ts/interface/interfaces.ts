@@ -1,7 +1,7 @@
 import {
   PageObjectResponse,
   PartialPageObjectResponse,
-  GetPagePropertyResponse
+  GetPagePropertyResponse,
 } from "../type/types";
 
 interface NotionTasksPayload {
@@ -10,16 +10,20 @@ interface NotionTasksPayload {
     id: string;
     created_time: string;
     last_edited_time: string;
-    created_by: { object: string; id: string; };
-    last_edited_by: { object: string; id: string; };
-    cover?: { type: string; external: { url: string; } } | null;
-    icon?: { type: string; external: { url: string; } } | null;
-    parent: { type: string; database_id: string; };
+    created_by: { object: string; id: string };
+    last_edited_by: { object: string; id: string };
+    cover?: { type: string; external: { url: string } } | null;
+    icon?: { type: string; external: { url: string } } | null;
+    parent: { type: string; database_id: string };
     archived: boolean;
-    properties: { Desc: { id: string; }; Date: { id: string; }; Task: { id: string; } };
+    properties: {
+      Desc: { id: string };
+      Date: { id: string };
+      Task: { id: string };
+    };
     url: string;
     is_inline?: boolean;
-  }
+  };
 }
 
 interface PropertyItem {
@@ -31,8 +35,8 @@ interface PropertyItem {
     text: {};
     annotations?: {};
     plain_text: string;
-    href?: null
-  }
+    href?: null;
+  };
 }
 
 export interface Cursor {
@@ -46,7 +50,12 @@ export interface NotionQuery {
 
 interface PromiseComplete {
   notion(): Promise<
-    Array<{ pageId: string; task: string; description: string; dueDate: object | string }>
+    Array<{
+      pageId: string;
+      task: string;
+      description: string;
+      dueDate: object | string;
+    }>
   >;
 }
 

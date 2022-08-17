@@ -91,11 +91,10 @@ export const notion = async () => {
 // Otherwise, it will return a single property item.
 
 const getPropertyValue = async ({ pageId, propertyId }: PropertyValue) => {
-  const propertyItem =
-    await notionClient.pages.properties.retrieve({
-      page_id: pageId,
-      property_id: propertyId,
-    });
+  const propertyItem = await notionClient.pages.properties.retrieve({
+    page_id: pageId,
+    property_id: propertyId,
+  });
   if (propertyItem.object === "property_item") {
     return propertyItem;
   }
@@ -105,12 +104,11 @@ const getPropertyValue = async ({ pageId, propertyId }: PropertyValue) => {
   const results = propertyItem.results;
 
   while (nextCursor !== null) {
-    const propertyItem =
-      await notionClient.pages.properties.retrieve({
-        page_id: pageId,
-        property_id: propertyId,
-        start_cursor: nextCursor,
-      });
+    const propertyItem = await notionClient.pages.properties.retrieve({
+      page_id: pageId,
+      property_id: propertyId,
+      start_cursor: nextCursor,
+    });
 
     nextCursor = propertyItem.next_cursor;
     results.push(...propertyItem.results);
