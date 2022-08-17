@@ -1,4 +1,8 @@
-import { PageObjectResponse, PartialPageObjectResponse } from "../type/types";
+import {
+  PageObjectResponse,
+  PartialPageObjectResponse,
+  GetPagePropertyResponse
+} from "../type/types";
 
 interface NotionTasksPayload {
   [index: number]: {
@@ -31,9 +35,13 @@ interface PropertyItem {
   }
 }
 
+export interface Cursor {
+  cursor: string | null | undefined;
+}
+
 export interface NotionQuery {
   results: (PageObjectResponse | PartialPageObjectResponse)[];
-  next_cursor: string | null;
+  next_cursor: string | null | undefined;
 }
 
 interface PromiseComplete {
@@ -45,6 +53,10 @@ interface PromiseComplete {
 export interface PropertyValue {
   pageId: string;
   propertyId: string;
+}
+
+export interface GetPagePropertyResponseInterface {
+  propertyItem: GetPagePropertyResponse;
 }
 
 // interface PromisePayload {

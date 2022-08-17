@@ -3,8 +3,17 @@
 import { Client } from "@notionhq/client";
 import dotenv from "dotenv";
 
-import { GetPagePropertyResponse } from "../ts/type/types"
-import { NotionQuery, PropertyValue } from "../ts/interface/interfaces";
+import {
+  GetPagePropertyResponse,
+  PartialPageObjectResponse,
+  PropertyItemObjectResponse,
+} from "../ts/type/types";
+import {
+  NotionQuery,
+  PropertyValue,
+  Cursor,
+  GetPagePropertyResponseInterface,
+} from "../ts/interface/interfaces";
 
 dotenv.config();
 
@@ -14,7 +23,7 @@ const databaseId: string = process.env.NOTION_DATABASE_ID as string;
 //Gets tasks from the database.
 export const notion = async () => {
   const pages = [];
-  let cursor = undefined;
+  let cursor: string | null | undefined = undefined;
 
   while (true) {
     const { results, next_cursor }: NotionQuery =
@@ -82,24 +91,26 @@ export const notion = async () => {
 // Otherwise, it will return a single property item.
 
 const getPropertyValue = async ({ pageId, propertyId }: PropertyValue) => {
-  const propertyItem: GetPagePropertyResponse = await notionClient.pages.properties.retrieve({
-    page_id: pageId,
-    property_id: propertyId,
-  });
+  const propertyItem =
+    await notionClient.pages.properties.retrieve({
+      page_id: pageId,
+      property_id: propertyId,
+    });
   if (propertyItem.object === "property_item") {
     return propertyItem;
   }
 
   // Property is paginated.
-  let nextCursor: string | null = propertyItem.next_cursor;
+  let nextCursor = propertyItem.next_cursor;
   const results = propertyItem.results;
 
   while (nextCursor !== null) {
-    const propertyItem = await notionClient.pages.properties.retrieve({
-      page_id: pageId,
-      property_id: propertyId,
-      start_cursor: nextCursor,
-    });
+    const propertyItem =
+      await notionClient.pages.properties.retrieve({
+        page_id: pageId,
+        property_id: propertyId,
+        start_cursor: nextCursor,
+      });
 
     nextCursor = propertyItem.next_cursor;
     results.push(...propertyItem.results);
