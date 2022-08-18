@@ -1,9 +1,8 @@
-import { notion } from "./service/notion";
 import { todoist } from "./service/todoist";
 
 const main = async () => {
-  const currentTasks = await notion();
-}
+  await todoist();
+};
 
 main()
   .then(() => process.exit(0))
