@@ -1,19 +1,31 @@
+// @ts-nocheck
+
 import { TodoistApi } from "@doist/todoist-api-typescript";
+import { notion } from "./notion";
 import dotenv from "dotenv";
+
 dotenv.config();
 
 export const todoist = async () => {
   const todoist = new TodoistApi(process.env.TODOIST_TOKEN as string);
 
-  await todoist
-    .getProjects()
-    .then((projects) =>
-      projects.map((project: any) => console.log(project.name))
-    )
-    .catch((error) => console.error());
+  const payload = await notion();
+  
+  const todoistPriorityList = {
+    high: 4,
+    med: 3,
+    low: 2,
+    none: 1,
+  }
 
-  await todoist
-    .getTasks()
-    .then((tasks) => console.log(tasks))
-    .catch((error) => console.error());
+
+  payload.map(async task => {
+    await todoist.addTask({
+      content: task.title,
+      description: task.description,
+      dueString: "in 3 days",
+      dueLang: "en",
+      priority: todoistPriorityList.low,
+    })
+  });
 };
