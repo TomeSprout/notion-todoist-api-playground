@@ -6,6 +6,21 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
+interface TodoistProject {
+  url: string;
+  id: number;
+  name: string;
+  color: number;
+  favorite: boolean;
+  commentCount: number;
+  shared: boolean;
+  parentId?: number | undefined;
+  order?: number | undefined;
+  inboxProject?: boolean | undefined;
+  teamInbox?: boolean | undefined;
+  syncId?: number | undefined;
+}
+
 export const todoist = async () => {
   const todoist = new TodoistApi(process.env.TODOIST_TOKEN as string);
 
@@ -35,4 +50,20 @@ export const todoist = async () => {
       labelIds: [labelNotionID],
     })
   });
+
+  await todoist
+    .getProjects()
+    .then((projects) =>
+      projects.map(async (project: TodoistProject) => {
+        project.name === 'Inbox' && (inboxProjectID = project.id);        
+      })
+    )
+    .catch((error) => console.error());
+
+  await todoist
+    .getTasks(labelNotionID)
+    .then((tasks) => {
+      console.log(tasks.content);
+    })
+  .catch(error => console.error());
 };
